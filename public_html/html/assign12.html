@@ -1,0 +1,41 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+          "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!--Assignments Page
+   Conatins links to other assignments
+  -->
+<html xmlns = "http://www.w3.org/1999/xhtml">
+  <head>
+    <script type = "text/javascript" src = "js/assign12.js"></script>
+    <title>Mileage Calculator</title>
+  </head>
+  <body style = "background-color:#d0e4fe;">
+    <h1 style = "color:orange; text-align:center;">CS 213</h1>
+    <hr/>
+    <p style = "font-family:Times New Roman; font-size:20px;
+                 text-align:center;">
+      Please enter Start and Destination
+    </p>
+    <div>
+      <table style = "margin:auto">
+        <tr>
+        <td><input type=text id="startCity"placeholder="Start City"/></td>
+        <td><input type=text id="startState"placeholder="St"
+                   size="1" maxLength="2"/></td>
+        </tr>
+        <tr>
+        <td><input type=text id="endCity"placeholder="End City"/></td>
+        <td><input type=text id="endState"placeholder="St" 
+                   size="1" maxLength="2"/></td>
+        </tr>
+        <tr>
+        <td><input type = "button" onclick="getMileage()" 
+                   value = "Calculate"/></td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <p id="req" style="text-align:center"></p>
+    </div>
+  </body>
+</html>

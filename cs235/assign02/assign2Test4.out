@@ -1,0 +1,7 @@
+TESTING ASSIGNMENT OPERATOR
+Original Stack 1:
+10 9 8 7 6 5 4 3 2 1 
+Stack 2 - copy of Original stack 1:
+10 9 8 7 6 5 4 3 2 1 
+New Stack 1:
+105 104 103 102 101 

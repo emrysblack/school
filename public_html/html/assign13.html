@@ -1,0 +1,139 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+          "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!--Assignments Page
+   Conatins links to other assignments
+  -->
+<html xmlns = "http://www.w3.org/1999/xhtml">
+  <head>    
+    <title>Brady Field's Assignment #13</title>
+    <script type = "text/javascript" src = "js/assign13.js"></script>
+  </head>
+  <body onload="loadStudents()" style="background-color:#d0e4fe">
+    <h1 style="color:orange; text-align:center">CS 213</h1>
+    <hr/>
+    <p style="font-family:Times New Roman; font-size:20px;
+              text-align:center;">
+      Piano Festival Registration
+    </p>
+    <div style="margin:auto; border:2px solid #a1a1a1; 
+                padding:10px 40px; background:#dddddd; 
+                width:300px; border-radius:25px">
+      <form  action="">
+        <table>
+          <tr>
+            <td>
+              <input type="radio" name="pType" value="Solo" 
+                     onclick="duet(false)" checked/>Solo
+              <input type="radio" name="pType" value="Duet" 
+                     onclick="duet(true)"/>Duet
+              <input type="radio" name="pType" value="Concerto" 
+                     onclick="duet(false)"/>Concerto
+            </td>
+          </tr>
+          <tr>
+            <td><hr/>Student<hr/></td>
+          </tr>
+          <tr>
+            <td>
+              <input type="text" id="fName" placeholder="First Name"/>
+              <input type="text" id="lName" placeholder="Last Name"/>
+              <input type="text" id="sId" placeholder="Student ID Number"/>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <select>
+                <option value="skill level" 
+                        disabled selected>Skill Level</option>
+                <option name="skill" value="beginner">Beginner</option>
+                <option name="skill" value="intermediate">Intermediate</option>
+                <option name="skill" value="pre-advanced">Pre-Advanced</option>
+                <option name="skill" value="advanced">Advanced</option>
+              </select>
+              <select>
+                <option value="Instrument" disabled selected>Instrument</option>
+                <option name="inst" value="piano">Piano</option>
+                <option name="inst" value="voice">Voice</option>
+                <option name="inst" value="string">String</option>
+                <option name="inst" value="organ">Organ</option>
+                <option name="inst" value="other">Other</option>
+              </select> 
+            </td>
+          </tr>
+        </table>
+        <table id="duet" style="display:none">
+          <tr>
+            <td><hr/>Student #2<hr/></td>
+          </tr>
+          <tr>
+            <td>
+              <input type="text" id="fName1" placeholder="First Name"/>
+              <input type="text" id="lName1" placeholder="Last Name"/>
+              <input type="text" id="sId1" placeholder="Student ID Number"/>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <select>
+                <option value="skill level" 
+                        disabled selected>Skill Level</option>
+                <option name="skill1" value="beginner">Beginner</option>
+                <option name="skill1" value="intermediate">Intermediate</option>
+                <option name="skill1" value="pre-advanced">Pre-Advanced</option>
+                <option name="skill1" value="advanced">Advanced</option>
+              </select>
+              <select>
+                <option value="Instrument" disabled selected>Instrument</option>
+                <option name="inst1" value="piano">Piano</option>
+                <option name="inst1" value="voice">Voice</option>
+                <option name="inst1" value="string">String</option>
+                <option name="inst1" value="organ">Organ</option>
+                <option name="inst1" value="other">Other</option>
+              </select> 
+            </td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <td><hr/>Location<hr/></td>
+          </tr>
+          <tr>
+            <td>
+              <input type="text" id="location" placeholder="Building Name"/>
+              <input type="text" id="room" placeholder="Room #" size = "5"/>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <select>
+                <option value="time slot"disabled selected>Time Slot</option>
+                <option name="time" value="0900a">9:00 AM</option>
+                <option name="time" value="0915a">9:15 AM</option>
+                <option name="time" value="0930a">9:30 AM</option>
+                <option name="time" value="0945a">9:45 AM</option>
+                <option name="time" value="1000a">10:00 AM</option>
+                <option name="time" value="1015a">10:15 AM</option>
+                <option name="time" value="1030a">10:30 AM</option>
+                <option name="time" value="1045a">10:45 AM</option>
+                <option name="time" value="1100a">11:00 AM</option>
+                <option name="time" value="1115a">11:15 AM</option>
+                <option name="time" value="1130a">11:30 AM</option>
+                <option name="time" value="1145a">11:45 AM</option>
+                <option name="time" value="1200p">12:00 PM</option>
+                <option name="time" value="1215p">12:15 PM</option>
+                <option name="time" value="1230p">12:30 PM</option>
+                <option name="time" value="1245p">12:45 PM</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+        <input type="button" 
+               onclick="register()" value="Register Student"/>
+        <input type="reset" value="Clear Form"/>
+      </form>
+    </div>
+      <div id="registered">
+      </div>
+  </body>
+</html>

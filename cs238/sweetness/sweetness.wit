@@ -1,0 +1,130 @@
+(require 'ment "/home/neffr/emacs/ment.el")
+
+(defun whatIsTrue () (list
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; What is true of my experience in general?                              ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; I learned something new. (2 points)
+true
+;; I achieved something meaningful,
+;; or something I can build upon at a later time. (2 points)
+true
+;; I remembered the difference between a problem and an exercise. (2 points)
+true
+;; I collaborated with one or more classmates. (2 points)
+true
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; What is true of my code's command-line interface?                       ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; It uses *unmodified* the /home/cs237/sweet/sweetnessCLI.cpp file,
+;; which interface handles the case of no command-line arguments, calling
+;; a function named *learned*, and then a function named *usage*. (3 points)
+true
+;; The *learned* function outputs several paragraphs reporting
+;; on the learning that happened. (3 points)
+true
+;; This report begins with a description of the best results found,
+;; formatted for clarity. (3 points)
+false
+;; The *usage* function gives instructions on how to run WITH command-line
+;; parameters to run various tests. (3 points)
+true
+;; These instructions tell first how to replicate best results. (3 points)
+false
+;; These instructions tell next how to run other tests
+;; or exercise features. (3 points)
+true
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; What is true of the mechanical "infelicities" (misspelled words,        ;;
+;; grammatical errors, punctuation errors) in my report of what I learned? ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; There are fewer than four. (2 points)
+true
+;; There are fewer than three. (2 points)
+true
+;; There are fewer than two. (2 points)
+true
+;; There are none. (2 points)
+true
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; What is true of how my code is parameterized?                           ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; It runs without the need for user input via files, network or database
+;; input or "cin >> " standard input. (3 points)
+true
+;; Specifically, in NO case does it prompt and wait for input, e.g.,
+;; "Do you want to run these tests? Y/N". (3 points)
+true
+;; It uses command-line parameters only. (3 points)
+true
+;; With command-line parameters it allows the user to choose
+;; which tests to run. (3 points)
+false
+;; With command-line parameters it allows for computing the sweetness value
+;; of a specific range/constant pair. (3 points)
+true
+;; With command-line parameters it allows for doing
+;; something creative not mentioned above. (3 points)
+false
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; What is true of my Sieve of Erathosthenes code?                         ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; It avoids the waste of calculating more primes than necessary. (4 points)
+true
+;; It avoids the waste of calculating and putting primes in a vector
+;; (or other collection type) and determining primeness
+;; by searching the vector. (4 points)
+true
+;; It is efficient, filling a bool array one time up front, and answering
+;; "Is n prime" by returning the n'th element of this array. (4 points)
+true
+;; It fills this bool array in under a minute
+;; on an unloaded Linux lab node. (4 points)
+true
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; What is true of how my code does calculations, in general?              ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; It respects the limit of what intermediate results --- like x * x ---
+;; will fit in an int. (4 points)
+false
+;; It respects the limit of what will fit in an int overall. (4 points)
+true
+;; It accounts for the fundamental feature of the distribution of primes that
+;; smaller numbers are more likely to be prime than larger ones. (4 points)
+false
+;; It calculates unique primes for the best range/constant pairs ---
+;; NO duplicates. (4 points)
+false
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; What is true of how my code calculates sweetness, in particular?        ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; It uses a measure of plenitude probabilistically, meaning 0 <= p <= 1.
+;; (4 points)
+false
+;; It uses a measure of distribution sparingly --- in other words,
+;; conditionally. (4 points)
+false
+;; It uses judicious conditions for applying this measure. (4 points)
+false
+;; It uses this measure accurately. (4 points)
+false
+))
+
+;;; Local Variables: 
+;;; mode: Emacs-Lisp
+;;; compile-command: "whatIsTrue /home/cs238/sweet"
+;;; TeX-master: t
+;;; End: 

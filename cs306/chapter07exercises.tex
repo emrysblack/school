@@ -1,0 +1,132 @@
+% Created 2016-06-09 Thu 22:46
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{hyperref}
+
+
+\title{Chapter 7 Exercises}
+\author{Brady Field}
+\date{09 June 2016}
+
+\begin{document}
+
+\maketitle
+
+
+\section*{Partners in crime}
+\label{sec-1}
+
+Landon - helped clarify what a few of the questions were asking, and
+helped catch me up on what I missed after I had to leave class on
+Friday.
+
+Matthew - helped with linking image of 2-3-4 tree, and helped
+with the top-down approach.
+
+Thom - helped with the top-down insertion of the 2-3-4 tree.
+
+\section*{Solution to Exercise 1 on page 274}
+\label{sec-2}
+
+
+\textbf{a.} open hash table
+
+
+\begin{center}
+\begin{tabular}{lllllllllll}
+ [ 0 ]  &  [ 1 ]       &  [ 2 ]  &  [ 3 ]  &  [ 4 ]  &  [ 5 ]  &  [ 6 ]  &  [ 7 ]  &  [ 8 ]       &  [ 9 ]       &  [ 10 ]  \\
+        &  \downarrow  &         &         &         &         &         &         &  \downarrow  &  \downarrow  &          \\
+        &  56          &         &         &         &         &         &         &  30          &  20          &          \\
+        &              &         &         &         &         &         &         &  \downarrow  &  \downarrow  &          \\
+        &              &         &         &         &         &         &         &  19          &  75          &          \\
+        &              &         &         &         &         &         &         &              &  \downarrow  &          \\
+        &              &         &         &         &         &         &         &              &  31          &          \\
+\end{tabular}
+\end{center}
+
+
+
+\textbf{b.} largest number of key comparisons
+
+3 comparisons if looking for entry 31
+
+\textbf{c.} average number of key comparisons
+
+If we look for all the entries we get (1 + 1 + 1 + 2 + 3 + 2)/6 = 5/3
+comparisons.
+
+\section*{Solution to Exercise 2 on page 274}
+\label{sec-3}
+
+
+\textbf{a.} closed hash table
+
+
+\begin{center}
+\begin{tabular}{lllllllllll}
+ [ 0 ]       &  [ 1 ]       &  [ 2 ]       &  [ 3 ]  &  [ 4 ]  &  [ 5 ]  &  [ 6 ]  &  [ 7 ]  &  [ 8 ]       &  [ 9 ]       &  [ 10 ]      \\
+ \downarrow  &  \downarrow  &  \downarrow  &         &         &         &         &         &  \downarrow  &  \downarrow  &  \downarrow  \\
+ 31          &  56          &  19          &         &         &         &         &         &  30          &  20          &  75          \\
+\end{tabular}
+\end{center}
+
+
+
+\textbf{b.} largest number of key comparisons
+
+6 comparisons if looking for entry 19
+
+\textbf{c.} average number of key comparisons
+
+if we look for all the entries we get (1 + 1 + 1 + 2 + 3 + 6)/6 = 7/3
+comparisons.
+
+\section*{Solution to Exercise 3 on page 275}
+\label{sec-4}
+
+
+There would be way too many collisions to make the hash
+effective. There are only 26 buckets for data, and far too many
+possible words to fit nicely into only 26 buckets.
+
+\section*{Solution to Exercise 4 on page 275}
+\label{sec-5}
+
+
+\left ( \frac{1}{m} \right )^{n} * {m} = \frac{1}{m^{n-1}}
+
+1/m is the probability of hitting a specific
+bucket. We raise to the n for the probability of hitting every
+time. We then multiply it by m to extend it to any single bucket.
+
+\section*{Solution to Exercise 3 on page 279}
+\label{sec-6}
+
+
+Following the technique outlined in the book, I used the formula 
+
+\left
+$\lfloor$ log\{_{\left $\lceil$ m/2 \right \rceil}\frac{n+1}{4}} \right
+$\rfloor$ + 1
+
+with 100 million for n, and got the height from plugging in values for
+m in wolfram alpha. I tried going up by 100 each time until I
+hit 600. I then tested 550, 580, 590, 585, 583, and 584 for m. This
+allowed me to discover that 585 was the minimum order for the desired
+height of 3.
+
+\section*{Solution to Exercise 6 on page 279}
+\label{sec-7}
+
+
+\textbf{a.} \href{https://drive.google.com/file/d/10gBOSN8BeleyW8wsbETAueg0bg20tyrKkg/view}{Tree}. We did a step-by-step construction of the tree using the
+top-down method.
+
+\textbf{b.} Using the top-down approach, we have a maximum of one split per
+insertion. This keeps things simple. The downside is that our tree may
+not have an optimal height compared to another method.
+
+\end{document}

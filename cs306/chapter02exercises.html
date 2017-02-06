@@ -1,0 +1,600 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+lang="en" xml:lang="en">
+<head>
+<title>Chapter 2 Exercises</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2016-05-06 00:08:39 MDT"/>
+<meta name="author" content="Brady Field"/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color:lightblue; font-weight:normal }
+  .target { }
+  .timestamp { color: grey }
+  .timestamp-kwd { color: CadetBlue }
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*/-->
+</script>
+</head><body>
+<h1 class="title">Chapter 2 Exercises</h1>
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Collaborators: Thom Allen, Kopsa brothers, Matthew Ary </h2>
+<div id="text-1">
+
+<p>Thom worked the math problems with me and served as a good subject to teach summations and how to adjust them.
+</p>
+<p>
+Matthew provided assistance with translatating our notes into Latex format.
+</p>
+<p>
+The Kopsa Brothers answered some general questions about the assignment.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Exercise 1 on page 50 </h2>
+<div id="text-2">
+
+
+<p>
+For each of the following algorithms, indicate (i) a natural size metric
+for its inputs; (ii) its basic operation; (iii) whether the basic operation count
+can be different for inputs of the same size:
+</p>
+<p>
+<b>a.</b> computing the sum of <img src="ltxpng/chapter02exercises_0001.png"/> numbers
+</p>
+<p>
+<b>b.</b> computing <img src="ltxpng/chapter02exercises_0002.png"/>
+</p>
+<p>
+<b>c.</b> finding the largest element in a list of <img src="ltxpng/chapter02exercises_0003.png"/> numbers
+</p>
+<p>
+<b>d.</b> Euclid's algorithm
+</p>
+<p>
+<b>e.</b> sieve of Eratosthenes
+</p>
+<p>
+<i>Up to 3 points are possible for a good answer for each part (*a-e*), for a total possible of 15 points.</i>
+</p>
+<p>
+Here is an example of a good answer for part <b>a</b>:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<col align="left"></col><col align="left"></col>
+<tbody>
+<tr><td>(i)</td><td><img src="ltxpng/chapter02exercises_0004.png"/></td></tr>
+<tr><td>(ii)</td><td>addition of two numbers</td></tr>
+<tr><td>(iii)</td><td>no</td></tr>
+</tbody>
+</table>
+
+
+
+</div>
+
+<div id="outline-container-2.1" class="outline-3">
+<h3 id="sec-2.1">Solutions </h3>
+<div id="text-2.1">
+
+
+<p>
+<b>b.</b> 
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<col align="left"></col><col align="left"></col>
+<tbody>
+<tr><td>(i)</td><td><img src="ltxpng/chapter02exercises_0005.png"/></td></tr>
+<tr><td>(ii)</td><td>multiplication of two numbers</td></tr>
+<tr><td>(iii)</td><td>no</td></tr>
+</tbody>
+</table>
+
+
+<p>
+<b>c.</b> 
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<col align="left"></col><col align="left"></col>
+<tbody>
+<tr><td>(i)</td><td><img src="ltxpng/chapter02exercises_0006.png"/></td></tr>
+<tr><td>(ii)</td><td>comparison of two numbers</td></tr>
+<tr><td>(iii)</td><td>no</td></tr>
+</tbody>
+</table>
+
+
+<p>
+<b>d.</b> Euclid's algorithm
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<col align="left"></col><col align="left"></col>
+<tbody>
+<tr><td>(i)</td><td>2</td></tr>
+<tr><td>(ii)</td><td>modulus of two numbers</td></tr>
+<tr><td>(iii)</td><td>yes</td></tr>
+</tbody>
+</table>
+
+
+<p>
+<b>e.</b> sieve of Eratosthenes
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<col align="left"></col><col align="left"></col>
+<tbody>
+<tr><td>(i)</td><td><img src="ltxpng/chapter02exercises_0007.png"/></td></tr>
+<tr><td>(ii)</td><td>multiplication of two numbers</td></tr>
+<tr><td>(iii)</td><td>no</td></tr>
+</tbody>
+</table>
+
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Exercise 8 on page 51 </h2>
+<div id="text-3">
+
+
+<p>
+For each of the following functions, indicate how much the
+function's value will change if its argument is increased fourfold.
+</p>
+<p>
+<b>a.</b> <img src="ltxpng/chapter02exercises_0008.png"/>
+</p>
+<p>
+<b>b.</b> <img src="ltxpng/chapter02exercises_0009.png"/>
+</p>
+<p>
+<b>c.</b> <img src="ltxpng/chapter02exercises_0010.png"/>
+</p>
+<p>
+<b>d.</b> <img src="ltxpng/chapter02exercises_0011.png"/>
+</p>
+<p>
+<b>e.</b> <img src="ltxpng/chapter02exercises_0012.png"/>
+</p>
+<p>
+<b>f.</b> <img src="ltxpng/chapter02exercises_0013.png"/>
+</p>
+<p>
+<i>Up to 2 points are possible (1 for a correct numerator, 1 for a correct denominator of a ratio giving the value change) for a good answer for each part (*a-f*), for a total possible of 12 points.</i>
+</p>
+<p>
+Here is an example of a good answer for part <b>a</b>:
+</p>
+<p>
+<img src="ltxpng/chapter02exercises_0014.png"/>. Value change: <img src="ltxpng/chapter02exercises_0015.png"/>
+</p>
+
+</div>
+
+<div id="outline-container-3.1" class="outline-3">
+<h3 id="sec-3.1">Solutions </h3>
+<div id="text-3.1">
+
+
+<p>
+<b>b.</b> <img src="ltxpng/chapter02exercises_0016.png"/>\)
+</p>
+<p>
+<b>c.</b> <img src="ltxpng/chapter02exercises_0017.png"/>\)
+</p>
+<p>
+<b>d.</b> <img src="ltxpng/chapter02exercises_0018.png"/>
+</p>
+<p>
+<b>e.</b> <img src="ltxpng/chapter02exercises_0019.png"/>
+</p>
+<p>
+<b>f.</b> <img src="ltxpng/chapter02exercises_0020.png"/>
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">Exercise 3 on page 59 </h2>
+<div id="text-4">
+
+
+<p>
+For each of the following functions, indicate the class &Theta;(<i>g(n)</i>)
+the function belongs to. (Use the simplest <i>g(n)</i> possible in your answers.)
+Prove your assertions.
+</p>
+<p>
+<b>a.</b> <img src="ltxpng/chapter02exercises_0021.png"/>
+</p>
+<p>
+<b>b.</b> <img src="ltxpng/chapter02exercises_0022.png"/>
+</p>
+<p>
+<b>d.</b> <img src="ltxpng/chapter02exercises_0023.png"/>
+</p>
+<p>
+<i>Up to 3 points are possible for a good answer for each part (*a, b, d*), for a total possible of 9 points.</i>
+</p>
+<p>
+Here is an example of a good answer for part <b>a</b>:
+</p>
+<p>
+<img src="ltxpng/chapter02exercises_0024.png"/> To prove this is in <img src="ltxpng/chapter02exercises_0025.png"/>:
+</p>
+
+<p>
+<img src="ltxpng/chapter02exercises_0050.png"/>
+</p>
+
+<p>
+Or, informally: <img src="ltxpng/chapter02exercises_0026.png"/>
+</p>
+
+</div>
+
+<div id="outline-container-4.1" class="outline-3">
+<h3 id="sec-4.1">Solutions </h3>
+<div id="text-4.1">
+
+
+<p>
+<b>b.</b> <img src="ltxpng/chapter02exercises_0027.png"/>
+<b>d.</b> <img src="ltxpng/chapter02exercises_0028.png"/>
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5">Exercise 1 on page 67 </h2>
+<div id="text-5">
+
+
+<p>
+Compute the following sums.
+</p>
+<p>
+<b>a.</b> <img src="ltxpng/chapter02exercises_0029.png"/>
+</p>
+<p>
+<b>b.</b> <img src="ltxpng/chapter02exercises_0030.png"/>
+</p>
+<p>
+<b>c.</b> <img src="ltxpng/chapter02exercises_0031.png"/>
+</p>
+<p>
+<b>d.</b> <img src="ltxpng/chapter02exercises_0032.png"/>
+</p>
+<p>
+<b>e.</b> <img src="ltxpng/chapter02exercises_0033.png"/>
+</p>
+<p>
+<i>Up to 2 points are possible for a good answer (1 for the correct answer, 1 for showing how you got it) for each part (*a-e*), for a total possible of 10 points.</i>
+</p>
+<p>
+Here is an example of a good answer for part <b>a</b>:
+</p>
+
+
+<p>
+<img src="ltxpng/chapter02exercises_0051.png"/>
+</p>
+
+<p>
+(Or, by using the formula for the sum of the arithmetic series with <img src="ltxpng/chapter02exercises_0034.png"/>.)
+</p>
+
+</div>
+
+<div id="outline-container-5.1" class="outline-3">
+<h3 id="sec-5.1">Solutions </h3>
+<div id="text-5.1">
+
+
+<p>
+<b>b.</b> <img src="ltxpng/chapter02exercises_0035.png"/>
+</p>
+<p>
+<b>c.</b> <img src="ltxpng/chapter02exercises_0036.png"/>
+</p>
+<p>
+<b>d.</b> <img src="ltxpng/chapter02exercises_0037.png"/>
+</p>
+<p>
+<b>e.</b> <img src="ltxpng/chapter02exercises_0038.png"/>
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6">Exercise 2 on page 67 </h2>
+<div id="text-6">
+
+
+<p>
+Find the order of growth of the following sums. Use the &Theta;(<i>g(n)</i>)
+notation with the simplest function <i>g(n)</i> possible.
+</p>
+<p>
+<b>a.</b> <img src="ltxpng/chapter02exercises_0039.png"/>
+</p>
+<p>
+<b>b.</b> <img src="ltxpng/chapter02exercises_0040.png"/>
+</p>
+<p>
+<b>c.</b> <img src="ltxpng/chapter02exercises_0041.png"/>
+</p>
+<p>
+<i>Up to 2 points are possible for a good answer (1 for the correct answer, 1 for showing how you got it) for each part (*a-c*), for a total possible of 6 points.</i>
+</p>
+<p>
+Here is an example of a good answer for part <b>a</b>:
+</p>
+
+
+<p>
+<img src="ltxpng/chapter02exercises_0052.png"/>
+</p>
+
+
+
+<p>
+<img src="ltxpng/chapter02exercises_0053.png"/>
+</p>
+
+
+
+
+</div>
+
+<div id="outline-container-6.1" class="outline-3">
+<h3 id="sec-6.1">Solutions </h3>
+<div id="text-6.1">
+
+
+<p>
+<b>b.</b> <img src="ltxpng/chapter02exercises_0042.png"/>
+</p>
+<p>
+<b>c.</b> <img src="ltxpng/chapter02exercises_0043.png"/>
+</p>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7">Exercise 2 on page 76 </h2>
+<div id="text-7">
+
+
+<p>
+Set up and solve a recurrence relation for the number of calls made by <i>F(n)</i>,
+the recursive algorithm for computing <i>n!</i>.
+</p>
+<p>
+<i>Up to 5 points are possible for a good answer.</i>
+</p>
+
+</div>
+
+<div id="outline-container-7.1" class="outline-3">
+<h3 id="sec-7.1">Solution </h3>
+<div id="text-7.1">
+
+<p><img src="ltxpng/chapter02exercises_0044.png"/>
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-8" class="outline-2">
+<h2 id="sec-8">Exercise 3 on page 76 </h2>
+<div id="text-8">
+
+
+<p>
+Consider the following recursive algorithm for computing the sum of the first
+<i>n</i> cubes: <img src="ltxpng/chapter02exercises_0045.png"/>
+</p>
+
+
+<pre>
+<p>
+<b>Algorithm</b> <i>S(n)</i>
+//// Input: A positive integer <i>n</i>
+//// Output: The sum of the first <i>n</i> cubes
+<b>if</b> <i>n = 1</i> <b>return</b> 1
+<b>else return</b> <i>S(n − 1) + n * n * n</i>
+</pre>
+
+<b>a.</b> Set up and solve a recurrence relation for the number of times the algorithm's
+basic operation is executed.
+</p>
+<p>
+<b>b.</b> How does this algorithm compare with the straightforward nonrecursive
+algorithm for computing this sum?
+</p>
+<p>
+<i>Up to 4 points are possible for each part (*a-b*), for a total possible of 8 points.</i>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-9" class="outline-2">
+<h2 id="sec-9">Exercise 7 on page 78 </h2>
+<div id="text-9">
+
+
+<p>
+<b>a.</b> Prove that the exact number of additions made by the recursive algorithm
+<i>BinRec(n)</i> for an arbitrary positive decimal integer n is <img src="ltxpng/chapter02exercises_0046.png"/>.
+</p>
+<p>
+<b>b.</b> Set up a recurrence relation for the number of additions made by the
+nonrecursive version of this algorithm (see Section 2.3, Example 4) and
+solve it.
+</p>
+<p>
+<i>Up to 5 points are possible for each part (*a-b*), for a total possible of 10 points.</i>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-10" class="outline-2">
+<h2 id="sec-10">Exercise 13 on page 78 </h2>
+<div id="text-10">
+
+
+<p>
+<i>Frying hamburgers</i>
+</p>
+<p>
+There are <i>n</i> hamburgers to be fried on a small grill that
+can hold only two hamburgers at a time. Each hamburger has to be fried
+on both sides; frying one side of a hamburger takes 1 minute, regardless of
+whether one or two hamburgers are fried at the same time. Consider the
+following recursive algorithm for executing this task in the minimum amount
+of time. If <img src="ltxpng/chapter02exercises_0047.png"/>, fry the hamburger or the two hamburgers together on each
+side. If <img src="ltxpng/chapter02exercises_0048.png"/>, fry any two hamburgers together on each side and then apply
+the same procedure recursively to the remaining <i>n − 2</i> hamburgers.
+</p>
+<p>
+<b>a.</b> Set up and solve the recurrence for the amount of time this algorithm needs
+to fry <i>n</i> hamburgers.
+</p>
+<p>
+<b>b.</b> Explain why this algorithm does not fry the hamburgers in the minimum
+amount of time for all <i>n &gt; 0</i>.
+</p>
+<p>
+<b>c.</b> Give a correct recursive algorithm that executes the task in the minimum
+amount of time.
+</p>
+<p>
+<i>Up to 4 points are possible for each part (*a-c*), for a total possible of 12 points.</i>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-11" class="outline-2">
+<h2 id="sec-11">Exercise 6 on page 83 </h2>
+<div id="text-11">
+
+
+<p>
+The maximum values of the Java primitive types <b>int</b> and <b>long</b> are 2<sup>31</sup> − 1 and
+2<sup>63</sup> − 1, respectively. Find the smallest <i>n</i> for which the <img src="ltxpng/chapter02exercises_0049.png"/>th Fibonacci number
+is not going to fit in a memory allocated for
+</p>
+<p>
+<b>a.</b> the type <b>int</b>.
+</p>
+<p>
+<b>b.</b> the type <b>long</b>.
+</p>
+<p>
+<i>Up to 2 points are possible for each part (*a-b*), for a total possible of 4 points.</i>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-12" class="outline-2">
+<h2 id="sec-12">Exercise 9 on page 84 </h2>
+<div id="text-12">
+
+
+<p>
+Prove the equality
+</p>
+
+
+<p>
+<img src="ltxpng/chapter02exercises_0054.png"/>
+</p>
+
+
+<p>
+<i>Up to 4 points are possible for a good answer.</i>
+</p>
+<p>
+(To be done in class via mathematical induction.)
+</p></div>
+</div>
+<div id="postamble"><p class="author"> Author: Brady Field
+<a href="mailto:emrys@AUS213L32.byui.edu">&lt;emrys@AUS213L32.byui.edu&gt;</a>
+</p>
+<p class="date"> Date: 2016-05-06 00:08:39 MDT</p>
+<p>HTML generated by org-mode 6.21b in emacs 23</p>
+</div></body>
+</html>

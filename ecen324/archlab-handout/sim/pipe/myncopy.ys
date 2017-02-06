@@ -1,0 +1,61 @@
+#/* $begin ncopy-ys */
+##################################################################
+# ncopy.ys - Copy a src block of len ints to dst.
+# Return the number of positive ints (>0) contained in src.
+#
+# Include your name and ID here.
+#
+# Describe how and why you modified the baseline code.
+#
+##################################################################
+	# Function prologue. Do not modify saving/setting %ebp.
+ncopy:	pushl  %ebp		# Save old frame pointer
+	rrmovl %esp,%ebp	# Set up new frame pointer
+	pushl  %esi		# Save callee-save regs
+	pushl  %ebx
+	mrmovl 8(%ebp),%ebx	# src
+	mrmovl 12(%ebp),%ecx	# dst
+	mrmovl 16(%ebp),%edx	# len
+
+	# Loop header
+	xorl   %eax,%eax	# count = 0;
+	andl  %edx,%edx	        # len > 0?
+	jg    Loop		# if so, goto Loop:
+
+End:	#andl  %edx,%edx	# len > 0?
+        #jg End1
+	# Function epilogue. Do not modify unless you implement 'leave'.
+	leave
+	ret
+
+	# Loop body.
+Loop:	mrmovl (%ebx), %esi	# read val from src...  
+        iaddl   $4, %ebx	# src++
+	rmmovl %esi, (%ecx)	# ...and store it to dst	
+	iaddl   $4, %ecx	# dst++
+        iaddl   $-1, %edx	# len--
+        andl   %esi, %esi		# val > 0?
+	jg    Inc		# if so, goto Inc:
+
+Npos:	andl   %edx,%edx	# len > 0?
+	jg     Loop		# if so, goto Loop:
+        leave
+	ret
+
+Inc:   	iaddl   $1, %eax	# count++
+        andl   %edx,%edx	# len > 0?
+	jg     Loop		# if so, goto Loop:
+	leave
+	ret
+
+End1:	mrmovl (%ebx), %esi	# read val from src...  
+	rmmovl %esi, (%ecx)	# ...and store it to dst
+        andl   %esi, %esi		# val > 0?
+	jg    End2		# if so, goto Inc:
+	# Function epilogue. Do not modify unless you implement 'leave'.
+	leave
+	ret
+
+End2:   iaddl   $1, %eax	# count++
+	jmp End
+#/* $end ncopy-ys */

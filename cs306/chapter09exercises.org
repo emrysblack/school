@@ -1,0 +1,90 @@
+# Created 2016-06-16 Thu 17:13
+#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t
+#+TITLE: Chapter 9 Exercises
+#+AUTHOR: Brady Field
+#+LANGUAGE: en
+#+STARTUP: showeverything
+
+* Partners in crime
+Thom - helped with spanning trees
+
+Matthew - helped with scheduling
+
+* Solution to Exercise 3 on page 313
+
+Use a shortest job first scheduler.
+
+#+BEGIN_VERSE
+While jobs left to do
+   find shortest job
+   execute shortest job
+#+END_VERSE
+
+This will always be optimal.
+
+* Solutions to Exercises Started in Class
+** Prim's Algorithm
+
+*** front page
+(a,d)
+(d,b)
+(b,c)
+(c,f)
+(f,e)
+(e,h)
+(h,i)
+(h,g)
+
+58
+
+*** back page
+(a,b)
+(b,c)
+(c,d)
+(d,h)
+(h,g)
+(g,f)
+(f,e)
+(e,i)
+(i,j)
+(j,k)
+(k,l)
+(l,p)
+(p,m)
+(m,n)
+(n,o)
+
+30
+
+** Kruskal's Algorithm
+
+*** front page
+(e,f)
+(a,d)
+(h,i)
+(d,b)
+(c,f)
+(e,h)
+(b,c)
+(g,h)
+
+58
+
+*** back page
+(a,b)
+(a,e)
+(c,d)
+(d,h)
+(a,d)
+(a,m)
+(d,p)
+(e,f)
+(e,i)
+(g,h)
+(l,p)
+(m,n)
+(n,o)
+(f,j)
+(k,l)
+
+27

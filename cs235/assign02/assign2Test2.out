@@ -1,0 +1,5 @@
+TESTING POP FUNCTION:
+TESTING EMPTY FUNCTION: 
+	Try popping a value off an empty stack.
+	Program should exit and fail.
+ERROR: Stack Underflow

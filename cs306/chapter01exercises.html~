@@ -1,0 +1,470 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+lang="en" xml:lang="en">
+<head>
+<title>Chapter 1 Exercises</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2016-04-26 23:01:57 MDT"/>
+<meta name="author" content="Brady Field"/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color:lightblue; font-weight:normal }
+  .target { }
+  .timestamp { color: grey }
+  .timestamp-kwd { color: CadetBlue }
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*/-->
+</script>
+</head><body>
+<h1 class="title">Chapter 1 Exercises</h1>
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Exercise 4 on page 7 </h2>
+<div id="text-1">
+
+
+<p>
+Design an algorithm for computing <img src="ltxpng/chapter01exercises_0001.png"/>
+for any positive integer <img src="ltxpng/chapter01exercises_0002.png"/>.  Besides assignment and comparison,
+your algorithm may only use the four basic arithmetical operations.
+</p>
+<p>
+<i>Up to 4 points are possible for a good answer.</i>
+</p>
+
+</div>
+
+<div id="outline-container-1.1" class="outline-3">
+<h3 id="sec-1.1">Solution </h3>
+<div id="text-1.1">
+
+
+<p>
+I repeatedly took an average of a number until it was reduced to two common integers.
+</p>
+
+
+
+<pre class="example">
+// test for a simple sqrt algorithm
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+   double num;
+   int rootFloor;
+
+   do
+   {
+      cout &lt;&lt; "Enter the number to find the root: ";
+      cin &gt;&gt; num;
+   } while (num &lt; 0);
+   
+   // compute the root
+   double big = num;
+   double small = 0;
+   while ((int)big != (int)small)
+   {
+      // take average
+      big = (big + small) / 2;
+      small = num / big;
+   }
+
+   rootFloor = big;
+   // display result
+   cout &lt;&lt; "The Square root of "
+        &lt;&lt; num &lt;&lt; " floored is " &lt;&lt; rootFloor &lt;&lt; endl
+        &lt;&lt; rootFloor &lt;&lt; " squared is "
+        &lt;&lt; rootFloor * rootFloor &lt;&lt; endl;
+   return 0;
+}
+</pre>
+
+
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Exercise 8 on page 8 </h2>
+<div id="text-2">
+
+
+<p>
+What does Euclid's algorithm do for a pair of numbers in
+which the first number is smaller than the second one? What is the
+largest number of times this can happen during the algorithm's
+execution on such an input?
+</p>
+<p>
+<i>Up to 2 points are possible for a good answer for each question, for a total possible of 4 points.</i>
+</p>
+
+</div>
+
+<div id="outline-container-2.1" class="outline-3">
+<h3 id="sec-2.1">Solution </h3>
+<div id="text-2.1">
+
+<ol>
+<li>
+The algorithm will flip the two numbers as a natural result of the modulus operation.
+</li>
+<li>
+It can only happen once. After being flipped, the two numbers will continue the
+</li>
+</ol>
+
+<p>algorithm in the normal fashion.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Exercise 12 on page 8 </h2>
+<div id="text-3">
+
+
+<p>
+<i>Locker doors</i>
+</p>
+<p>
+There are <i>n</i> lockers in a hallway, numbered sequentially from 1 to
+<i>n</i>. Initially, all the locker doors are closed. You make <i>n</i> passes
+by the lockers, each time starting with locker #1. On the <i>ith</i>
+pass, <i>i</i> = 1, 2, &hellip;, <i>n</i>, you toggle the door of every <i>ith</i>
+locker: if the door is closed, you open it; if it is open, you close
+it. After the last pass, which locker doors are open and which are
+closed? How many of them are open?
+</p>
+<p>
+<i>Up to 4 points are possible for a good answer for each question, for a total possible of 8 points.</i>
+</p>
+
+</div>
+
+<div id="outline-container-3.1" class="outline-3">
+<h3 id="sec-3.1">Solution </h3>
+<div id="text-3.1">
+
+<ol>
+<li>
+After the last pass, only perfect squares are the door numbers left open.
+</li>
+<li>
+The number of doors that are left open is related to the first question: the floor of the square root of n.
+
+</li>
+</ol>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">Exercise 5 on page 17 </h2>
+<div id="text-4">
+
+
+<p>
+Describe the standard algorithm for finding the binary
+representation of a positive decimal integer
+</p>
+<ul>
+<li>
+in English
+</li>
+<li>
+in a pseudocode.
+
+</li>
+</ul>
+
+<p><i>Up to 4 points are possible for a good answer for each part, for a total possible of 8 points.</i>
+</p>
+
+</div>
+
+<div id="outline-container-4.1" class="outline-3">
+<h3 id="sec-4.1">Solution </h3>
+<div id="text-4.1">
+
+
+</div>
+
+<div id="outline-container-4.1.1" class="outline-4">
+<h4 id="sec-4.1.1">English </h4>
+<div id="text-4.1.1">
+
+<p>Repeatedly divide a number by two and record the remainder at each step until the number is broken down to zero.
+The list of remainders becomes the binary number.
+</p></div>
+
+</div>
+
+<div id="outline-container-4.1.2" class="outline-4">
+<h4 id="sec-4.1.2">Pseudocode </h4>
+<div id="text-4.1.2">
+
+
+
+
+<pre class="example">
+while number &gt; 0
+   append number % 2 to end of string
+   set number to number / 2
+display string in reverse
+</pre>
+
+
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5">Exercise 10 on page 18 </h2>
+<div id="text-5">
+
+
+<p>
+One of the most influential books on problem solving, titled
+<i>How to Solve It</i> [Pol57], was written by the Hungarian-American
+mathematician George Polya (1887-1985). Polya summarized his ideas in
+a four-point summary. Find this summary on the Web or, better yet,
+in his book, and compare it with the plan outlined in Section 1.2.
+What do they have in common? How are they different?
+</p>
+<p>
+<i>Up to 4 points are possible for a good answer for each part, for a total possible of 8 points.</i>
+</p>
+
+</div>
+
+<div id="outline-container-5.1" class="outline-3">
+<h3 id="sec-5.1">Solution </h3>
+<div id="text-5.1">
+
+<ol>
+<li>
+They both give a similar process for solving problems.
+</li>
+</ol>
+
+<p>They both agree that one must first understand a problem before attempting to come up with a solution.
+They both place importance on verification.
+</p><ol>
+<li>
+They differ in that Levitin talks about more steps. Levitin talks about designing and implimenting the algorithm
+</li>
+</ol>
+
+<p>specifically for a computational device. Also, Polya outlines in his last step that one should try a different
+approach to the problem. This is not explicitly stated as a unique step in the Levitin text. 
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6">Exercise 8 on page 25 </h2>
+<div id="text-6">
+
+
+<p>
+Consider the following map:
+</p>
+
+
+
+<pre class="example">
+
++-----+-----------+-----+
+|     |           |     |
+|     |     b     |     |
+|     |           |     |
+|  a  +-----+-----+     |
+|     |     |           |
+|     |     |     d     |
+|     |     |           |
++-----+  c  |           |
+|     |     |           |
+|     |     +-----------+
+|     |     |           |
+|  e  +-----+           |
+|     |                 |
+|     |           f     |
+|     |                 |
++-----+-----------------+
+</pre>
+
+
+
+
+<p>
+<b>a.</b> Explain how we can use the graph-coloring problem to color the map so
+that no two neighboring regions are colored the same.
+</p>
+<p>
+<b>b.</b> Use your answer to part <b>a</b> to color the map with the smallest number of
+colors.
+</p>
+<p>
+<i>Up to 4 points are possible for a good answer for each part, for a total possible of 8 points.</i>
+</p>
+
+</div>
+
+<div id="outline-container-6.1" class="outline-3">
+<h3 id="sec-6.1">Solution </h3>
+<div id="text-6.1">
+
+<ol>
+<li>
+The blocks are the nodes. They can be colored so as to not be connected with the same color values.
+</li>
+</ol>
+
+<p>The fewest amount of colors in this example is 4.
+</p><ol>
+<li>
+Part B
+
+
+
+<pre class="example">
+
++-----+-----------+-----+
+| red |  green    |     |
+|     |     b     |     |
+|     |           |     |
+|  a  +-----+-----+     |
+|     |brown| blue      |
+|     |     |     d     |
+|     |     |           |
++-----+  c  |           |
+|blue |     |           |
+|     |     +-----------+
+|     |     |           |
+|  e  +-----+           |
+|     | red             |
+|     |           f     |
+|     |                 |
++-----+-----------------+
+</pre>
+
+
+
+
+</li>
+</ol>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7">Exercise 9 on page 25 </h2>
+<div id="text-7">
+
+
+<p>
+Design an algorithm for the following problem: Given a set of <i>n</i> points in the
+Cartesian plane, determine whether all of them lie on the same circumference.
+</p>
+<p>
+<i>Up to 8 points are possible for a good answer.</i>
+</p>
+
+</div>
+
+<div id="outline-container-7.1" class="outline-3">
+<h3 id="sec-7.1">Solution </h3>
+<div id="text-7.1">
+
+
+
+
+<pre class="example">
+if n &gt; 3
+   return true
+
+compute circumcenter from the first three points in the list.
+
+set dist to distance from circumcenter to first point
+
+for i..n
+   if dist is not equal to distance from point i to circumcenter
+      return false
+return true
+</pre>
+
+
+</div>
+</div>
+</div>
+<div id="postamble"><p class="author"> Author: Brady Field
+<a href="mailto:emrys@AUS213L32.byui.edu">&lt;emrys@AUS213L32.byui.edu&gt;</a>
+</p>
+<p class="date"> Date: 2016-04-26 23:01:57 MDT</p>
+<p>HTML generated by org-mode 6.21b in emacs 23</p>
+</div></body>
+</html>

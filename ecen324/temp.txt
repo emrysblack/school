@@ -1,0 +1,14 @@
+24
+3.14159
+A
+Users pay rate: $10.5
+ Hours worked: 40
+    Gross Pay: $420
+Twice 55 is 110
+
+Integer: 99 ###
+Integer:         99 ###
+Integer: 99         ###
+
+  Float: 43.200001 ###
+  Float:  43.200001 ###

@@ -1,0 +1,45 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+          "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!--Assignments Page
+   Conatins links to other assignments
+  -->
+<html xmlns = "http://www.w3.org/1999/xhtml">
+  <head>
+    <script src="js/assign09.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/assign09.css"/>
+    <title>Ajax Assignment</title>
+  </head>
+  <body>
+    <h1>Dynamic Loader</h1>
+    <hr/>
+    <h1 style = "text-align:center">Countries of the World</h1>
+    <table border="0" style="margin:auto;">
+      <tr>
+        <th>
+          <select id="select" onchange="loadTxt()">
+            <option id="usa.txt">USA</option>
+            <option id="canada.txt">Canada</option>
+            <option id="mexico.txt">Mexico</option>
+            <option id="russia.txt">Russia</option>
+          </select>
+        </th>
+      </tr>
+      <tr>
+        <td>
+          <textarea id="text" rows="10" cols="50">
+          </textarea>
+        </td>
+      </tr>
+    </table>
+    <br/>
+    <form style="text-align:center;">
+      <input type="text" id="url" placeholder="Enter URL"/>
+      <input type="button" value ="submit" onclick="loadHTML()" />
+    </form>
+    <br/>
+    <br/>
+    <div id="wPage">
+    </div>
+  </body>
+</html>

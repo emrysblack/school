@@ -1,0 +1,60 @@
+                      | # Execution begins at address 0
+  0x000:              | .pos 0
+  0x000: 308400010000 | init:	irmovl Stack, %esp	# Set up Stack pointer
+  0x006: 308500010000 | 	irmovl Stack, %ebp	# Set up base pointer
+  0x00c: 702c000000   | 	jmp    Main		# Execute main program
+                      | 
+  0x014:              |         .align 4
+                      |         # Source block
+  0x014:              |         src:
+  0x014: 0a000000     |                 .long 0x00a
+  0x018: b0000000     |                 .long 0x0b0
+  0x01c: 000c0000     |                 .long 0xc00
+                      |         # Destination block
+  0x020:              |         dest:
+  0x020: 11010000     |                 .long 0x111
+  0x024: 22020000     |                 .long 0x222
+  0x028: 33030000     |                 .long 0x333 
+                      | 
+  0x02c: 308003000000 | Main:	irmovl $3,%eax
+  0x032: a008         | 	pushl  %eax		# Push 3
+  0x034: 308220000000 | 	irmovl dest,%edx
+  0x03a: a028         | 	pushl  %edx		# Push dest
+  0x03c: 308214000000 |         irmovl src,%edx
+  0x042: a028         |         pushl  %edx             # Push src
+  0x044: 804a000000   | 	call   copy_block	# Cpy(src, dest, 3)
+  0x049: 10           | 	halt
+                      | 
+  0x04a:              | copy_block:
+  0x04a: a058         | 	pushl	%ebp
+  0x04c: 2045         | 	rrmovl	%esp, %ebp
+  0x04e: a078         | 	pushl	%edi
+  0x050: a068         | 	pushl	%esi
+  0x052: a038         | 	pushl	%ebx
+  0x054: 507508000000 | 	mrmovl	8(%ebp), %edi
+  0x05a: 50650c000000 | 	mrmovl	12(%ebp), %esi
+  0x060: 501510000000 | 	mrmovl	16(%ebp), %ecx
+  0x066: 308200000000 | 	irmovl	$0, %edx
+  0x06c: 308000000000 | 	irmovl	$0, %eax
+  0x072: 6211         | 	andl	%ecx, %ecx
+  0x074: 719e000000   | 	jle	L3
+  0x079:              | L6:
+                      |         
+  0x079: 503700000000 | 	mrmovl	(%edi), %ebx
+  0x07f: 403600000000 | 	rmmovl	%ebx, (%esi)
+  0x085: 6330         | 	xorl	%ebx, %eax
+  0x087: 308204000000 |         irmovl  $4, %edx
+  0x08d: 6027         | 	addl	%edx, %edi
+  0x08f: 6026         |         addl    %edx, %esi
+  0x091: 308201000000 |         irmovl  $1, %edx
+  0x097: 6121         | 	subl	%edx, %ecx
+  0x099: 7479000000   | 	jne	L6
+  0x09e:              | L3:
+  0x09e: b038         | 	popl	%ebx
+  0x0a0: b068         | 	popl	%esi
+  0x0a2: b078         | 	popl	%edi
+  0x0a4: b058         | 	popl	%ebp
+  0x0a6: 90           | 	ret
+                      | 
+  0x100:              | .pos 0x100
+  0x100:              | Stack:				# The stack goes here

@@ -1,0 +1,12 @@
+// test for modulus and negatives
+#include <iostream>
+using namespace std;
+
+int main(int argc, char ** argv)
+{
+   int a = argv[1] - '1';
+   int b 2 argv[2] - '1';
+
+   cout << a << " mod " << b << " = " << a%b << endl;
+   return 0;
+}

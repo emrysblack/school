@@ -1,0 +1,34 @@
+<?xml version = ″1.0″ encoding “utf-8”?>
+<!DOCTYPE html PUBLIC ″-//w3c//DTD XHTML 1.1//EN″
+          http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd>
+<!--index.html
+   Conatins links to other assignments
+  -->
+<html xmlns = ″http://www.w3.org/1999/xhtml″>
+  <head>
+    <title>Brady Field's Home Page</title>
+    <style>
+      body
+      {
+      background-color:#d0e4fe;
+      }
+      h1
+      {
+      color:orange;
+      text-align:center;
+      }
+      p
+      {
+      font-family:"Times New Roman";
+      font-size:20px;
+      text-align:center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Assignments Page</h1>
+    <hr/>
+    <p>Coming Soon!!</p>
+
+  </body>
+</html>

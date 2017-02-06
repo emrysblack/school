@@ -1,0 +1,140 @@
+
+Bubble Sort
+
+Random list of 60000 items: 15.03 seconds
+Backword list of 60000 items: 13.5 seconds
+Sorted list of 60000 items: 0 seconds
+Almost sorted list of 60000 items: 9.58 seconds
+
+Insertion Sort
+
+Random list of 60000 items: 3.05 seconds
+Backword list of 60000 items: 6.07 seconds
+Sorted list of 60000 items: 0 seconds
+Almost sorted list of 60000 items: 1.21 seconds
+
+Merge Sort
+
+Random list of 60000 items: 0.02 seconds
+Backword list of 60000 items: 0.01 seconds
+Sorted list of 60000 items: 0.01 seconds
+Almost sorted list of 60000 items: 0.01 seconds
+
+Quick Sort
+
+Random list of 60000 items: 0.01 seconds
+Backword list of 60000 items: 0 seconds
+Sorted list of 60000 items: 0 seconds
+Almost sorted list of 60000 items: 0.01 seconds
+
+Bubble Sort
+
+Random list of 70000 items: 20.53 seconds
+Backword list of 70000 items: 18.38 seconds
+Sorted list of 70000 items: 0 seconds
+Almost sorted list of 70000 items: 13.04 seconds
+
+Insertion Sort
+
+Random list of 70000 items: 4.15 seconds
+Backword list of 70000 items: 8.31 seconds
+Sorted list of 70000 items: 0 seconds
+Almost sorted list of 70000 items: 1.66 seconds
+
+Merge Sort
+
+Random list of 70000 items: 0.02 seconds
+Backword list of 70000 items: 0.01 seconds
+Sorted list of 70000 items: 0.01 seconds
+Almost sorted list of 70000 items: 0.01 seconds
+
+Quick Sort
+
+Random list of 70000 items: 0.01 seconds
+Backword list of 70000 items: 0.01 seconds
+Sorted list of 70000 items: 0 seconds
+Almost sorted list of 70000 items: 0.01 seconds
+
+Bubble Sort
+
+Random list of 80000 items: 26.97 seconds
+Backword list of 80000 items: 24.05 seconds
+Sorted list of 80000 items: 0 seconds
+Almost sorted list of 80000 items: 17.04 seconds
+
+Insertion Sort
+
+Random list of 80000 items: 5.41 seconds
+Backword list of 80000 items: 10.94 seconds
+Sorted list of 80000 items: 0 seconds
+Almost sorted list of 80000 items: 2.17 seconds
+
+Merge Sort
+
+Random list of 80000 items: 0.02 seconds
+Backword list of 80000 items: 0.01 seconds
+Sorted list of 80000 items: 0.02 seconds
+Almost sorted list of 80000 items: 0.01 seconds
+
+Quick Sort
+
+Random list of 80000 items: 0.01 seconds
+Backword list of 80000 items: 0.01 seconds
+Sorted list of 80000 items: 0 seconds
+Almost sorted list of 80000 items: 0.01 seconds
+
+Bubble Sort
+
+Random list of 90000 items: 34.1 seconds
+Backword list of 90000 items: 30.4 seconds
+Sorted list of 90000 items: 0 seconds
+Almost sorted list of 90000 items: 21.56 seconds
+
+Insertion Sort
+
+Random list of 90000 items: 6.85 seconds
+Backword list of 90000 items: 13.66 seconds
+Sorted list of 90000 items: 0 seconds
+Almost sorted list of 90000 items: 2.74 seconds
+
+Merge Sort
+
+Random list of 90000 items: 0.02 seconds
+Backword list of 90000 items: 0.02 seconds
+Sorted list of 90000 items: 0.01 seconds
+Almost sorted list of 90000 items: 0.02 seconds
+
+Quick Sort
+
+Random list of 90000 items: 0.01 seconds
+Backword list of 90000 items: 0.01 seconds
+Sorted list of 90000 items: 0 seconds
+Almost sorted list of 90000 items: 0.01 seconds
+
+Bubble Sort
+
+Random list of 100000 items: 42.07 seconds
+Backword list of 100000 items: 37.49 seconds
+Sorted list of 100000 items: 0 seconds
+Almost sorted list of 100000 items: 26.8 seconds
+
+Insertion Sort
+
+Random list of 100000 items: 8.45 seconds
+Backword list of 100000 items: 16.9 seconds
+Sorted list of 100000 items: 0 seconds
+Almost sorted list of 100000 items: 3.39 seconds
+
+Merge Sort
+
+Random list of 100000 items: 0.02 seconds
+Backword list of 100000 items: 0.02 seconds
+Sorted list of 100000 items: 0.02 seconds
+Almost sorted list of 100000 items: 0.02 seconds
+
+Quick Sort
+
+Random list of 100000 items: 0.01 seconds
+Backword list of 100000 items: 0.01 seconds
+Sorted list of 100000 items: 0 seconds
+Almost sorted list of 100000 items: 0.01 seconds

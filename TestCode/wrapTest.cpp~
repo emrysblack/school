@@ -1,0 +1,131 @@
+// test for atoi
+#include <iostream>
+#include <string>
+using namespace std;
+
+const int MAX = 10;
+
+class Deque
+{
+private:
+   int front;
+   int back;
+   int num;
+   int *items;
+
+public:
+   Deque(); //constructor
+   ~Deque(); // destructor
+   void pushFront(int value);
+   void popFront();
+   void pushBack(int value);
+   void popBack();
+   void display();
+   bool empty();
+   bool full();
+};
+
+Deque::Deque()
+{
+   items = new int[10];
+   front = 0;
+   back = 0;
+   num = 0;
+}
+
+Deque::~Deque()
+{
+   delete [] items;
+}
+
+void Deque::pushFront(int value)
+{
+   if (num != 0)
+   {
+      front += MAX - 1;
+      front %= MAX;
+   }
+   items[front] = value;
+   num++;
+}
+
+void Deque::popFront()
+{
+   if (num != 0)
+   {
+      front ++;
+      front %= MAX;
+      num--;
+   }  
+}
+
+void Deque::pushBack(int value)
+{
+   if(num != 0)
+   {
+      back++;
+      back %= MAX;
+   }
+   items[back] = value;
+   num++;
+}
+
+void Deque::popBack()
+{
+   if (num != 0)
+   {
+      back += MAX -1;
+      back %= MAX;
+      num--;
+   }
+}
+
+void Deque::display()
+{
+   cout << "--List--\n";
+   for (int i = front, j = 0; j < num; i++, j++)
+   {
+      i %= MAX;
+      cout << "item at pos " << i  << "-> " << items[i] << endl;
+   }
+   cout << endl;
+}
+
+bool Deque::empty()
+{
+   return num == 0;
+}
+
+bool Deque::full()
+{
+   return num == MAX;
+}
+
+int main(int argc, char** argv)
+{
+   Deque deque;
+   for (int i = 0; i < MAX / 2; i++)
+   {   
+      cout << "pushing front\n";
+      deque.pushFront(i);   
+   }
+   
+   for (int i = 0; i < MAX / 2; i++)
+   {   
+      cout << "pushing back\n";
+      deque.pushBack(i);
+   }
+   
+   deque.popFront();
+   deque.popBack();
+   deque.popBack();
+   deque.popBack();
+   deque.popBack();
+   deque.popBack();
+   deque.display();
+
+   cout << "Full? " << (deque.full() ? "yes" : "no") << endl;
+   cout << "Empty? " << (deque.empty() ? "yes" : "no") << endl;
+   
+   return 0;
+}

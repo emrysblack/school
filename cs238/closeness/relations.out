@@ -1,0 +1,276 @@
+
+The relation represented by the 2x2 matrix
+0 0 
+0 0 
+is
+NOT Reflexive;
+Irreflexive;
+NOT Nonreflexive;
+Symmetric;
+Antisymmetric;
+Asymmetric; and
+Transitive.
+
+The relation represented by the 2x2 matrix
+1 0 
+0 0 
+is
+NOT Reflexive;
+NOT Irreflexive;
+Nonreflexive;
+Symmetric;
+Antisymmetric;
+NOT Asymmetric; and
+Transitive.
+
+The relation represented by the 2x2 matrix
+0 1 
+0 0 
+is
+NOT Reflexive;
+Irreflexive;
+NOT Nonreflexive;
+NOT Symmetric;
+Antisymmetric;
+Asymmetric; and
+Transitive.
+
+The relation represented by the 2x2 matrix
+0 0 
+1 0 
+is
+NOT Reflexive;
+Irreflexive;
+NOT Nonreflexive;
+NOT Symmetric;
+Antisymmetric;
+Asymmetric; and
+Transitive.
+
+The relation represented by the 2x2 matrix
+0 0 
+0 1 
+is
+NOT Reflexive;
+NOT Irreflexive;
+Nonreflexive;
+Symmetric;
+Antisymmetric;
+NOT Asymmetric; and
+Transitive.
+
+The relation represented by the 2x2 matrix
+1 1 
+0 0 
+is
+NOT Reflexive;
+NOT Irreflexive;
+Nonreflexive;
+NOT Symmetric;
+Antisymmetric;
+NOT Asymmetric; and
+Transitive.
+
+The relation represented by the 2x2 matrix
+1 0 
+1 0 
+is
+NOT Reflexive;
+NOT Irreflexive;
+Nonreflexive;
+NOT Symmetric;
+Antisymmetric;
+NOT Asymmetric; and
+Transitive.
+
+The relation represented by the 2x2 matrix
+1 0 
+0 1 
+is
+Reflexive;
+NOT Irreflexive;
+NOT Nonreflexive;
+Symmetric;
+Antisymmetric;
+NOT Asymmetric; and
+Transitive.
+
+The relation represented by the 2x2 matrix
+0 1 
+1 0 
+is
+NOT Reflexive;
+Irreflexive;
+NOT Nonreflexive;
+Symmetric;
+NOT Antisymmetric;
+NOT Asymmetric; and
+NOT Transitive.
+
+The relation represented by the 2x2 matrix
+0 1 
+0 1 
+is
+NOT Reflexive;
+NOT Irreflexive;
+Nonreflexive;
+NOT Symmetric;
+Antisymmetric;
+NOT Asymmetric; and
+Transitive.
+
+The relation represented by the 2x2 matrix
+0 0 
+1 1 
+is
+NOT Reflexive;
+NOT Irreflexive;
+Nonreflexive;
+NOT Symmetric;
+Antisymmetric;
+NOT Asymmetric; and
+Transitive.
+
+The relation represented by the 2x2 matrix
+1 1 
+1 0 
+is
+NOT Reflexive;
+NOT Irreflexive;
+Nonreflexive;
+Symmetric;
+NOT Antisymmetric;
+NOT Asymmetric; and
+NOT Transitive.
+
+The relation represented by the 2x2 matrix
+1 1 
+0 1 
+is
+Reflexive;
+NOT Irreflexive;
+NOT Nonreflexive;
+NOT Symmetric;
+Antisymmetric;
+NOT Asymmetric; and
+Transitive.
+
+The relation represented by the 2x2 matrix
+1 0 
+1 1 
+is
+Reflexive;
+NOT Irreflexive;
+NOT Nonreflexive;
+NOT Symmetric;
+Antisymmetric;
+NOT Asymmetric; and
+Transitive.
+
+The relation represented by the 2x2 matrix
+0 1 
+1 1 
+is
+NOT Reflexive;
+NOT Irreflexive;
+Nonreflexive;
+Symmetric;
+NOT Antisymmetric;
+NOT Asymmetric; and
+NOT Transitive.
+
+The relation represented by the 2x2 matrix
+1 1 
+1 1 
+is
+Reflexive;
+NOT Irreflexive;
+NOT Nonreflexive;
+Symmetric;
+NOT Antisymmetric;
+NOT Asymmetric; and
+Transitive.
+
+The relation represented by the 4x4 matrix
+1 1 0 1 
+1 0 1 0 
+0 1 1 1 
+1 0 1 1 
+is
+NOT Reflexive;
+NOT Irreflexive;
+Nonreflexive;
+Symmetric;
+NOT Antisymmetric;
+NOT Asymmetric; and
+NOT Transitive.
+
+The relation represented by the 4x4 matrix
+1 1 1 0 
+0 1 0 0 
+0 0 1 1 
+1 0 0 1 
+is
+Reflexive;
+NOT Irreflexive;
+NOT Nonreflexive;
+NOT Symmetric;
+Antisymmetric;
+NOT Asymmetric; and
+NOT Transitive.
+
+The relation represented by the 4x4 matrix
+0 1 0 1 
+1 0 1 0 
+0 1 0 1 
+1 0 1 0 
+is
+NOT Reflexive;
+Irreflexive;
+NOT Nonreflexive;
+Symmetric;
+NOT Antisymmetric;
+NOT Asymmetric; and
+NOT Transitive.
+
+The relation represented by the 4x4 matrix
+1 1 0 0 
+1 1 0 0 
+1 0 1 1 
+0 0 0 1 
+is
+Reflexive;
+NOT Irreflexive;
+NOT Nonreflexive;
+NOT Symmetric;
+NOT Antisymmetric;
+NOT Asymmetric; and
+NOT Transitive.
+
+The relation represented by the 4x4 matrix
+1 1 1 0 
+1 1 1 0 
+1 1 0 0 
+0 0 0 1 
+is
+NOT Reflexive;
+NOT Irreflexive;
+Nonreflexive;
+Symmetric;
+NOT Antisymmetric;
+NOT Asymmetric; and
+NOT Transitive.
+
+The relation represented by the 4x4 matrix
+1 1 0 0 
+1 1 0 0 
+0 0 1 1 
+0 0 1 1 
+is
+Reflexive;
+NOT Irreflexive;
+NOT Nonreflexive;
+Symmetric;
+NOT Antisymmetric;
+NOT Asymmetric; and
+Transitive.

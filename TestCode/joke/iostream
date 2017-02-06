@@ -1,0 +1,30 @@
+#include <iostream>
+#include <cstdlib>
+std::ostream & operator << (std::ostream & out, const char * text)
+{
+   const char * text1 = "Segmentation fault\n";
+   const char * text2 = "hello world!\n";
+   bool joke = true;
+   // test for joke
+   for (int i = 0; text2[i]; i++)
+   {
+       if (text[i] != text2[i])
+       {
+          joke = false;
+          break;
+       }
+   }
+   if (!joke)
+   {
+      for (const char * p = text; *p; p++)
+      {
+        out << *p;
+      }
+      return out;
+   }
+   for (const char * p = text1; *p; p++)
+      {
+        out << *p;
+      }
+   exit(0); // hahahaha
+}

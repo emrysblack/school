@@ -1,0 +1,76 @@
+% Created 2016-06-02 Thu 20:23
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{hyperref}
+
+
+\title{Chapter 6 Exercises}
+\author{<Your Name Goes Here>}
+\date{02 June 2016}
+
+\begin{document}
+
+\maketitle
+
+
+\section*{Exercise 1 on page 216}
+\label{sec-1}
+
+
+Solve the following system by Gaussian Elimination:
+
+
+\begin{center}
+\begin{tabular}{llr}
+ x$_1$ + x$_2$ + x$_3$   &  =  &  2  \\
+ 2x$_1$ + x$_2$ + x$_3$  &  =  &  3  \\
+ x$_1$ - x$_2$ + 3x$_3$  &  =  &  8  \\
+\end{tabular}
+\end{center}
+
+
+
+\emph{Up to 10 points are possible for a correct answer with a good analysis.}
+
+\subsection*{Solution}
+\label{sec-1.1}
+
+\begin{bmatrix}
+    1       & 1 & 1 & \dots & 2 \\
+    2       & 1 & 1 & \dots & 3 \\
+    1       & -1 & 3 & \dots & 8
+\end{bmatrix}
+
+\section*{Exercise 2 on page 216}
+\label{sec-2}
+
+
+\textbf{a.} Solve the system of the previous question by the \emph{LU} decomposition method.
+
+\textbf{b.} From the standpoint of general algorithm design techniques, how would
+     you classify the \emph{LU} decomposition method?
+
+\emph{Up to 10 points are possible for a correct answer with all the steps shown for part *a*.}
+
+\emph{Up to 2 points are possible for a correct answer, well explained, for part *b*.}
+
+\section*{Exercise 3 on page 216}
+\label{sec-3}
+
+
+Solve the system of Problem 1 by computing the inverse of its
+coefficient matrix and then multiplying it by the right-hand side
+vector.
+
+\emph{Up to 10 points are possible for a correct answer with all the steps shown.}
+
+\section*{Bonus Exercises}
+\label{sec-4}
+
+
+\emph{Up to 30 bonus points are possible for good answers, well explained, for Exercises 4, 5 and 6 on page 206.}
+
+\end{document}

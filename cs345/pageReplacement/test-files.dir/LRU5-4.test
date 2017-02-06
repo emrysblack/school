@@ -1,0 +1,3 @@
+COMPILE COMMAND: vmalgorithm 5 LRU
+COMPILE FILES: program4.vm
+COMPILE OUTPUT: LRU5-4.out

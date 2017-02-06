@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+<xsl:template match="studentList">
+  <html>
+  <body style = "background-color:#d0e4fe"><!--"background-color:#E5E4D7;">-->
+  <h2 style = "text-align:center">Student List</h2>
+<table style = "margin:auto" border = "1">
+<tr>
+<th>Student</th>
+<th>Location</th>
+<th>School</th>
+<th>Department</th>
+<th>Major</th>
+</tr>
+<xsl:apply-templates/>
+</table>
+  </body>
+  </html>
+</xsl:template>
+
+<xsl:template match="student">
+<tr>
+  <td>
+	<xsl:value-of select="first"/>
+<xsl:value-of select="middle"/>
+<xsl:value-of select="last"/>
+	</td>
+  <!--<xsl:apply-templates/>-->
+</tr>
+  
+</xsl:template>
+
+</xsl:stylesheet> 

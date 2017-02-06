@@ -1,0 +1,13 @@
+F(x) =  x^2 - 4
+G(x) =  x^2 + 2
+
+P(x) = (F + G)(x) = 2x^2 - 2
+P(1) = 0
+
+temp1(x) is same as 8x^6 + G(x) or 8x^6 + x^2 + 2
+temp2(x) is same as F(x) or x^2 - 4
+temp3(x) is same as G(x) or x^2 + 2
+
+Original functions were:
+F(x) =  x^2 - 4
+G(x) =  x^2 + 2

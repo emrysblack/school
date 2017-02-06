@@ -1,0 +1,16 @@
+Host 157.201.194.*
+     Port 215
+
+Host AUS21*
+     Port 215
+
+Host jordanTest
+     Port 215
+
+Host *
+     Protocol 2
+     ServerAliveInterval 150
+     ServerAliveCountMax 3
+     ControlMaster auto
+     ControlPath /tmp/%r@%h:%p
+

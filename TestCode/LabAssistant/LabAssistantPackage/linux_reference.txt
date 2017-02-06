@@ -1,0 +1,329 @@
+Content-Type: text/enriched
+Text-Width: 80
+
+<bold><underline>File Commands</underline></bold>
+ls     = directory listing
+ls -al = formatted listing w/ hidden files
+
+
+cd dir = change directory to dir
+cd     = change directory to home
+cd -   = change back to last directory
+
+
+pwd       = show current directory
+mkdir dir = create directory dir
+
+
+rm file    = delete file
+rm -r dir  = delete directory dir
+rm -f file = force delete file
+rm -rf dir = force delete directory dir
+
+
+cp file1 file2 = copy file1 to file2
+mv file1 file2 = move(rename) file1 to file2
+
+
+ln -s file link = create symbolic link (shortcut)
+touch file      = create or update file
+
+
+cat file  = dump file to standard out
+more file = output file to stdout one page at a time
+less file = scroll through file (q to quit)
+head file = output first 10 lines of file
+tail file = output last 10 lines of file
+
+
+<underline><bold>Working With Commands</bold></underline>
+cmd &      = start command in background
+cmd > file = redirect standard output from cmd to file
+cmd << file = read file as standard input to cmd
+cmd 2>&1   = combine standard output and standard error
+cmd1 | cmd2  = use the standard output of cmd1 as
+               the standard input of cmd2
+
+
+cmd1 `cmd2` = insert the results of cmd2 as an
+              argument of cmd1
+
+
+<underline><bold>SSH/Rsync</bold></underline>
+ssh user@host         = connect to host as user
+ssh user@host cmd     = connect to host and run
+                        command, then exit
+ssh -p prt user@host  = connect using port prt (215 for
+                        the linux lab)
+
+
+SSH Tunnelling
+ssh user@host1 -L l:host2:r -N = connect port r on
+                                 host2 to port l on
+                                 the local machine.
+                                 host2 must be
+                                 accessible from host1
+
+
+rsync user1@host1:file1 user2@host2:file2 -avP
+      Copies file1 on host1 to file2 on host2. 'user@host:'
+      can be ommitted for local files. For the linux lab
+
+      --rsh='ssh -p215' must be added
+          -a saves permissions
+          -v prints more info
+          -P gives a progress bar
+          -n performs a test run
+
+
+<underline><bold>Network</bold></underline>
+ping host   = ping host 'host' to check for connection
+dig domain  = get DNS info for domain
+dig -x host = reverse DNS lookup for host
+
+
+wget file    = Download file
+wget -c file = Continue stopped download
+wget -r url  = Recursively download files from URL
+
+
+<underline><bold>System Info</bold></underline>
+date   = show date and time
+cal    = show this month's calendar
+uptime = show how long the computer had been on
+
+
+uname -a          = show kernel info
+cat /proc/cpuinfo = show cpu info
+cat /proc/meminfo = show memory info
+
+
+df -h  = show human readable disk usage stats
+du -h  = show directory space usage in GB
+du -sh = show directory space summary in GB
+quota  = show disk quota for current user
+
+
+free = show memory and swap usage
+top  = show memory and swap usage by process
+
+
+whereis app = show possible locations for app
+which app   = show which app will be run by default
+
+
+man command  = show manual page for command (q to quit)
+help command = show help for builtin bash commands
+
+
+<underline><bold>Users</bold></underline>
+who    = display who is online
+w      = display more info about who is online
+whoami = show who you are logged in as
+
+
+write user pts/# = send a message to user on pts/#
+mesg y|n         = accept or block message from users
+wall message     = send a message to all users on your
+                   machine - be nice.
+
+
+<underline><bold>Searching</bold></underline>
+grep pattern files = search for pattern in files
+grep -r patern dir = search recursively for pattern
+                     in dir
+command | grep pattern = search for pattern in output
+                         of command
+
+
+<underline><bold>Process Management</bold></underline>
+ps     = display active processes that belong to this
+         terminal
+ps aux = display all processes
+
+
+kill pid     = kill process with id 'pid'
+killall proc = kill all processes named proc
+
+
+bg   = list background processes, resumes stopped job
+       in background
+fg   = bring most recent job to foreground
+fg n = bring job n to foreground
+
+
+<underline><bold>File Permissions</bold></underline>
+chmod octal file - change permission of file
+   4 - read   (r)
+   2 - write  (w)
+   1 - execute(x), also used to open directories
+
+
+   order: owner/group/other
+   example:
+   chmod 700 - rwx for owner, nothing for world
+   chmod 644 - rw for owner, read for everyone else
+
+
+<underline><bold>Compression</bold></underline>
+tar cf file.tar file = tar files into file.tar
+tar xf file.tar      = untar files from file.tar
+tar tf file.tar      = list contents of file.tar
+
+
+gzip file        = compress file to file.zip
+gzup -d file     = uncompress file
+bzip2 file.zip   = compress file file.bz2
+bunzip2 file.bz2 = uncompress file
+
+
+<underline><bold>Shortcuts</bold></underline>
+ctrl+c = halt current program
+ctrl+z = pause current program
+fg     = resume paused program in foreground
+bg     = resume paused program in background
+
+
+[TAB]  = complete line, if possible. If not [Tab][Tab]
+
+         will show possible completions
+
+
+ctrl+d = logout
+ctrl+w = erase one word
+ctrl+u = erase whole line
+
+
+!!            = repeat last command
+fc -s         = repeat last command
+fc -s pattern = repeat last command starting with
+                pattern
+fc -ln        = list last 15 or so commands
+
+
+<underline><bold>Emacs Misc</bold></underline>
+C-x C-c = Quit
+C-x C-s = Save
+
+
+C-[     = Meta (fallback)
+C-_     = Undo
+
+
+C-s     = Search Forward
+C-r     = Search Backward
+
+
+M-c     = Capitalize word
+M-l     = Lowercase word
+
+
+C-u # cmd = repeat cmd # times
+For example: "C-u 60 *" prints '*' 60 times
+
+
+<underline><bold>Emacs Navigation</bold></underline>
+M-g M-g = Goto line
+M-<<     = Jump to start of doc
+M->     = Jump to end of doc
+
+
+C-a     = Jump to start of line
+C-e     = Jump to end of line
+
+
+M-f     = Forward 1 word
+M-b     = Backward 1 word
+
+
+<underline><bold>Emacs Editing</bold></underline>
+C-q     = Wrap text in current paragraph
+
+[Tab]   = Indent current line or selection
+
+
+C-x h     = Select all
+C-[Space] = Start selection
+
+
+C-w     = 'kill' selected text (acts as cut)
+M-w     = Copy selected text
+C-k     = 'kill' line of text (acts as cut)
+C-y     = 'yank' line of text (acts as paste)
+
+
+<underline><bold>Emacs Named Commands</bold></underline>
+M-x     = Input command by name (Tab completion works
+
+          in this buffer as in bash)
+C-g     = Quit the command buffer
+
+
+replace-string  = replaces text after the cursor
+query-replace   = replaces, but asks each time
+auto-fill-mode  = wraps after a certain column
+set-fill-column = sets the colum to wrap on
+ispell          = spell checks the current buffer
+ispell-word     = spell checks just the current word
+
+
+<underline><bold>Emacs Buffers</bold></underline>
+C-x b    = Switch to last buffer
+C-x C-b  = Show a list of open buffers
+C-x o    = Switch between frames
+
+
+C-x 0    = Close the current frame
+C-x 1    = Close all other frames
+C-x 2    = Split frame horizontally
+C-x 3    = Split frame vertically
+
+
+C-x {    = Make frame one column wider
+C-x }    = Make frame one column smaller
+C-x ^    = Make frame one row taller
+
+
+C-x [left]  = Switch to previous buffer in list
+C-x [right] = Switch to next buffer in list
+
+
+<underline><bold>Emacs Macros</bold></underline>
+C-x ( = Start defining keyboard macro
+C-x ) = Stop defining keyboard macro
+
+
+C-x C-k C-i     = Insert macro counter value
+C-x C-k C-c     = Set the macro counter value
+
+
+C-x C-k C-a     = Adds value to macro
+C-u C-x C-k C-a = Resets counter to last inserted value
+C-x C-k C-f     = Sets format for macro (as printf)
+
+
+M-x name-last-kbd-macro = Save the last macro
+M-x my_macro            = Execute macro my_macro
+M-x insert-kbd-macro    = Inserts commands to load macro
+                          (usually run inside .emacs file)
+
+
+C-x e = Execute last macro. Hit 'e' again to execute
+        another time.
+C-u # C-x e = Execute macro # times
+C-u 0 C-x e = Execute macro infinite number of times
+
+
+<bold><underline>Emacs RCS</underline></bold>
+
+C-x v v = Check in/out file
+
+C-c C-c = Finish log entry
+
+C-x v l = View version history
+
+C-x v = = View changes
+
+C-x v u = Revert to last version
+
+C-x v ~ = Compare with old version

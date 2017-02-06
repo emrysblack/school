@@ -1,0 +1,81 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+use Fcntl qw(:mode);
+
+for (@ARGV)
+{
+    &publishFile ($_) if (-f $_);
+    if (-d $_)
+    {
+        &publishDir($_);
+        $_ =~ s./$..g;
+        recursiveDo ($_, \&publishFile, \&publishDir);
+    }
+}
+
+sub publishFile
+{
+    my $target = shift @_;
+    my $perms = &getPerms ($target);
+
+    if ($perms =~ /^7/)
+    {
+        chmod 0755, $target;
+        print "$target set to 755".$/;
+    }
+    else
+    {
+        chmod 0644, $target;
+        print "$target set to 0644".$/;
+    }
+}
+
+sub publishDir
+{
+    chmod 0755, $_[0];
+    print "$_[0] set to 0755".$/;
+}
+
+sub getPerms
+{
+    my $mode = (stat (shift @_))[2];
+    my $perms;
+    {
+        my $user = ($mode & S_IRWXU) >> 6;
+        my $group = ($mode & S_IRWXG) >> 3;
+        my $other = $mode & S_IRWXO;
+        $perms = "$user$group$other";
+    }
+
+    return $perms;
+}
+
+sub recursiveDo
+{
+    my $target = shift @_;
+    my $fileOp = shift @_;
+    my $dirOp  = shift @_;
+
+    opendir my $handle, $target or die ("Unable to open target: $!");
+    my @files =
+        map { "$target/$_" } grep { if (/^\./) {0} else {1}} readdir ($handle);
+
+    close $handle;
+
+    my @dirs;
+    for my $item (@files)
+    {
+        &$fileOp ($item) if (-f $item);
+        if (-d $item)
+        {
+            push (@dirs, $item);
+        }
+    }
+    for (@dirs)
+    {
+        &$dirOp ($_);
+        &recursiveDo ($_, $fileOp, $dirOp);
+    }
+}
+

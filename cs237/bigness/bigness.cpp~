@@ -1,0 +1,109 @@
+/***********************************************************************
+ * Program:
+ *    Exploration 3, Bigness
+ *    Brother Neff, CS237
+ *
+ * Author:
+ *    Brady Field
+ *
+ * Summary:
+ *    RSA Encryption/Decryption Function Definitions using ZZ 
+ *
+ ***********************************************************************/
+
+#include <cassert>
+#include <cstdlib>
+#include <NTL/ZZ.h>
+#include <cmath>
+#include <iostream>
+#include <iomanip>
+#include <string>
+
+NTL_CLIENT
+
+/*****************************************************************************
+ * Find b^n % m.
+ *****************************************************************************/
+ZZ modPow(ZZ b, ZZ n, ZZ m)
+{
+   return to_ZZ(1);
+}
+
+/*****************************************************************************
+ * Find s such that a * s is congruent to 1 (mod m).
+ *****************************************************************************/
+ZZ findInverse(ZZ a, ZZ m)
+{
+   return to_ZZ(1);
+}
+
+/****************************************************************************
+ * Convert from a text message representing a base 27 number to a ZZ number.
+ ****************************************************************************/
+ZZ fromBase27(string message)
+{
+   ZZ base10;
+   for (int i = 0; i < message.size(); i++)
+   {
+      base10 += to_ZZ((message[i] - '@') * pow(27, message.size() - i - 1));
+   }
+   
+   return base10;
+}
+
+/****************************************************************************
+ * Convert from a ZZ number to a base 27 number represented by a text message.
+ ****************************************************************************/
+string toBase27(ZZ n)
+{
+   char num;
+   string base27b;
+   string base27;
+   // covert
+   while (n > 0)
+   {
+      num = (n % 27) + '@';
+      n /= 27;
+      base27b += num;
+   }
+   // reverse to put least significant back on the right
+   for (int i = base27b.size() - 1; i >= 0; i--)
+   {
+      base27 += base27b[i];
+   }
+   return base27;
+}
+
+/****************************************************************************
+ * Find a suitable e for a ZZ number that is the "totient" of two primes.
+ ****************************************************************************/
+ZZ findE(ZZ t)
+{
+   return to_ZZ(1);
+}
+
+/*****************************************************************************
+ * Find suitable primes p and q for encrypting a ZZ number that is the message.
+ *****************************************************************************/
+void findPandQ(ZZ m, ZZ& p, ZZ& q)
+{
+}
+
+/*************************************************************************
+ * What was learned.
+ *************************************************************************/
+void learned()
+{
+   int num = 10546753;
+   string num1 = toBase27(to_ZZ(num));
+   ZZ num2 = fromBase27(num1);
+   cout << num1 << " " << num2
+        << ": " << num << endl; 
+}
+
+/*************************************************************************
+ * How to use this program.
+ *************************************************************************/
+void usage(const char* programName)
+{
+}

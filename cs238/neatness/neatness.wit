@@ -1,0 +1,169 @@
+(require 'ment "/home/neffr/emacs/ment.el")
+
+(defun whatIsTrue () (list
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; What is true of my experience in general?                              ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; I had fun and learned something new. (2 points)
+true
+;; I achieved something meaningful,
+;; or something I can build upon at a later time. (2 points)
+true
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; What is true of my code's command-line interface?                       ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; It uses *unmodified* the /home/cs238/neat/neatnessCLI.cpp file,
+;; which interface handles the case of no command-line arguments, calling
+;; a function named *learned*, and then a function named *usage*. (2 points)
+true
+;; The *learned* function outputs several (> 21) well-written sentences
+;; reporting on the learning that happened. (2 points)
+false
+;; The *usage* function gives instructions on how to run WITH command-line
+;; parameters. (2 points)
+true
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; What is true of the mechanical "infelicities" (misspelled words,        ;;
+;; grammatical errors, punctuation errors) in my report of what I learned? ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; There are fewer than four. (2 points)
+true
+;; There are fewer than three. (2 points)
+true
+;; There are fewer than two. (2 points)
+true
+;; There are none. (2 points)
+true
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; What is true about the correctness and completeness of my code?         ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; It correctly implements the first TODO. (2 points)
+true
+;; It correctly implements the second TODO. (2 points)
+true
+;; It correctly implements the third TODO. (2 points)
+true
+;; It correctly implements the fourth TODO. (2 points)
+true
+;; It correctly implements the fifth TODO. (2 points)
+true
+;; It correctly implements the sixth TODO. (2 points)
+true
+;; It correctly implements the seventh TODO. (2 points)
+true
+;; It correctly implements the eighth TODO. (2 points)
+true
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; What is true about the elegance of my code?                             ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; It has some by virtue of its correctness, as first and foremost,
+;; an elegant solution is a correct solution. (2 points)
+true
+;; It increases by my having no Cell instantiations in the normal sense ---
+;; just Cell constructor calls. (3 points)
+true
+;; It increases by my enhancing the output in some way that makes
+;; pattern detection easier. (4 points)
+false
+;; It increases by my enhancing the way program input is supplied
+;; in some way that makes running the standard and
+;; random cell functions easy. (5 points)
+true
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; How well did I categorize the various patterns I observed?              ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; I described how well with more than zero sentences in my report. (2 points)
+false
+;; I described how well with more than one Good sentence in my report. (3 points)
+false
+;; I described how well with more than two GREAT sentences in my report. (5 points)
+false
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; How well did I master the basic terminology and operations of Boolean   ;;
+;; algebra, Boolean logic, and gating networks?                            ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; I described how well with more than zero sentences in my report. (2 points)
+false
+;; I described how well with more than one Good sentence in my report. (2 points)
+false
+;; I described how well with more than two GREAT sentences in my report. (3 points)
+false
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; How well did I demonstrate discrete mathematical reasoning              ;;
+;; through solving problems?                                               ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; I described how well with more than zero sentences in my report. (2 points)
+false
+;; I described how well with more than one Good sentence in my report. (2 points)
+false
+;; I described how well with more than two GREAT sentences in my report. (3 points)
+false
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; How well did I discern between effective and ineffective approaches     ;;
+;; to problem solving?                                                     ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; I described how well with more than zero sentences in my report. (2 points)
+false
+;; I described how well with more than one Good sentence in my report. (2 points)
+false
+;; I described how well with more than two GREAT sentences in my report. (3 points)
+false
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; How well did I solve problems using limited or constrained resources?   ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; I described how well with more than zero sentences in my report. (2 points)
+true
+;; I described how well with more than one Good sentence in my report. (2 points)
+true
+;; I described how well with more than two GREAT sentences in my report. (3 points)
+true
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; How well did I recognize the relative importance of different elements  ;;
+;; of a mathematical or computer science problem?                          ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; I described how well with more than zero sentences in my report. (2 points)
+false
+;; I described how well with more than one Good sentence in my report. (2 points)
+false
+;; I described how well with more than two GREAT sentences in my report. (3 points)
+false
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; How well did I make connections between discrete mathematics and        ;;
+;; real-world applications?                                                ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; I described how well with more than zero sentences in my report. (2 points)
+false
+;; I described how well with more than one Good sentence in my report. (2 points)
+false
+;; I described how well with more than two GREAT sentences in my report. (3 points)
+false
+))
+
+;;; Local Variables: 
+;;; mode: Emacs-Lisp
+;;; compile-command: "whatIsTrue /home/cs238/neat"
+;;; TeX-master: t
+;;; End: 

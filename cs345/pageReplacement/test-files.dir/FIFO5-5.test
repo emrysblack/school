@@ -1,0 +1,3 @@
+COMPILE COMMAND: vmalgorithm 5 FIFO
+COMPILE FILES: program5.vm
+COMPILE OUTPUT: FIFO5-5.out

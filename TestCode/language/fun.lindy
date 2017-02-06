@@ -1,0 +1,23 @@
+{yo(num)}
+   Print(num,"\n")
+
+   If(num % 2)
+      Return("Odd")
+
+   Loop(True)
+      Print("Inside outer loop\n")
+         j = 3
+         Print("Inner scope value: ", j ,"\n")
+      Loop(True)
+         Print("Inside inner loop\n")
+         Loop(True)
+            Return("Even")
+   Print("Error: should not see this message!\n")
+
+Print(yo(1),"\n")
+Print(yo(2), "\n")
+
+If(True)
+   Print("Next line should be a return error\n")
+   Return()
+Print("Error: should not see me\n")

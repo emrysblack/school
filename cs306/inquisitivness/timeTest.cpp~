@@ -1,0 +1,22 @@
+// test for timer
+#include <iostream>
+#include <ctime>
+
+using namespace std;
+
+int main()
+{
+   cout << "start\n";
+
+   time_t end = time(NULL);
+
+   end += (60 * 255);
+
+   while (time(NULL) < end)
+   {
+      ;
+   }
+
+   cout << "end\n";
+   return 0;
+}

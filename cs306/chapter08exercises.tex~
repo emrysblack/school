@@ -1,0 +1,103 @@
+% Created 2016-06-16 Thu 21:13
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{hyperref}
+
+
+\title{Chapter 8 Exercises}
+\author{<Your Name Goes Here>}
+\date{16 June 2016}
+
+\begin{document}
+
+\maketitle
+
+
+\section*{Partners in Crime}
+\label{sec-1}
+
+Thom - 
+Matthew -
+\section*{Typos}
+\label{sec-2}
+
+Exercise 9 on page 292 - ``efficiciencies'' should be ``efficiencies''
+\section*{Solution to Exercise 9 on page 292}
+\label{sec-3}
+
+
+I would use Pascal's Triangle to get around the multiplications. I can
+generate the triangle up to the n$^{\mathrm{th}}$ row and simply select the k$^{\mathrm{th}}$
+item as my coefficient.
+
+The time efficiency is much better than the formula method since
+addition is much cheaper than the multiplication, or factorials,
+required in the formula.
+
+At first glance, it may seem that the space efficiency is bad since we
+have to store Pascal's Triangle, but if we consider than we only ever
+need to store two rows of the triangle (for computing to the next row
+from the previous), the cost isn't that bad. The cost will only be
+seen for large values of n and is well worth the price for the incredible
+gain in time efficiency in most cases.
+\section*{Solution to Exercise 12 on page 292}
+\label{sec-4}
+
+
+\emph{World Series odds}
+
+Consider two teams, \emph{A} and \emph{B}, playing a series of games until one
+of the teams wins \emph{n} games. Assume that the probability of \emph{A}
+winning a games is the same for each game and equal to \emph{p}, and the
+probability of \emph{A} losing a game is \emph{q = 1 - p}. (Hence, there are
+no ties.)  Let \emph{P(i, j)} be the probability of \emph{A} winning a series
+of games if \emph{A} needs \emph{i} more games to win the series and \emph{B} needs
+\emph{j} more games to win the series.
+
+\textbf{a.} P(i,j) = P(i-1,j) + P(i,j-1), the first recurrence is the
+probability of Team A winning the game. This leaves one less game for
+them to win and Team B still needs the same amount. The second
+recurrence is the opposite where Team A loses and has to win the same
+amount of games, but Team B has one less game to win.
+
+\textbf{b.} Find the probability of team \emph{A} winning a seven-game series if
+     the probability of the team winning a game is 0.4.
+
+\textbf{c.} Write pseudocode of the dynamic programming algorithm for
+     solving this problem and determine its time and space
+     efficiencies.
+
+\section*{Exercise 8 on page 297 (NOTE wording change: Give two reasons versus Explain)}
+\label{sec-5}
+
+
+Give two reasons why the memory function approach is unattractive
+for the problem of computing a binomial coefficient by the formula
+\emph{C(n, k) = C(n - 1, k - 1) + C(n - 1, k)}.
+
+\section*{Exercise 5 on page 303}
+\label{sec-6}
+
+
+True or false: The root of an optimal binary search tree always contains
+the key with the highest search probability.
+
+\section*{Exercise 7 on page 312}
+\label{sec-7}
+
+
+Solve the all-pairs shortest-path problem for the digraph with the
+weight matrix
+
+\[\left[\begin{array}{ccccc}
+  0 &  2 &  \infty &  1 &  8 \\
+  6 &  0 &  3 &  2 &  \infty \\
+  \infty &  \infty &  0 &  4 &  \infty \\
+  \infty &  \infty &  2 &  0 &  3 \\
+  3 &  \infty &  \infty &  \infty &  0 \\
+  \end{array}\right]\]
+
+\end{document}

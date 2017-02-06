@@ -1,0 +1,69 @@
+<< Lindy quicksort algorithm adapted from Python code >>
+
+{ quickSort(array) }
+
+   << Initialize empty lists >>
+   less = []
+   equal = []
+   greater = []
+
+   If(ListLength(array) > 1)
+      pivot = GetItem(array,0)
+      i = 0
+      Loop(i < ListLength(array))
+         x = GetItem(array,i)
+         If(x < pivot)
+            less = Push(less,x)
+         Else(x == pivot)
+            equal = Push(equal,x)
+         Else(x > pivot)
+            greater = Push(greater,x)
+         i = i + 1
+
+      << Don't forget to return something!
+      Return(quickSort(less) + equal + quickSort(greater))  << Just use the + operator to join lists
+   Else(True)  << You need to handle the part at the end of the recursion - when you only have one element in your array, just return the array.
+      Return(array)
+
+<< bubblesort alogrithm >>
+
+{ bubbleSort(list) }
+   << inner function used to change two elements >>
+   {swap(list1,i,j)}
+      l = GetItem(list1, i)
+      list1 = ReplaceItem(list1,i,GetItem(list1,j))
+      Return(ReplaceItem(list1,j,l))
+
+   << do the sort >>
+   i = 0
+   << ListLength ensures we have a list >>
+   Loop(i < ListLength(list) - 1)
+      << out of order >>
+      If(GetItem(list,i) > GetItem(list,i+1))
+         list = swap(list,i,i+1) << swap
+         i = -1 << start over
+      i = i + 1
+   Return(list)
+
+{ promptList() }
+   Print("\nEnter in a list of numbers to be sorted.\n")
+   Print("Enter a non-number when finished.\n\n> ")
+   t = Prompt()
+
+   list = 0
+   Loop(GetType(t) == "Int" || GetType(t) == "Float")
+      list = Push(list,t)
+      t = Prompt("> ")
+
+   Return(list)
+
+nums = promptList()
+
+
+<< Bubble Sort >>
+Print("\nUnsorted\n", nums,"\n")
+Print("\nSorted\n", bubbleSort(nums),"\n")
+
+<< Quick Sort >>
+Print("\nUnsorted\n",nums,"\n")
+Print("\nSorted\n",quickSort(nums),"\n")

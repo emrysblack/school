@@ -1,0 +1,4 @@
+TESTING PUSH FUNCTION:
+TESTING FULL FUNCTION: Inserting a 6th item
+This function should fail and leave error message
+ERROR: Stack Overflow

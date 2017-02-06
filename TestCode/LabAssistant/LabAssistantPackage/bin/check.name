@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Be a good citizen and let others view your .name
+# Access to the home directory is needed, but read only - they won't be able to
+# see the file names. The stat call checks the current permissions and won't fix
+# what ain't broke.
+[ "$(stat -c '%A' "$HOME" | cut -b7)" != 'x' ] && chmod go+x "$HOME"
+
+# Allow them to read, but not write the .name file
+[ "$(stat -c '%a' "$HOME/.name")" != '640' ]   && chmod 640 "$HOME/.name"
+
+# Print Header
+printf '%-25s| %-30s\n' 'Lab Assistant' 'Current Name'
+echo   '-------------------------+------------------------------'
+
+# Iterate over files/directories in home
+for i in /home/*
+do
+    # Only work on files that have a .name in them
+    if [ -f "$i"/.name ]; then
+        # Get name
+        TA="$(getent passwd | grep "$i" | cut -d':' -f5 | cut -d',' -f1)"
+        # Title Case name
+        TA="$(echo "$TA" | sed -E 's/(^| )([a-z])/\1\u\2/g')"
+
+        # Get file info
+        if [ -r "$i"/.name ]; then
+            FILE="$(cat "$i/.name" 2>/dev/null)"
+        else
+            FILE="No read access"
+        fi
+
+        # Print the info
+        printf '%-25s| %s\n' "$TA" "$FILE"
+    fi
+done

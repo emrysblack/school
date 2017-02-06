@@ -1,0 +1,24 @@
+list = [[[1],[2],[3]],"Hi, there",5]
+Print(list, "\n")
+Print("First Item: ",GetItem(list,0),"\n")
+Print("Second Item: ",GetItem(list,1),"\n")
+sublist = GetItem(list,0)
+Print("sublist: ",sublist, "\n")
+Print("First: ",GetItem(sublist,0),"\n")
+Print("Inner First: ",GetItem(GetItem(sublist,0),0), "\n")
+i = 0
+Loop(i < ListLength(list))
+   list = ReplaceItem(list,i,i+1)
+   Print("Replaced List: ", list, "\n")
+   i = i + 1
+
+Loop(ListLength(list))
+   Print(ListLength(list) > 0,"\n")
+   list = RemoveItem(list,ListLength(list) - 1)
+   Print("Removed List: ", list, "\n")
+   Print(ListLength(list) > 0,"\n")
+
+list = Push(list,0)
+Print("Pushed: ",list, "\n")
+list = InsertItem(list, 0, "hi")
+Print("Inserted: ",list, "\n")

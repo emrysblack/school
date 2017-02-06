@@ -1,0 +1,9 @@
+#!/bin/bash
+if (($1))
+then
+    $1 > .name
+else
+    echo -n "Please enter new name: "
+    read name
+    echo $name > ~/.name
+fi

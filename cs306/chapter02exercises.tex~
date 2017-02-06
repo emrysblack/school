@@ -1,0 +1,361 @@
+% Created 2016-05-06 Fri 00:15
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{hyperref}
+
+
+\title{Chapter 2 Exercises}
+\author{Brady Field}
+\date{06 May 2016}
+
+\begin{document}
+
+\maketitle
+
+
+\section*{Collaborators: Thom Allen, Kopsa brothers, Matthew Ary}
+\label{sec-1}
+
+Thom worked the math problems with me and served as a good subject to teach summations and how to adjust them.
+
+Matthew provided assistance with translatating our notes into Latex format.
+
+The Kopsa Brothers answered some general questions about the assignment.
+
+\section*{Exercise 1 on page 50}
+\label{sec-2}
+
+
+For each of the following algorithms, indicate (i) a natural size metric
+for its inputs; (ii) its basic operation; (iii) whether the basic operation count
+can be different for inputs of the same size:
+
+\textbf{a.} computing the sum of \(n\) numbers
+
+\textbf{b.} computing \(n!\)
+
+\textbf{c.} finding the largest element in a list of \(n\) numbers
+
+\textbf{d.} Euclid's algorithm
+
+\textbf{e.} sieve of Eratosthenes
+
+\emph{Up to 3 points are possible for a good answer for each part (*a-e*), for a total possible of 15 points.}
+
+Here is an example of a good answer for part \textbf{a}:
+
+
+\begin{center}
+\begin{tabular}{ll}
+ (i)    &  \(n\)                    \\
+ (ii)   &  addition of two numbers  \\
+ (iii)  &  no                       \\
+\end{tabular}
+\end{center}
+
+
+
+\subsection*{Solutions}
+\label{sec-2.1}
+
+
+\textbf{b.} 
+
+
+\begin{center}
+\begin{tabular}{ll}
+ (i)    &  \(n\)                          \\
+ (ii)   &  multiplication of two numbers  \\
+ (iii)  &  no                             \\
+\end{tabular}
+\end{center}
+
+
+
+\textbf{c.} 
+
+
+\begin{center}
+\begin{tabular}{ll}
+ (i)    &  \(n\)                      \\
+ (ii)   &  comparison of two numbers  \\
+ (iii)  &  no                         \\
+\end{tabular}
+\end{center}
+
+
+
+\textbf{d.} Euclid's algorithm
+
+
+\begin{center}
+\begin{tabular}{ll}
+ (i)    &  2                       \\
+ (ii)   &  modulus of two numbers  \\
+ (iii)  &  yes                     \\
+\end{tabular}
+\end{center}
+
+
+
+\textbf{e.} sieve of Eratosthenes
+
+
+\begin{center}
+\begin{tabular}{ll}
+ (i)    &  \(n\)                          \\
+ (ii)   &  multiplication of two numbers  \\
+ (iii)  &  no                             \\
+\end{tabular}
+\end{center}
+
+
+
+
+\section*{Exercise 8 on page 51}
+\label{sec-3}
+
+
+For each of the following functions, indicate how much the
+function's value will change if its argument is increased fourfold.
+
+\textbf{a.} \(log_2\ n\)
+
+\textbf{b.} \(\sqrt{n}\)
+
+\textbf{c.} \(n\)
+
+\textbf{d.} \(n^2\)
+
+\textbf{e.} \(n^3\)
+
+\textbf{f.} \(2^n\)
+
+\emph{Up to 2 points are possible (1 for a correct numerator, 1 for a correct denominator of a ratio giving the value change) for a good answer for each part (*a-f*), for a total possible of 12 points.}
+
+Here is an example of a good answer for part \textbf{a}:
+
+\(log_2\ n\). Value change: \(\frac{\log_2 4n}{\log_2 n} = \log_2 4n - \log_2 n = (\log_2 4 + \log_2 n) - \log_2 n = 2\)
+
+\subsection*{Solutions}
+\label{sec-3.1}
+
+
+\textbf{b.} \(\(\frac{\sqrt{4n}}{\sqrt{n}}=2\)\)
+
+\textbf{c.} \(\(\frac{4n}{n}=4\)\)
+
+\textbf{d.} \(\frac{\left(4n\right)^2}{n^2}=4^2=16\)
+
+\textbf{e.} \(\frac{\left(4n\right)^3}{n^3}=\frac{4^3n^3}{n^3}=64\)
+
+\textbf{f.} \(\frac{2^{\left(4n\right)}}{2^n}=2^{4n-n}=2^{3n}=8^n\)
+
+\section*{Exercise 3 on page 59}
+\label{sec-4}
+
+
+For each of the following functions, indicate the class $\Theta$(\emph{g(n)})
+the function belongs to. (Use the simplest \emph{g(n)} possible in your answers.)
+Prove your assertions.
+
+\textbf{a.} \((n^2 + 1)^{10}\)
+
+\textbf{b.} \(\sqrt{10n^2 + 7n + 3}\)
+
+\textbf{d.} \(2^{n + 1} + 3^{n - 1}\)
+
+\emph{Up to 3 points are possible for a good answer for each part (*a, b, d*), for a total possible of 9 points.}
+
+Here is an example of a good answer for part \textbf{a}:
+
+\((n^2 + 1)^{10}.\) To prove this is in \(\Theta(n^{20})\):
+\[ \lim_{n \rightarrow \infty} \frac{(n^2 + 1)^{10}}{n^{20}} =
+   \lim_{n \rightarrow \infty} \frac{(n^2 + 1)^{10}}{(n^2)^{10}} =
+   \lim_{n \rightarrow \infty} \left( \frac{n^2 + 1}{n^2} \right)^{10} =
+   \lim_{n \rightarrow \infty} \left( 1 + \frac{1}{n^2} \right)^{10} = 1.
+\]
+Or, informally: \((n^2 + 1)^{10} \approx (n^2)^{10} = n^{20} \in \Theta(n^{20})\)
+
+\subsection*{Solutions}
+\label{sec-4.1}
+
+
+\textbf{b.} \(\lim_{n\to\infty}\left(\frac{\sqrt{10n^2+7n+3}}{n}\right)=\lim_{n\to\infty}\left(\frac{\frac{20n+7}{2\sqrt{10n^2+7n+3}}}{n}\right)=\sqrt{10}\)
+\textbf{d.} \(\lim_{x\to\infty}\left(\frac{\left(2^{n+1}+3^{n-1}\right)}{3^n}\right)=\frac{1}{3}\)
+
+\section*{Exercise 1 on page 67}
+\label{sec-5}
+
+
+Compute the following sums.
+
+\textbf{a.} \(1 + 3 + 5 + 7 + \cdots + 999\)
+
+\textbf{b.} \(2 + 4 + 8 + 16 + \cdots + 1024\)
+
+\textbf{c.} \(\Sigma_{i = 3}^{n + 1} 1\)
+
+\textbf{d.} \(\Sigma_{i = 3}^{n + 1} i\)
+
+\textbf{e.} \(\Sigma_{i = 0}^{n - 1} i(i + 1)\)
+
+\emph{Up to 2 points are possible for a good answer (1 for the correct answer, 1 for showing how you got it) for each part (*a-e*), for a total possible of 10 points.}
+
+Here is an example of a good answer for part \textbf{a}:
+
+\[ 1 + 3 + 5 + 7 + \cdots + 999 = \sum_{i = 1}^{500} (2i - 1) = \sum_{i = 1}^{500} 2i - \sum_{i = 1}^{500} 1
+= 2 \frac{500 * 501}{2} - 500 = 250,000.
+\]
+(Or, by using the formula for the sum of the arithmetic series with \(a_1 = 1, a_n = 999, n = 500, \frac{(a_1 + a_n)n}{2} =
+\frac{(1 + 999)500}{2} = 250,000\).)
+
+\subsection*{Solutions}
+\label{sec-5.1}
+
+
+\textbf{b.} \(2+4+8+16+...+1024=\sum_{i=1}^{10}\left(2^i\right)=2^{n+1}-2=2046\)
+
+\textbf{c.} \(\sum_{i=3}^{n+1}1=n+1-2=n-1\)
+
+\textbf{d.} \(\sum_{i=3}^{n+1}i=\frac{n\left(n+1\right)}{2}-3+n+1=\frac{\left(n\left(n+1\right)-6+2n+1\right)}{2}=\frac{\left(n^2+n-6+2n+2\right)}{2}=\frac{\left(n^2+3n-4\right)}{2}\)
+
+\textbf{e.} \(\sum_{i=0}^ni\left(i+1\right)=\sum_{i=0}^{n-1}i^2+i=\sum_{i=0}^{n-1}i^2+\sum_{i=0}^{n-1}i=\sum_{i=0}^{n-1}i^2+\sum_{i=0}^{n-1}i=\frac{\left(n-1\right)n\left(2n-1\right)}{6}+\frac{\left(n-1\right)n}{2}=\frac{n\left(n^2-1\right)}{3}\)
+
+\section*{Exercise 2 on page 67}
+\label{sec-6}
+
+
+Find the order of growth of the following sums. Use the $\Theta$(\emph{g(n)})
+notation with the simplest function \emph{g(n)} possible.
+
+\textbf{a.} \(\Sigma_{i = 0}^{n - 1}\ (i^2 + 1)^2\)
+
+\textbf{b.} \(\Sigma_{i =2}^{n - 1}\ \mbox{lg}\ i^2\)
+
+\textbf{c.} \(\Sigma_{i = 1}^{n}\ (i + 1)2^{i - 1}\)
+
+\emph{Up to 2 points are possible for a good answer (1 for the correct answer, 1 for showing how you got it) for each part (*a-c*), for a total possible of 6 points.}
+
+Here is an example of a good answer for part \textbf{a}:
+
+\[ \sum_{i = 0}^{n - 1} (i^2 + 1)^2 = \sum_{i = 0}^{n - 1}(i^4 + 2i^2 + 1) = \sum_{i = 0}^{n - 1} i^4 + 2 \sum_{i = 0}^{n - 1} i^2 + \sum_{i = 0}^{n - 1} 1 \in \Theta(n^5) + \Theta(n^3) + \Theta(n) = \Theta(n^5)
+\]
+\[(\mbox{or just} \sum_{i = 0}^{n - 1} (i^2 + i)^2 \approx \sum_{i = 0}^{n - 1} i^4 \in \Theta(n^5)).
+\]
+
+
+\subsection*{Solutions}
+\label{sec-6.1}
+
+
+\textbf{b.} \(\sum_{i=2}^{n-1}\left(\log_2i^2\right)=\sum_{i=2}^{n-1}2\log_2i=2\sum_{i=2}^{n-1}\log_2i=2\sum_{i=2}^{n-1}\log_2i-2\log_2n\rightarrow\epsilon\Theta\left(n\log n\right)\)
+
+\textbf{c.} \(\sum_{i=1}^n\left(i+1\right)2^{i-1}=\sum_{i=1}^ni2^{i-1}+2^{i-1}=\sum_{i=1}^ni2^{i-1}+\sum_{i=1}^n2^{i-1}=\frac{1}{2}\sum_{i=1}^ni2^i+\sum_{i=0}^{n-1}2\rightarrow\epsilon\Theta(n2^n)+\Theta\left(2n\right)=\Theta\left(n2^n\right)\)
+
+
+\section*{Exercise 2 on page 76}
+\label{sec-7}
+
+
+Set up and solve a recurrence relation for the number of calls made by \emph{F(n)},
+the recursive algorithm for computing \emph{n!}.
+
+\emph{Up to 5 points are possible for a good answer.}
+
+\subsection*{Solution}
+\label{sec-7.1}
+
+\(F\left(n\right)=1+F\left(n-1\right)=n\)
+
+\section*{Exercise 3 on page 76}
+\label{sec-8}
+
+
+Consider the following recursive algorithm for computing the sum of the first
+\emph{n} cubes: \(S(n) = 1^3 + 2^3 + ... + n^3.\)
+
+\textbf{Algorithm} \emph{S(n)}
+  \emph{//} Input: A positive integer \emph{n}
+  \emph{//} Output: The sum of the first \emph{n} cubes
+  \textbf{if} \emph{n = 1} \textbf{return} 1
+  \textbf{else return} \emph{S(n − 1) + n * n * n}
+
+\textbf{a.} Set up and solve a recurrence relation for the number of times the algorithm's
+   basic operation is executed.
+
+\textbf{b.} How does this algorithm compare with the straightforward nonrecursive
+   algorithm for computing this sum?
+
+\emph{Up to 4 points are possible for each part (*a-b*), for a total possible of 8 points.}
+
+\section*{Exercise 7 on page 78}
+\label{sec-9}
+
+
+\textbf{a.} Prove that the exact number of additions made by the recursive algorithm
+   \emph{BinRec(n)} for an arbitrary positive decimal integer n is \(\lfloor log_2 n \rfloor\).
+
+\textbf{b.} Set up a recurrence relation for the number of additions made by the
+   nonrecursive version of this algorithm (see Section 2.3, Example 4) and
+   solve it.
+
+\emph{Up to 5 points are possible for each part (*a-b*), for a total possible of 10 points.}
+
+\section*{Exercise 13 on page 78}
+\label{sec-10}
+
+
+\emph{Frying hamburgers}
+
+There are \emph{n} hamburgers to be fried on a small grill that
+can hold only two hamburgers at a time. Each hamburger has to be fried
+on both sides; frying one side of a hamburger takes 1 minute, regardless of
+whether one or two hamburgers are fried at the same time. Consider the
+following recursive algorithm for executing this task in the minimum amount
+of time. If \(n \le 2\), fry the hamburger or the two hamburgers together on each
+side. If \(n > 2\), fry any two hamburgers together on each side and then apply
+the same procedure recursively to the remaining \emph{n − 2} hamburgers.
+
+\textbf{a.} Set up and solve the recurrence for the amount of time this algorithm needs
+   to fry \emph{n} hamburgers.
+
+\textbf{b.} Explain why this algorithm does not fry the hamburgers in the minimum
+   amount of time for all \emph{n > 0}.
+
+\textbf{c.} Give a correct recursive algorithm that executes the task in the minimum
+   amount of time.
+
+\emph{Up to 4 points are possible for each part (*a-c*), for a total possible of 12 points.}
+
+\section*{Exercise 6 on page 83}
+\label{sec-11}
+
+
+The maximum values of the Java primitive types \textbf{int} and \textbf{long} are 2$^{\mathrm{31\}}$ − 1 and
+2$^{\mathrm{63\}}$ − 1, respectively. Find the smallest \emph{n} for which the \(n\)th Fibonacci number
+is not going to fit in a memory allocated for
+
+\textbf{a.} the type \textbf{int}.
+
+\textbf{b.} the type \textbf{long}.
+
+\emph{Up to 2 points are possible for each part (*a-b*), for a total possible of 4 points.}
+
+\section*{Exercise 9 on page 84}
+\label{sec-12}
+
+
+Prove the equality
+
+\[\left[ \begin{array}{cc} F(n - 1) & F(n)\\ F(n) & F(n + 1)\\ \end{array} \right]
+  = \left[ \begin{array}{cc} 0 & 1\\ 1 & 1\\ \end{array} \right]^n\ \mbox{for}\ n \ge 1.\]
+
+\emph{Up to 4 points are possible for a good answer.}
+
+(To be done in class via mathematical induction.)
+
+\end{document}

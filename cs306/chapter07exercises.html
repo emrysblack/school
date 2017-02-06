@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+lang="en" xml:lang="en">
+<head>
+<title>Chapter 7 Exercises</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2016-06-09 22:46:23 MDT"/>
+<meta name="author" content="Brady Field"/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color:lightblue; font-weight:normal }
+  .target { }
+  .timestamp { color: grey }
+  .timestamp-kwd { color: CadetBlue }
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*/-->
+</script>
+</head><body>
+<h1 class="title">Chapter 7 Exercises</h1>
+
+
+<div id="outline-container-1" class="outline-3">
+<h3 id="sec-1">Partners in crime </h3>
+<div id="text-1">
+
+<p>Landon - helped clarify what a few of the questions were asking, and
+helped catch me up on what I missed after I had to leave class on
+Friday.
+</p>
+<p>
+Matthew - helped with linking image of 2-3-4 tree, and helped
+with the top-down approach.
+</p>
+<p>
+Thom - helped with the top-down insertion of the 2-3-4 tree.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-3">
+<h3 id="sec-2">Solution to Exercise 1 on page 274 </h3>
+<div id="text-2">
+
+
+<p>
+<b>a.</b> open hash table
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<col align="left"></col><col align="left"></col><col align="left"></col><col align="left"></col><col align="left"></col><col align="left"></col><col align="left"></col><col align="left"></col><col align="left"></col><col align="left"></col><col align="left"></col>
+<tbody>
+<tr><td>[ 0 ]</td><td>[ 1 ]</td><td>[ 2 ]</td><td>[ 3 ]</td><td>[ 4 ]</td><td>[ 5 ]</td><td>[ 6 ]</td><td>[ 7 ]</td><td>[ 8 ]</td><td>[ 9 ]</td><td>[ 10 ]</td></tr>
+<tr><td></td><td>&darr;</td><td></td><td></td><td></td><td></td><td></td><td></td><td>&darr;</td><td>&darr;</td><td></td></tr>
+<tr><td></td><td>56</td><td></td><td></td><td></td><td></td><td></td><td></td><td>30</td><td>20</td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>&darr;</td><td>&darr;</td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>19</td><td>75</td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>&darr;</td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>31</td><td></td></tr>
+</tbody>
+</table>
+
+
+<p>
+<b>b.</b> largest number of key comparisons
+</p>
+<p>
+3 comparisons if looking for entry 31
+</p>
+<p>
+<b>c.</b> average number of key comparisons
+</p>
+<p>
+If we look for all the entries we get (1 + 1 + 1 + 2 + 3 + 2)/6 = 5/3
+comparisons.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-3">
+<h3 id="sec-3">Solution to Exercise 2 on page 274 </h3>
+<div id="text-3">
+
+
+<p>
+<b>a.</b> closed hash table
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<col align="left"></col><col align="left"></col><col align="left"></col><col align="left"></col><col align="left"></col><col align="left"></col><col align="left"></col><col align="left"></col><col align="left"></col><col align="left"></col><col align="left"></col>
+<tbody>
+<tr><td>[ 0 ]</td><td>[ 1 ]</td><td>[ 2 ]</td><td>[ 3 ]</td><td>[ 4 ]</td><td>[ 5 ]</td><td>[ 6 ]</td><td>[ 7 ]</td><td>[ 8 ]</td><td>[ 9 ]</td><td>[ 10 ]</td></tr>
+<tr><td>&darr;</td><td>&darr;</td><td>&darr;</td><td></td><td></td><td></td><td></td><td></td><td>&darr;</td><td>&darr;</td><td>&darr;</td></tr>
+<tr><td>31</td><td>56</td><td>19</td><td></td><td></td><td></td><td></td><td></td><td>30</td><td>20</td><td>75</td></tr>
+</tbody>
+</table>
+
+
+<p>
+<b>b.</b> largest number of key comparisons
+</p>
+<p>
+6 comparisons if looking for entry 19
+</p>
+<p>
+<b>c.</b> average number of key comparisons
+</p>
+<p>
+if we look for all the entries we get (1 + 1 + 1 + 2 + 3 + 6)/6 = 7/3
+comparisons.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-3">
+<h3 id="sec-4">Solution to Exercise 3 on page 275 </h3>
+<div id="text-4">
+
+
+<p>
+There would be way too many collisions to make the hash
+effective. There are only 26 buckets for data, and far too many
+possible words to fit nicely into only 26 buckets.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-3">
+<h3 id="sec-5">Solution to Exercise 4 on page 275 </h3>
+<div id="text-5">
+
+
+<p>
+\left ( \frac{1}{m} \right )<sup>n</sup> * {m} = \frac{1}{m<sup>n-1</sup>}
+</p>
+<p>
+1/m is the probability of hitting a specific
+bucket. We raise to the n for the probability of hitting every
+time. We then multiply it by m to extend it to any single bucket.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-3">
+<h3 id="sec-6">Solution to Exercise 3 on page 279 </h3>
+<div id="text-6">
+
+
+<p>
+Following the technique outlined in the book, I used the formula 
+</p>
+<p>
+\left
+&lfloor; log{_{\left &lceil; m/2 \right &rceil;}\frac{n+1}{4}} \right
+&rfloor; + 1
+</p>
+<p>
+with 100 million for n, and got the height from plugging in values for
+m in wolfram alpha. I tried going up by 100 each time until I
+hit 600. I then tested 550, 580, 590, 585, 583, and 584 for m. This
+allowed me to discover that 585 was the minimum order for the desired
+height of 3.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-3">
+<h3 id="sec-7">Solution to Exercise 6 on page 279 </h3>
+<div id="text-7">
+
+
+<p>
+<b>a.</b> <a href="https://drive.google.com/file/d/10gBOSN8BeleyW8wsbETAueg0bg20tyrKkg/view">Tree</a>. We did a step-by-step construction of the tree using the
+top-down method.
+</p>
+<p>
+<b>b.</b> Using the top-down approach, we have a maximum of one split per
+insertion. This keeps things simple. The downside is that our tree may
+not have an optimal height compared to another method.
+</p></div>
+</div>
+<div id="postamble"><p class="author"> Author: Brady Field
+<a href="mailto:emrys@AUS213L25.byui.edu">&lt;emrys@AUS213L25.byui.edu&gt;</a>
+</p>
+<p class="date"> Date: 2016-06-09 22:46:23 MDT</p>
+<p>HTML generated by org-mode 6.21b in emacs 23</p>
+</div></body>
+</html>

@@ -1,0 +1,1 @@
+alias iwilllogoff='.rmwp.sh'

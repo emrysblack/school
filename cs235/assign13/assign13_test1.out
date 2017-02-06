@@ -1,0 +1,18 @@
+Tree in Infix-Order Traversal
+10 29 0 15 2 26 23 27 21 3 
+Tree in Prefix-Order Traversal
+23 15 29 10 0 26 2 21 27 3 
+Tree in Postfix-Order Traversal
+10 0 29 2 26 15 27 3 21 23 
+Tree in Level-Order Traversal
+  23  Parent = NULL! 
+  15  Parent = 23   
+  21  Parent = 23   
+  29  Parent = 15   
+  26  Parent = 15   
+  27  Parent = 21   
+   3  Parent = 21   
+  10  Parent = 29   
+   0  Parent = 29   
+   2  Parent = 26   
+

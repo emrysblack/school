@@ -1,0 +1,103 @@
+#+OPTIONS: H:4 toc:3 author:nil
+#+COMMENT: The above line sets export options: the heading depth is extended to
+#+COMMENT: 4 levels, and restricts the table of contents to 3 levels. It also
+#+COMMENT: removes the 'author' line.
+
+Now Serving System README
+
+* NSS Component Programs
+** ServerDisplayClient
+   Integrated into the LabAssistant program, allows lab assistants to view the
+   queue and remove students from the queue.
+
+** LabAssistantClient
+   Provides a server connection and GUI for the lab assistants. Notifies the lab
+   assistants of current help requests.
+
+** DisplayClient
+   Provides a display for the system showing the current lab assistants and the
+   currently first-in-line students.
+
+** StudentClient
+   Provides a way for the students to make help requests and enter the queue for
+   help.
+
+* Ports Used
+  1982: ServerDisplayClient
+  1983: LabAssistantClient
+  1984: DisplayClient
+  1985: StudentClient
+
+* Configuration Files
+  These files are located in the user directory of the "nss" user. In order to
+  manipulate them, a Lab Assistant would need to SSH into one of the lab
+  computers as the nss user, or use 'su' to change your effective account.
+** DisplayClient
+*** .nssa files
+   A .nssa file is a file containing the needed information for automated
+   announcements. They are located in the ~/NSS directory.
+
+**** Format
+     There are two sections to an nssa file.
+
+     The first is the time in "h:mm a" format (example 8 pm would be "08:00 PM")
+     followed by a new line.
+
+     This section is followed by the announcement information section.
+
+     This section includes the number of minutes before the time, listed in the
+     previous section, the announcement should be made followed by a '|' and the
+     URL for the sound file.
+
+     There can be any number of announcements for one time. There can also be
+     multiple times followed by their respective announcements.
+
+**** Example
+     01:59 PM
+     default
+     08:00 PM
+     15|http://www.somewhere.com/LinuxLabSounds/15MinAnnoucn.mp3
+     0|file:///home/nss/ClosedAnnoucn.mp3
+
+     The 1:59 PM closing time will use the default announcements, and the
+     announcements relative to 8:00 pm will play the file at the URL
+     "http://www.somewhere.com/LinuxLabSounds/15MinAnnoucn.mp3" 15 minutes
+     before the indicated time (7:45 PM) and the local file at 8:00 pm.
+
+**** ~/NSS/default.nssa
+     Contains the minute and sound file data that will be used by default if
+     "default" is place in the announcment section of a .nssa file
+
+**** ~/NSS/{1-7}announce.nssa
+     These are the nssa files containing the needed information for each day of
+     the week. 1 = Sunday, 7 = Saturday.
+
+*** .nss-config
+    The background of the DisplayClient can be changed through the use of the
+    ~/NSS/.nss-config hidden file.
+
+    This file is read every time the DisplayClient is updated (i.e., an 'event'
+    occurs - a Lab Assistant connects to the system or a student needing help
+    enters the help queue) and any changes are processed.
+
+    The line "INDI|no" should remain, it's use probably has to do with having a
+    different text color for each Lab Assistant, but the documentation on that
+    is a little sparse.
+
+**** Background Image
+    The program expects a URL after the BACKGROUND| line label.The default is
+    the BYU-I emblem on blue background, which can be found here:
+    file:///mnt/local/updates/backgrounds.default.png
+
+    Example: BACKGROUND|file:///mnt/local/updates/backgrounds.default.png
+
+**** Text Color
+     The text for the DisplayClient is updated every time the DisplayClient
+     status is updated, just like the background image. The colors allowed are
+     the standard Java colors, as well as any RGB color in the format of a hex
+     triplet, like '0xFFFFFF' which is black.
+
+     The program expects a Java color name or a hex triplet like 0x------ after
+     the TEXT| line label.
+
+     Example: TEXT|BLACK

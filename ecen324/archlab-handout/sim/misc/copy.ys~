@@ -1,0 +1,47 @@
+# Execution begins at address 0
+.pos 0
+init:	irmovl Stack, %esp	# Set up Stack pointer
+	irmovl Stack, %ebp	# Set up base pointer
+	jmp    Main		# Execute main program
+
+        .align 4
+        # Source block
+        src:
+                .long 0x00a
+                .long 0x0b0
+                .long 0xc00
+        # Destination block
+        dest:
+                .long 0x111
+                .long 0x222
+                .long 0x333 
+
+Main:	irmovl $3,%eax
+	pushl  %eax		# Push 3
+	irmovl dest,%edx
+	pushl  %edx		# Push dest
+        irmovl src,%edx
+        pushl  %edx             # Push src
+	call   sum_list		# Cpy(src, dest, 3)
+	halt
+
+# int sum_list(list_ptr ls)
+sum_list:
+	pushl	%ebp
+	rrmovl	%esp, %ebp
+	mrmovl	8(%ebp), %edx
+	irmovl	$0, %eax
+	andl	%edx, %edx
+	je	L3
+L6:
+        mrmovl  (%edx), %esi
+	addl	%esi, %eax
+	mrmovl	4(%edx), %edx
+	andl	%edx, %edx
+	jne	L6
+L3:
+	popl	%ebp
+	ret
+
+.pos 0x100
+Stack:				# The stack goes here

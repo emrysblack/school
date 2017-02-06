@@ -1,0 +1,436 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<?xml-stylesheet href="assign08.xsl" type="text/xsl" ?>
+<!--BSA XML document
+   Details a document following defined bsa xml rules-->
+<bsa xmlns="assign08"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="assign08 assign08.xsd">
+  <council name="Wild West Council">
+    <troop number="1080" unitName="Braves">
+      <scout>
+        <firstName>Crazy</firstName>
+        <lastName>Horse</lastName>
+        <phone>123-456-0789</phone>
+        <address>
+          <street>455 Buckskin Ave</street>
+          <city>Zarahemla</city>
+          <state>Montana</state>
+        </address>
+        <rank date-earned="2-20-2012">Eagle</rank>
+        <rank date-earned="6-13-2010">Life</rank>
+        <rank date-earned="3-25-2009">Star</rank>
+        <rank date-earned="2-13-2008">1stClass</rank>
+        <rank date-earned="1-21-2007">2ndClass</rank>
+        <rank date-earned="11-13-2006">Tenderfoot</rank>
+        <meritbadge date-earned="2-15-2012">Story Telling</meritbadge>
+        <meritbadge date-earned="12-10-2011">Tepee Building</meritbadge>
+        <meritbadge date-earned="12-10-2011">Horesmanship</meritbadge>
+        <meritbadge date-earned="12-10-2011">Canoeing</meritbadge>
+        <meritbadge date-earned="9-23-2011">Archery</meritbadge>
+        <meritbadge date-earned="4-15-2010">Wilderness Survival</meritbadge>
+        <meritbadge date-earned="7-19-2008">First Aid</meritbadge>
+        <meritbadge date-earned="7-13-2007">Hunting</meritbadge>
+        <meritbadge date-earned="6-21-2007">Fishing</meritbadge>
+        <meritbadge date-earned="1-15-2007">Tracking</meritbadge>
+      </scout>
+      <scout>
+        <firstName>Chief</firstName>
+        <lastName>Geronimo</lastName>
+        <phone>222-587-1829</phone>
+        <address>
+          <street>123 Apache Ln</street>
+          <city>Zarahemla</city>
+          <state>Montana</state>
+        </address>
+        <rank date-earned="2-20-2012">Eagle</rank>
+        <rank date-earned="6-13-2010">Life</rank>
+        <rank date-earned="3-25-2009">Star</rank>
+        <rank date-earned="2-13-2008">1stClass</rank>
+        <rank date-earned="1-21-2007">2ndClass</rank>
+        <rank date-earned="11-13-2006">Tenderfoot</rank>
+        <meritbadge date-earned="2-15-2012">Story Telling</meritbadge>
+        <meritbadge date-earned="12-10-2011">Tepee Building</meritbadge>
+        <meritbadge date-earned="12-10-2011">Horesmanship</meritbadge>
+        <meritbadge date-earned="12-10-2011">Canoeing</meritbadge>
+        <meritbadge date-earned="9-23-2011">Archery</meritbadge>
+        <meritbadge date-earned="4-15-2010">Wilderness Survival</meritbadge>
+        <meritbadge date-earned="7-19-2008">First Aid</meritbadge>
+        <meritbadge date-earned="7-13-2007">Hunting</meritbadge>
+        <meritbadge date-earned="6-21-2007">Fishing</meritbadge>
+        <meritbadge date-earned="1-15-2007">Tracking</meritbadge>
+      </scout>
+      <scout>
+        <firstName>Little</firstName>
+        <lastName>Bear</lastName>
+        <phone>123-456-1992</phone>
+        <address>
+          <street>213 Sasquatch Rd</street>
+          <city>Zarahemla</city>
+          <state>Montana</state>
+        </address>
+        <rank date-earned="6-13-2010">Life</rank>
+        <rank date-earned="3-25-2009">Star</rank>
+        <rank date-earned="2-13-2008">1stClass</rank>
+        <rank date-earned="1-21-2007">2ndClass</rank>
+        <rank date-earned="11-13-2006">Tenderfoot</rank>
+        <meritbadge date-earned="12-10-2011">Horesmanship</meritbadge>
+        <meritbadge date-earned="12-10-2011">Canoeing</meritbadge>
+        <meritbadge date-earned="9-23-2011">Archery</meritbadge>
+        <meritbadge date-earned="4-15-2010">Wilderness Survival</meritbadge>
+        <meritbadge date-earned="7-19-2008">First Aid</meritbadge>
+        <meritbadge date-earned="7-13-2007">Hunting</meritbadge>
+        <meritbadge date-earned="6-21-2007">Fishing</meritbadge>
+        <meritbadge date-earned="1-15-2007">Tracking</meritbadge>
+      </scout>
+      <scout>
+        <firstName>Red</firstName>
+        <lastName>Cloud</lastName>
+        <phone>123-789-4432</phone>
+        <address>
+          <street>730 Buckskin Ave</street>
+          <city>Zarahemla</city>
+          <state>Montana</state>
+        </address>
+        <rank date-earned="2-13-2008">1stClass</rank>
+        <rank date-earned="1-21-2007">2ndClass</rank>
+        <rank date-earned="11-13-2006">Tenderfoot</rank>
+        <meritbadge date-earned="4-15-2010">Wilderness Survival</meritbadge>
+        <meritbadge date-earned="7-19-2008">First Aid</meritbadge>
+        <meritbadge date-earned="7-13-2007">Hunting</meritbadge>
+        <meritbadge date-earned="6-21-2007">Fishing</meritbadge>
+        <meritbadge date-earned="1-15-2007">Tracking</meritbadge>
+      </scout>
+      <scout>
+        <firstName>Sitting</firstName>
+        <lastName>Bull</lastName>
+        <phone>123-728-9327</phone>
+        <address>
+          <street>455 Big Eagle Drive</street>
+          <city>Zarahemla</city>
+          <state>Montana</state>
+        </address>
+        <rank date-earned="1-21-2007">2ndClass</rank>
+        <rank date-earned="11-13-2006">Tenderfoot</rank>
+        <meritbadge date-earned="7-13-2007">Hunting</meritbadge>
+        <meritbadge date-earned="6-21-2007">Fishing</meritbadge>
+        <meritbadge date-earned="1-15-2007">Tracking</meritbadge>
+      </scout>
+    </troop>
+    <troop number="720" unitName="Cowboys">
+      <scout>
+        <firstName>Billy</firstName>
+        <lastName>the Kid</lastName>
+        <phone>543-125-2365</phone>
+        <address>
+          <street>123 Hidden Canyon Way</street>
+          <city>Hideout</city>
+          <state>Utah</state>
+        </address>
+        <rank date-earned="2-20-2012">Eagle</rank>
+        <rank date-earned="6-13-2010">Life</rank>
+        <rank date-earned="3-25-2009">Star</rank>
+        <rank date-earned="2-13-2008">1stClass</rank>
+        <rank date-earned="1-21-2007">2ndClass</rank>
+        <rank date-earned="11-13-2006">Tenderfoot</rank>
+        <meritbadge date-earned="2-15-2012">Gunslinging</meritbadge>
+        <meritbadge date-earned="12-10-2011">Horsemanship</meritbadge>
+        <meritbadge date-earned="12-10-2011">Singing</meritbadge>
+        <meritbadge date-earned="12-10-2011">Emergency Preparedness</meritbadge>
+        <meritbadge date-earned="9-23-2011">Herding</meritbadge>
+        <meritbadge date-earned="4-15-2010">Wilderness Survival</meritbadge>
+        <meritbadge date-earned="7-19-2008">First Aid</meritbadge>
+        <meritbadge date-earned="7-13-2007">Pioneering</meritbadge>
+        <meritbadge date-earned="6-21-2007">Fishing</meritbadge>
+        <meritbadge date-earned="1-15-2007">Ranching</meritbadge>
+      </scout>
+      <scout>
+        <firstName>Butch</firstName>
+        <lastName>Cassidy</lastName>
+        <phone>543-432-0789</phone>
+        <address>
+          <street>429 Saloon Ave</street>
+          <city>Hideout</city>
+          <state>Utah</state>
+        </address>
+        <rank date-earned="2-20-2012">Eagle</rank>
+        <rank date-earned="6-13-2010">Life</rank>
+        <rank date-earned="3-25-2009">Star</rank>
+        <rank date-earned="2-13-2008">1stClass</rank>
+        <rank date-earned="1-21-2007">2ndClass</rank>
+        <rank date-earned="11-13-2006">Tenderfoot</rank>
+        <meritbadge date-earned="2-15-2012">Gunslinging</meritbadge>
+        <meritbadge date-earned="12-10-2011">Horsemanship</meritbadge>
+        <meritbadge date-earned="12-10-2011">Singing</meritbadge>
+        <meritbadge date-earned="12-10-2011">Emergency Preparedness</meritbadge>
+        <meritbadge date-earned="9-23-2011">Herding</meritbadge>
+        <meritbadge date-earned="4-15-2010">Wilderness Survival</meritbadge>
+        <meritbadge date-earned="7-19-2008">First Aid</meritbadge>
+        <meritbadge date-earned="7-13-2007">Pioneering</meritbadge>
+        <meritbadge date-earned="6-21-2007">Fishing</meritbadge>
+        <meritbadge date-earned="1-15-2007">Ranching</meritbadge>
+      </scout>
+      <scout>
+        <firstName>Buffalo</firstName>
+        <lastName>Bill</lastName>
+        <phone>543-735-0721</phone>
+        <address>
+          <street>832 Wild West St</street>
+          <city>Hideout</city>
+          <state>Utah</state>
+        </address>
+        <rank date-earned="1-21-2007">2ndClass</rank>
+        <rank date-earned="11-13-2006">Tenderfoot</rank>
+        <meritbadge date-earned="7-13-2007">Pioneering</meritbadge>
+        <meritbadge date-earned="6-21-2007">Fishing</meritbadge>
+        <meritbadge date-earned="1-15-2007">Ranching</meritbadge>
+      </scout>
+      <scout>
+        <firstName>John</firstName>
+        <lastName>Wayne</lastName>
+        <phone>543-123-4567</phone>
+        <address>
+          <street>100 Hollywood Ave</street>
+          <city>Hideout</city>
+          <state>Utah</state>
+        </address>
+        <rank date-earned="11-13-2006">Tenderfoot</rank>
+        <meritbadge date-earned="6-21-2007">Fishing</meritbadge>
+        <meritbadge date-earned="1-15-2007">Ranching</meritbadge>
+      </scout>
+      <scout>
+        <firstName>Lone</firstName>
+        <lastName>Ranger</lastName>
+        <phone>543-322-7456</phone>
+        <address>
+          <street>655 Gunslinger Way</street>
+          <city>Hideout</city>
+          <state>Utah</state>
+        </address>
+        <rank date-earned="3-25-2009">Star</rank>
+        <rank date-earned="2-13-2008">1stClass</rank>
+        <rank date-earned="1-21-2007">2ndClass</rank>
+        <rank date-earned="11-13-2006">Tenderfoot</rank>
+        <meritbadge date-earned="9-23-2011">Herding</meritbadge>
+        <meritbadge date-earned="4-15-2010">Wilderness Survival</meritbadge>
+        <meritbadge date-earned="7-19-2008">First Aid</meritbadge>
+        <meritbadge date-earned="7-13-2007">Pioneering</meritbadge>
+        <meritbadge date-earned="6-21-2007">Fishing</meritbadge>
+        <meritbadge date-earned="1-15-2007">Ranching</meritbadge>
+      </scout>
+    </troop>
+  </council>
+  <council name="New World Council">
+    <troop number="180" unitName="Rebels">
+      <scout>
+        <firstName>George</firstName>
+        <lastName>Washington</lastName>
+        <phone>422-758-0012</phone>
+        <address>
+          <street>123 Capitol Hill</street>
+          <city>Boston</city>
+          <state>Massachusetts</state>
+        </address>
+        <rank date-earned="2-20-2012">Eagle</rank>
+        <rank date-earned="6-13-2010">Life</rank>
+        <rank date-earned="3-25-2009">Star</rank>
+        <rank date-earned="2-13-2008">1stClass</rank>
+        <rank date-earned="1-21-2007">2ndClass</rank>
+        <rank date-earned="11-13-2006">Tenderfoot</rank>
+        <meritbadge date-earned="2-15-2012">Honesty</meritbadge>
+        <meritbadge date-earned="12-10-2011">Tree Chopping</meritbadge>
+        <meritbadge date-earned="12-10-2011">Citizanship</meritbadge>
+        <meritbadge date-earned="12-10-2011">Politics</meritbadge>
+        <meritbadge date-earned="9-23-2011">Marksmanship</meritbadge>
+        <meritbadge date-earned="4-15-2010">Wilderness Survival</meritbadge>
+        <meritbadge date-earned="7-19-2008">First Aid</meritbadge>
+        <meritbadge date-earned="7-13-2007">Indian Affairs</meritbadge>
+        <meritbadge date-earned="6-21-2007">Horsemanship</meritbadge>
+        <meritbadge date-earned="1-15-2007">Leadership</meritbadge>
+      </scout>
+      <scout>
+        <firstName>Paul</firstName>
+        <lastName>Revere</lastName>
+        <phone>422-758-1169</phone>
+        <address>
+          <street>428 Yankee Ln</street>
+          <city>Boston</city>
+          <state>Massachusetts</state>
+        </address>
+        <rank date-earned="2-20-2012">Eagle</rank>
+        <rank date-earned="6-13-2010">Life</rank>
+        <rank date-earned="3-25-2009">Star</rank>
+        <rank date-earned="2-13-2008">1stClass</rank>
+        <rank date-earned="1-21-2007">2ndClass</rank>
+        <rank date-earned="11-13-2006">Tenderfoot</rank>
+        <meritbadge date-earned="2-15-2012">Scouting</meritbadge>
+        <meritbadge date-earned="12-10-2011">Citizanship</meritbadge>
+        <meritbadge date-earned="12-10-2011">Horesmanship</meritbadge>
+        <meritbadge date-earned="12-10-2011">Patriotism</meritbadge>
+        <meritbadge date-earned="9-23-2011">Marksmanship</meritbadge>
+        <meritbadge date-earned="4-15-2010">Wilderness Survival</meritbadge>
+        <meritbadge date-earned="7-19-2008">First Aid</meritbadge>
+        <meritbadge date-earned="7-13-2007">Hunting</meritbadge>
+        <meritbadge date-earned="6-21-2007">Fishing</meritbadge>
+        <meritbadge date-earned="1-15-2007">Tracking</meritbadge>
+      </scout>
+      <scout>
+        <firstName>Thomas</firstName>
+        <lastName>Paine</lastName>
+        <phone>422-758-1037</phone>
+        <address>
+          <street>655 Common Sense Way</street>
+          <city>Boston</city>
+          <state>Massachusetts</state>
+        </address>
+        <rank date-earned="6-13-2010">Life</rank>
+        <rank date-earned="3-25-2009">Star</rank>
+        <rank date-earned="2-13-2008">1stClass</rank>
+        <rank date-earned="1-21-2007">2ndClass</rank>
+        <rank date-earned="11-13-2006">Tenderfoot</rank>
+        <meritbadge date-earned="12-10-2011">Debate</meritbadge>
+        <meritbadge date-earned="12-10-2011">Penmanship</meritbadge>
+        <meritbadge date-earned="9-23-2011">Gunsmithing</meritbadge>
+        <meritbadge date-earned="4-15-2010">Wilderness Survival</meritbadge>
+        <meritbadge date-earned="7-19-2008">First Aid</meritbadge>
+        <meritbadge date-earned="7-13-2007">Hunting</meritbadge>
+        <meritbadge date-earned="6-21-2007">Fishing</meritbadge>
+        <meritbadge date-earned="1-15-2007">Tracking</meritbadge>
+      </scout>
+      <scout>
+        <firstName>Thomas</firstName>
+        <lastName>Jefferson</lastName>
+        <phone>422-758-9463</phone>
+        <address>
+          <street>650 Constitution Ave</street>
+          <city>Boston</city>
+          <state>Massachusetts</state>
+        </address>
+        <rank date-earned="2-13-2008">1stClass</rank>
+        <rank date-earned="1-21-2007">2ndClass</rank>
+        <rank date-earned="11-13-2006">Tenderfoot</rank>
+        <meritbadge date-earned="4-15-2010">Politics</meritbadge>
+        <meritbadge date-earned="7-19-2008">First Aid</meritbadge>
+        <meritbadge date-earned="7-13-2007">Creative Writing</meritbadge>
+        <meritbadge date-earned="6-21-2007">Fishing</meritbadge>
+        <meritbadge date-earned="1-15-2007">Tracking</meritbadge>
+      </scout>
+      <scout>
+        <firstName>John</firstName>
+        <lastName>Hancock</lastName>
+        <phone>422-758-4223</phone>
+        <address>
+          <street>645 Constitution Ave</street>
+          <city>Boston</city>
+          <state>Massachusetts</state>
+        </address>
+        <rank date-earned="1-21-2007">2ndClass</rank>
+        <rank date-earned="11-13-2006">Tenderfoot</rank>
+        <meritbadge date-earned="7-13-2007">Penmanship</meritbadge>
+        <meritbadge date-earned="6-21-2007">Politics</meritbadge>
+        <meritbadge date-earned="1-15-2007">Tracking</meritbadge>
+      </scout>
+    </troop>
+    <troop number="360" unitName="Redcoats">
+      <scout>
+        <firstName>King</firstName>
+        <lastName>George III</lastName>
+        <phone>357-286-1185</phone>
+        <address>
+          <street>121 Royal Ct</street>
+          <city>Britain</city>
+          <state>Virgina</state>
+        </address>
+        <rank date-earned="2-20-2012">Eagle</rank>
+        <rank date-earned="6-13-2010">Life</rank>
+        <rank date-earned="3-25-2009">Star</rank>
+        <rank date-earned="2-13-2008">1stClass</rank>
+        <rank date-earned="1-21-2007">2ndClass</rank>
+        <rank date-earned="11-13-2006">Tenderfoot</rank>
+        <meritbadge date-earned="2-15-2012">State Management</meritbadge>
+        <meritbadge date-earned="12-10-2011">Empire Building</meritbadge>
+        <meritbadge date-earned="12-10-2011">Music</meritbadge>
+        <meritbadge date-earned="12-10-2011">Business</meritbadge>
+        <meritbadge date-earned="9-23-2011">Revenue</meritbadge>
+        <meritbadge date-earned="4-15-2010">Leadership</meritbadge>
+        <meritbadge date-earned="7-19-2008">Literacy</meritbadge>
+        <meritbadge date-earned="7-13-2007">Horsemanship</meritbadge>
+        <meritbadge date-earned="6-21-2007">Dancing</meritbadge>
+        <meritbadge date-earned="1-15-2007">Financial Management</meritbadge>
+      </scout>
+      <scout>
+        <firstName>Benedict</firstName>
+        <lastName>Arnold</lastName>
+        <phone>357-286-9775</phone>
+        <address>
+          <street>425 Torrie Way</street>
+          <city>Britain</city>
+          <state>Virginia</state>
+        </address>
+        <rank date-earned="2-20-2012">Eagle</rank>
+        <rank date-earned="6-13-2010">Life</rank>
+        <rank date-earned="3-25-2009">Star</rank>
+        <rank date-earned="2-13-2008">1stClass</rank>
+        <rank date-earned="1-21-2007">2ndClass</rank>
+        <rank date-earned="11-13-2006">Tenderfoot</rank>
+        <meritbadge date-earned="2-15-2012">Citizanship</meritbadge>
+        <meritbadge date-earned="12-10-2011">Horsemanship</meritbadge>
+        <meritbadge date-earned="12-10-2011">Financial Management</meritbadge>
+        <meritbadge date-earned="12-10-2011">Emergency Preparedness</meritbadge>
+        <meritbadge date-earned="9-23-2011">Politics</meritbadge>
+        <meritbadge date-earned="4-15-2010">Wilderness Survival</meritbadge>
+        <meritbadge date-earned="7-19-2008">First Aid</meritbadge>
+        <meritbadge date-earned="7-13-2007">Pioneering</meritbadge>
+        <meritbadge date-earned="6-21-2007">Fishing</meritbadge>
+        <meritbadge date-earned="1-15-2007">Marching</meritbadge>
+      </scout>
+      <scout>
+        <firstName>Thomas</firstName>
+        <lastName>Gage</lastName>
+        <phone>357-286-1245</phone>
+        <address>
+          <street>553 Captain Way</street>
+          <city>Britain</city>
+          <state>Virginia</state>
+        </address>
+        <rank date-earned="1-21-2007">2ndClass</rank>
+        <rank date-earned="11-13-2006">Tenderfoot</rank>
+        <meritbadge date-earned="7-13-2007">Leadership</meritbadge>
+        <meritbadge date-earned="6-21-2007">Marksmanship</meritbadge>
+        <meritbadge date-earned="1-15-2007">Marching</meritbadge>
+      </scout>
+      <scout>
+        <firstName>Charles</firstName>
+        <lastName>Cornwallis</lastName>
+        <phone>357-286-3557</phone>
+        <address>
+          <street>120 Redwall Ave</street>
+          <city>Britain</city>
+          <state>Virginia</state>
+        </address>
+        <rank date-earned="11-13-2006">Tenderfoot</rank>
+        <meritbadge date-earned="6-21-2007">Scouting</meritbadge>
+        <meritbadge date-earned="1-15-2007">Leadership</meritbadge>
+      </scout>
+      <scout>
+        <firstName>William</firstName>
+        <lastName>Howe</lastName>
+        <phone>357-286-7236</phone>
+        <address>
+          <street>465 York Ave</street>
+          <city>Britain</city>
+          <state>Virginia</state>
+        </address>
+        <rank date-earned="3-25-2009">Star</rank>
+        <rank date-earned="2-13-2008">1stClass</rank>
+        <rank date-earned="1-21-2007">2ndClass</rank>
+        <rank date-earned="11-13-2006">Tenderfoot</rank>
+        <meritbadge date-earned="9-23-2011">Leadership</meritbadge>
+        <meritbadge date-earned="4-15-2010">Wilderness Survival</meritbadge>
+        <meritbadge date-earned="7-19-2008">First Aid</meritbadge>
+        <meritbadge date-earned="7-13-2007">Pioneering</meritbadge>
+        <meritbadge date-earned="6-21-2007">Marching</meritbadge>
+        <meritbadge date-earned="1-15-2007">Tactics</meritbadge>
+      </scout>
+    </troop>
+  </council>
+</bsa>

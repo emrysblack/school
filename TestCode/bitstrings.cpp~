@@ -1,0 +1,25 @@
+  #include<stdio.h>
+
+  int main()
+  {
+     long int a,b,rim;
+     long int sum=0;
+
+     printf("ENTER MULTIPLICAND: ");
+     scanf("%ld",&b);
+     printf("ENTER MULTIPLIER: ");
+     scanf("%ld",&a);
+     while(b>=1)
+     {
+        rim=b%2;
+        b=b/2;
+        if(rim==1)
+        {
+         sum=sum+a;
+         printf("%ld\n", sum);
+        }
+        a=a*2;
+     }
+     printf("%ld\n",sum);
+     return 0;
+  }

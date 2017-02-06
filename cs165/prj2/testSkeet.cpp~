@@ -1,0 +1,27 @@
+/***********************************************************************
+* Program:
+*    Project 2, Skeet Shoot
+*    Brother Boyer, CS165
+* Author:
+*    Brady Field
+* Summary: 
+*    This allows a text test of the Skeet program for testbed.
+*
+*    Estimated:  15.0 hrs   
+*    Actual:     0.0 hrs
+*      A few crazy things
+************************************************************************/
+
+#include <iostream>
+#include <cassert>
+#include "skeet.h"
+using namespace std;
+
+/**********************************************************************
+ * A simple driver program to exercise our constructors
+ ***********************************************************************/
+int main()
+{
+   Skeet Bird;
+   return 0;
+}

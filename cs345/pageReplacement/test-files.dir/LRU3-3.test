@@ -1,0 +1,3 @@
+COMPILE COMMAND: vmalgorithm 3 LRU
+COMPILE FILES: program3.vm
+COMPILE OUTPUT: LRU3-3.out

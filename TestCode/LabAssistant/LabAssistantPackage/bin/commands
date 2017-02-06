@@ -1,0 +1,12 @@
+
+open            open gnome application
+go [URL]        open website in firefox
+byui            open BYUI website
+ilearn          open ilearn website
+search [string] search a given string in google
+inlab           display users in linux lab
+loggedin        display all users logged into linux lab
+labnames        check the names of lab assistants on NSS
+new             create a new terminal window
+members [group] lists users of a specified linux group
+cname           changes lab assistant display name on NSS

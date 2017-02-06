@@ -1,0 +1,21 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# User specific aliases and function
+
+alias open='gnome-open'
+alias go='firefox'
+alias byui='firefox www.byui.edu&'
+alias ilearn='firefox https://byui.brainhoney.com/Frame/Component/Home&'
+alias search='firefox -search'
+alias inlab='whoall.pl islocal andmap'
+alias loggedin='whoall.pl'
+alias labnames='check.name'
+alias ?='cat ~/.commands'
+alias new='gnome-terminal'
+alias cname='cn'
+alias members='group.pl'

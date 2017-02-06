@@ -1,0 +1,174 @@
+# -*- Shell-script -*-
+##############################
+##############################
+##
+## Scripture Search
+##
+##############################
+##############################
+VERSE_CACHE="$HOME/.cache/verse-grep"
+# Set to the directory with the plain text scriptures
+VERSE_BASE_DIR="$HOME/thisSemester/greppableScriptures/"
+
+function verse-generate-matches
+{
+    # Build the regex by concatenating each as a group, separated by the
+    # pipe. Then the final (and unnecessary) pipe in dropped
+    local regex=$(printf '(%s)|' "$@")
+    regex=${regex%|}
+
+    # Check for cached results
+    if \
+        [ -f "$VERSE_CACHE" ] && \
+        [ "$regex" == "$(head -n1 "$VERSE_CACHE")" ]; then
+        return 0;
+    fi
+
+    # Insert the full query as the first line of the file. This also removes old
+    # query results.
+    echo "$regex" > "$VERSE_CACHE"
+
+    local OLDIFS="$IFS"
+    IFS=$'\n'
+
+    local index=0
+    local files=("bible:Bible" "bom:Book of Mormon" "dnc:D&C" "pofgp:Perl of Great Price")
+
+    local source=
+    for source in ${files[@]}
+    do
+        local file="${source%%:*}"
+        local title="${source##*:}"
+
+        local matches=( $(grep -ihE "$regex" "$VERSE_BASE_DIR/$file/"*) )
+
+        if [[ "${#matches[@]}" != 0 ]]; then
+
+            # The major books are indicated by a tag marking the transition
+            echo "FROM:$title" >> "$VERSE_CACHE"
+
+            local line='';
+            for line in ${matches[@]}
+            do
+                echo "$index $line"  >> "$VERSE_CACHE"
+                index=$(( $index + 1 ));
+            done
+        fi
+    done
+
+    IFS=$OLDIFS
+    return 0
+}
+
+function verse-front-end-online
+{
+    local line="$1"
+
+    local verse="$(echo "$line" | cut -d' ' -f2 | sed 's/:/./')"
+    local ref="${line%% *}"
+
+    line="$(grep -ihE "\b$ref\b" "$VERSE_BASE_DIR/00.Name.map" | cut -d',' -f1,4)"
+
+    local book="${line##*,}"
+    local group="${line%%,*}"
+
+    local target="$(( ${verse#*.} - 1 ))"
+
+    go "http://www.lds.org/scriptures/$group/$book/$verse?lang=eng#$target"
+}
+
+function verse-front-end-twitchell
+{
+    local class="$(echo $1 | tr [[:lower:]] [[:upper:]])"
+    local verse="$(echo "$2" | cut -d' ' -f2)"
+    local book="$(grep -ihE "\b${2%% *}\b" "$VERSE_BASE_DIR/00.Name.map" | cut -d',' -f5)"
+
+    local ref="$(webSafe "$book $verse")"
+
+    labexec "lynx 'http://157.201.194.254/cgi-bin/twitchellk/scriptures/studentResult.pl?check=Check&class=$class&scripture=$ref' -dump"
+}
+
+function verse-front-end-print
+{
+    local ref="$(echo "$1" | cut -d' ' -f-2)"
+    local title="$(grep -ihE "\b${ref% *}\b" "$VERSE_BASE_DIR/00.Name.map" | cut -d',' -f5)"
+    echo "$title ${ref#* }"
+    echo "$1" | cut -d' ' -f3- | fold -sw 80 | nl -w2 -bn -s ''
+}
+
+function verse-front-end-print-plain
+{
+    local ref="$(echo "$1" | cut -d' ' -f-2)"
+    local title="$(grep -ihE "\b${ref% *}\b" "$VERSE_BASE_DIR/00.Name.map" | cut -d',' -f5)"
+    echo "$1" | cut -d' ' -f3-
+    echo "$title ${ref#* }"
+}
+
+function verse-grep
+{
+    # Extract the regular expression list. Terminated by either any number not
+    # escaped with a '\', which probably will have to itself be escaped or quote
+    # protected from the shell
+    local regex=()
+    while [ "$#" ]
+    do
+        # Strip out all digits, if there is anything left, then we have some
+        # none number we can play with
+        if [ "$(echo "$1" | sed 's/[[:digit:]]//g')" ]; then
+            # Add to the list of regular expressions, removing any numerical
+            # escape if required.
+            regex+=("$(echo "$1" | sed -r 's/^\\([[:digit:]]+)$/\1/')");
+            shift
+        else
+            break
+        fi
+    done
+
+    local choice="$1"
+    local command="$2"
+
+    verse-generate-matches "${regex[@]}"
+
+    if [ ! "$choice" ]; then
+        local line=
+        while read line
+        do
+            if [ "${line%%:*}" == "FROM" ]; then
+                echo "====== ${line#*:} ======"
+            else
+                local index="${line%% *}"
+                line="${line#* }"
+                local ref="$(echo "$line" | cut -d' ' -f-2)";
+                local verse="$(echo "$line" | cut -d' ' -f3- | fold -sw 80 | nl -w5 -bn -s '')";
+                printf '%3d: %s\n%s\n' "$index" "$ref" "$verse";
+            fi
+        done < <(tail -n+2 "$VERSE_CACHE")
+
+    else
+        local line="$(grep "^$choice " "$VERSE_CACHE")"
+        line="${line#* }"
+        case $command in
+            print)
+                verse-front-end-print "$line"
+                ;;
+            simple)
+                verse-front-end-print-plain "$line"
+                ;;
+            web)
+                verse-front-end-online "$line"
+                ;;
+            [Cc][Ss][[:digit:]][[:digit:]][[:digit:]])
+                verse-front-end-twitchell "$command" "$line"
+                ;;
+            *) echo "Commands: print simple web cs[0-9]{3}" ;;
+        esac
+    fi
+}
+
+function verse-grep-last-regex
+{
+    head -n1 "$VERSE_CACHE" | \
+        sed -E 's/^\((.*)\)$/\1/'
+}
+
+alias verse-grep-results='verse-grep $(verse-grep-last-regex)'

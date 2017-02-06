@@ -1,0 +1,7 @@
+Print("Hello"," ")
+Print("World!\n")
+greeting = "I was " + "built" + " with " + "concatenation!\n"
+Print(greeting)
+
+   secret = "I'm scoped\n"
+   Print(secret)

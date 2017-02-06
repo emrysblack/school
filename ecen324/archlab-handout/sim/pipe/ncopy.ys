@@ -1,0 +1,52 @@
+#/* $begin ncopy-ys */
+##################################################################
+# ncopy.ys - Copy a src block of len ints to dst.
+# Return the number of positive ints (>0) contained in src.
+#
+# Brady Field emrys
+#
+# Improved branch prediction, implemented immediate adds and
+# leave functions, and removed unnecessary code
+##################################################################
+	# Function prologue. Do not modify saving/setting %ebp.
+ncopy:	pushl  %ebp		# Save old frame pointer
+	rrmovl %esp,%ebp	# Set up new frame pointer
+	pushl  %esi		# Save callee-save regs
+	pushl  %ebx
+	mrmovl 8(%ebp),%ebx	# src
+	mrmovl 12(%ebp),%ecx	# dst
+	mrmovl 16(%ebp),%edx	# len
+
+	# Loop header
+	xorl   %eax,%eax	# count = 0;
+	#andl   %edx,%edx	# len <= 0?
+	Loop:	mrmovl (%ebx), %esi	# read val from src...
+        iaddl   $4, %ebx	# src++
+	rmmovl %esi, (%ecx)	# ...and store it to dst
+	andl   %esi, %esi	# val <= 0?
+	jg    Npos1		# if so, goto Npos:
+
+Npos:	iaddl   $-1, %edx	# len--
+	iaddl   $4, %ecx	# dst++
+	andl   %edx,%edx	# len > 0?
+	jg     Loop		# if so, goto Loop:
+
+	# Function epilogue. Do not modify unless you implement 'leave'.
+	leave
+	ret
+
+Npos1:	iaddl  $1, %eax	# count++
+        iaddl   $-1, %edx	# len--
+	iaddl   $4, %ecx	# dst++
+	andl   %edx,%edx	# len > 0?
+	jg     Loop		# if so, goto Loop:
+
+	# Function epilogue. Do not modify unless you implement 'leave'.
+	leave
+	ret
+
+Done:	# Function epilogue. Do not modify unless you implement 'leave'.
+	leave
+	ret
+
+#/* $end ncopy-ys */

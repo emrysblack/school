@@ -1,0 +1,21 @@
+<!--
+   assign10.dtd - document type definition for
+   assign10 document which specifies studentList
+-->
+
+<!ELEMENT studentList (student+)>
+<!ELEMENT student (name, location, college?)>
+<!ELEMENT  name (first, middle?, last)>
+<!ELEMENT  first (#PCDATA)>
+<!ELEMENT  middle (#PCDATA)>
+<!ELEMENT  last (#PCDATA)>
+<!ELEMENT  location (city,state)>         
+<!ELEMENT  city (#PCDATA)>
+<!ELEMENT  state (#PCDATA)>
+<!ELEMENT college (department?)>
+<!ELEMENT department (major*)>
+<!ELEMENT  major (#PCDATA)>         
+
+<!ATTLIST college name CDATA #IMPLIED>   
+<!ATTLIST department name CDATA "#REQUIRED">   
+<!ATTLIST  major id CDATA "399">

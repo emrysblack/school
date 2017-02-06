@@ -1,0 +1,274 @@
+Welcome to the Lindy Language
+
+This document is intended to give some usage guidance by outlining basic Lindy syntax.
+
+
+Comments
+
+In Lindy, comments are noted with << and >> symbols. The << starts
+a comment and the >> ends it. An example follows.
+
+<< I'm a comment in Lindy >>
+
+Print("Hello World") << Prints "Hello World to the screen"
+Print( << comment >> "Hello World")
+
+Note that comments can happen anywhere in Lindy. They can be their own line, they can
+occur in the middle of code where everything between the opening and closing tags is
+ignored without bothering execution. Also note that if closing tags are not present,
+the comment will run for the rest of the line so anything after the opening comments
+will be ignored.
+
+Comments are limited to a single line. There are no multi-line comments in Lindy.
+In fact, there is no multi-line execution in Lindy. Every line is evaluated independently
+of others.
+
+
+Variables
+
+Lindy is a procedural, interpretive language that supports basic data types such as
+Integers, Floats, Booleans, and strings. It also supports variable lists as a container
+type.
+
+Variables are loosely-typed. That is, the type changes depending on the value of the
+variable. Any variable my be reassigned a new value, at which point the type
+automatically changes to reflect the new value.
+
+Variable Declaration
+
+In Lindy a variable is declared by giving it a value. For example, to declare a variable
+named "number" that holds an Integer with a value of 1, a user would write:
+
+number = 1
+
+This will create a new variable ready to be used in the code, provided that the variable
+is still in scope where it is referenced. Note, a variable must be given an actual value
+to be initialized. The following code is invalid, and will not setup a new variable to be
+referenced:
+
+number
+
+While this may be an acceptable declaration in some languages, in Lindy such references are
+only valid to fetch values from previously declared variables. This is to enforce the best
+practice of always initializing variables on creation.
+Variables must start with a letter or an underscore to be considered a variable.
+
+Scope
+
+In Lindy, spacing is important. Spacing determines scope, and scope determines variable and
+function availability. This helps to ensure clean-looking code on top of providing powerful
+scoping capabilities. The following is an example of how basic scoping works:
+
+num = 1
+Print(num) << num is in scope >>
+
+   hidden = 2
+   Print(hidden)  << hidden is in scope >>
+      Print(hidden) << will work since hidden is still in scope >>
+
+Print(num) << num is in scope >>
+Print(hidden) << will not work since hidden has fallen out of scope and been destroyed
+   Print(hidden) << will not work since hidden has fallen out of scope and been destroyed
+
+Note that 3 spaces are needed to increase the scope level. Also, scope is immediate, when
+a variable falls out of scope, it is immediately destroyed.
+Only spaces are allowed as leading whitespace. If anything else is encountered before code,
+such as a tab, Lindy will give an error.
+
+Globals and Const
+
+In Lindy, variables are dependent on naming conventions to achieve global or constant
+functionality. If a variable starts with a lowercase letter or an underscore, that
+variable is a simple local variable. It can be changed and fall out of scope. If a
+variable starts with a capital letter, that variable is global. It can be referenced
+from anywhere once initialized. Global variables, as expected are independent of scope.
+
+A variable that ends in an underscore denotes a constant. That is, it may be initialized
+with a value, but may not be changed after that. Attempting to do so will give an error.
+
+Need a global const? Easy, just start the variable with an uppercase letter and end it in
+an underscore. Some example code follows:
+
+local = "I am local"
+local = "I have a new value"
+
+   Global = "I am global"
+Global = "I can't fall out of scope"
+
+const_ = "I can only have this value"
+const_ = "This line will result in an error"
+
+<< PI_ can never be changed >>
+PI_ = 3.14
+
+Types
+
+Int
+Whole numbers. Same operational limits apply as in C.
+
+Float
+Floating point numbers. Same operational limits apply as in C.
+
+String
+Strings are defined with opening and closing quotes. Quotes may be either single or double
+as long as the closing quote type matches the opening. Escaped characters are supported only
+between double quotes. Single quotes are always literal text.
+"I will print a newline at the end\n"
+'I will print a literal "backslash n" at the end\n'
+
+The following escapes are supported.
+\n  << newline
+\t  << tab
+\r  << carriage return
+\\  << backslash
+\"  << double quote
+\'  << single quote
+any other escape combination will be interpreted as literal text
+
+Bool
+Boolean values are True and False. Case is important so don't forget
+to capitalize.
+
+List
+Lists are supported in Lindy. A list is declared with square brackets, and
+consists of comma-separated items. An example follows.
+list = [0,1,2,"hello",[var1,var2]]
+
+As can be seen, a list can contain any type of variable, or mixed variables. A list
+can even contain another list or list of lists and so on!
+
+Functions
+
+System
+The following system functions are available to use without defining them yourself.
+Note, all system defined functions start with an uppercase letter.
+
+If()
+conditional execution in argument evaluates to True and is ignored if argument
+evaluates to False
+
+Else()
+Like If, but only is checked if attached If was not executed. Note, must be given an argument.
+Works like "else if" constructs in other languages. If catch all functionality is desired, it
+should be declared explicitly with Else(True) which will always execute.
+
+Loop()
+Like If, but executes repeatedly until condition evaluates to False.
+
+GetType()
+Returns a string hold the type of variable passed to it. It only takes one argument and maybe
+return "Int", "Float", "Bool", "String", or "List" depending on the value of the argument.
+
+Return()
+Returns a value from a function. It must be called from within a function and must return nothing or
+1 argument or an error will be passed to the user.
+
+Print()
+Puts output on the screen. It may be given any number of arguments, all of which will be printed
+one after another with no separation. If a separator is desired, it should be placed explicitly
+as an argument wherever needed.
+
+Prompt()
+Prompts the user for input. Will return the entire line of input. There is no space separated system.
+If user wishes to parse input, the input should be stored in a variable and the user may parse the
+variable as desired. Has one optional argument for a string value or variable that will be displayed
+to the user as a message before accepting input. Example as follows:
+input = Prompt() << will wait for the user to enter input and press return. The input minus the return
+                 << will be stored in the variable "input"
+age = Prompt('What is your age? ') << Will ask the user for age and then store it in the age variable
+
+Declaring
+user-defined functions are declared with braces like so:
+
+{ greet() }
+   Print("hello\n")
+
+The above code will declare a function named greet that takes no arguments and prints to the screen.
+
+{ count(num) }
+   i = 1
+   Loop(i <= num)
+      Print(i,"\n")
+      i = i + 1
+
+The above code will declare a function that will count from 1 to an argument on the screen.
+
+The name of the function with arguments is placed between the braces. Any attached code must be indented at least
+3 spaces.
+
+Calling
+A function is called by giving the name with arguments like so:
+
+greet()
+
+count(5)
+
+The above will call the two functions we previously declared.
+
+Scope
+functions may be scoped just like variables for availability
+Here is an example.
+{ getNextEven(num)}
+   { isOdd(num)}
+      Return(num % 2)
+
+   If (isOdd(num))
+      Return(num + 1)
+   Return(num + 2)
+
+The above function takes a number and returns the next even number. It uses an inner-function to
+determine if a number is odd. This function is only available to the parent function.
+Also note that return is a function call. Therefore it must have parenthesis and return a maximum of
+1 item.
+
+Recursion
+Recursion is supported in Lindy and works as expected as in other languages. An example follows:
+
+{ countDown(num)}
+   If(num)
+      Print(num,"\n")
+      countDown(num - 1)
+
+countDown(10)
+Print("blast off!")
+
+The above code uses a recursive function to count down like a spaceship launch.
+
+Operators
+
+Math
+Lindy supports basic math operations with proper order of operation execution
+
++ << addition, string concatenation
+- << subtraction, inverse
+* << multiplication
+/ << division
+% << modulus
+^ << exponent
+
+Logical
+Lindy supports logical operations with standard comparisons
+
+&& << and
+|| << or
+== << equality
+!= << inequality
+<  << less
+<= << less or equal
+>  << greater
+>= << greater or equal
+!  << inversion
+The order is left to right except for && and ||. These evaluate after the others. The !
+operator always evaluates first as expected.
+
+Lists
+Lindy supports extensive uses of lists with built-in functionality.
+
+newList = Push(oldList, newItem)                  << Push takes a list and an item to append and will return a new list
+item = GetItem(list, position)                    << GetItem returns value of list at indexed position
+length = ListLength(list)                         << ListLength returns the number of elements in a given list
+newList = ReplaceItem(oldList, position, newItem) << ReplaceItem takes a list, overwrites a value at an
+                                                  << indexed position with given value, and returns a new list
+newList = InsertItem(oldList, position, newItem)  << InsertItem takes a list, inserts a value at an
+                                                  << indexed position, and returns a new list
+newList = RemoveItem(oldList, position)           << RemoveItem returns a new list with item removed from an indexed position

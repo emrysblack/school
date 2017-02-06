@@ -1,0 +1,88 @@
+(require 'ment "/home/neffr/emacs/ment.el")
+
+(defun whatIsTrue () (list
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; What is true of my experience in general?                              ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; I learned something new. (2 points)
+true
+;; I achieved something meaningful,
+;; or something I can build upon at a later time. (2 points)
+true
+;; I collaborated with one or more classmates. (2 points)
+true
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; What is true of my code's command-line interface?                       ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; It uses *unmodified* the /home/cs238/ripe/ripenessCLI.cpp file,
+;; which interface handles the case of no command-line arguments, calling
+;; a function named *learned*, and then a function named *usage*. (2 points)
+true
+;; The *learned* function outputs several (> 9) well-written sentences
+;; reporting on the learning that happened. (6 points)
+true
+;; The *usage* function gives instructions on how to run WITH command-line
+;; parameters. (2 points)
+true
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; What is true of the mechanical "infelicities" (misspelled words,        ;;
+;; grammatical errors, punctuation errors) in my report of what I learned? ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; There are fewer than four. (2 points)
+true
+;; There are fewer than three. (3 points)
+true
+;; There are fewer than two. (3 points)
+true
+;; There are none. (4 points)
+true
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; What is true about the correctness and completeness of my code          ;;
+;; (verified by no "diff" output from the "make just" command)?            ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; It correctly passes the "treet" test. (10 points)
+true
+;; It correctly passes the "tsort" test. (10 points)
+true
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; What is true about the elegance of my code?                             ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; It has some by virtue of its correctness, as first and foremost,
+;; an elegant solution is a correct one. (6 points)
+true
+;; It increases by my correct use of the Tree class. (6 points)
+true
+;; It increases by my correct use of the Node class. (6 points)
+true
+;; It increases by my implementing the findNode function
+;; recursively. (6 points)
+true
+;; It increases by my implementing the findNode function using one
+;; three-way if-elseif-else statement. (6 points)
+true
+;; It increases by my implementing the findNode function in fewer than
+;; ten lines of code. (6 points)
+true
+;; It increases by my implementing the tournament sort, not some other
+;; sorting algorithm. (8 points)
+true
+;; It increases by my having found a natural way to use recursion
+;; (e.g., a helper function like findNode) somewhere in my tournament
+;; sort code. (8 points)
+true
+))
+
+;;; Local Variables: 
+;;; mode: Emacs-Lisp
+;;; compile-command: "whatIsTrue /home/cs238/ripe"
+;;; TeX-master: t
+;;; End: 

@@ -1,0 +1,20 @@
+/****************************************************************************
+* Program:
+*    Lab UnixShellT2, Operating Systems
+*    Brother Jones, CS 345
+* Author:
+*    Your Name
+* Summary:
+*    Descriptive text ...
+*
+*****************************************************************************
+*
+* Changes made to my code for the re-submission:
+*   (examples:)
+*   -I added comments such that they would help me remember what I did to
+*    write this program in another six months.
+*   -Fixed an error, ...
+*   - ...
+*
+*****************************************************************************/
+

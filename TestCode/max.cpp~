@@ -1,0 +1,30 @@
+// test for finding max position recursively
+
+#include <iostream>
+using namespace std;
+
+int rCount, bCount = 0;
+
+int maxPos(int nums[], int l, int r)
+{
+   if (l == r)
+   {
+      return l;
+   }
+   int mid = (l+r)/2;
+   int left = maxPos(nums,l,mid);
+   int right = maxPos(nums,mid+1,r);
+   rCount++;
+   return (nums[left] > nums[right] ? left : right);    
+}
+
+int main()
+{
+   int nums[] = {1,0,0,0,0,0,0,0,0,1};
+   // int nums[] = {62,17,73,22,61,14,49,35,63,2};
+   int pos = maxPos(nums,0,sizeof(nums)/sizeof(int));
+   cout << nums[pos] << " at position " << pos << endl;
+   cout << rCount // << " vs. " << bCount
+        << endl;
+   return 0;
+}

@@ -1,0 +1,498 @@
+<gconfschemafile>
+    <schemalist>
+
+        <schema>
+            <key>/schemas/apps/guake/general/default_shell</key>
+            <applyto>/apps/guake/general/default_shell</applyto>
+            <owner>guake</owner>
+            <type>string</type>
+            <default></default>
+            <locale name="C">
+                <short>Path to the default shell.</short>
+                <long>Path to the default shell. Set to empty to
+                use default user shell. If invalid path is set
+                here, guake will fallback to user shell.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/guake/general/use_login_shell</key>
+            <applyto>/apps/guake/general/use_login_shell</applyto>
+            <owner>guake</owner>
+            <type>bool</type>
+            <default>false</default>
+            <locale name="C">
+                <short>Login shell</short>
+                <long>If true, the commands in terminal will be
+                executed in a login shell.</long>
+            </locale>
+        </schema>
+
+	<schema>
+            <key>/schemas/apps/guake/general/use_trayicon</key>
+            <applyto>/apps/guake/general/use_trayicon</applyto>
+            <owner>guake</owner>
+            <type>bool</type>
+            <default>true</default>
+            <locale name="C">
+                <short>Sets the tray visibility.</short>
+                <long>When true tray is visible.</long>
+            </locale>
+        </schema>
+
+	<schema>
+            <key>/schemas/apps/guake/general/use_popup</key>
+            <applyto>/apps/guake/general/use_popup</applyto>
+            <owner>guake</owner>
+            <type>bool</type>
+            <default>true</default>
+            <locale name="C">
+                <short>Sets the popup notifications visibility.</short>
+                <long>When true, popup notifications will be shown
+                when Guake starts.</long>
+            </locale>
+        </schema>
+
+	<schema>
+            <key>/schemas/apps/guake/general/prompt_on_quit</key>
+            <applyto>/apps/guake/general/prompt_on_quit</applyto>
+            <owner>guake</owner>
+            <type>bool</type>
+            <default>true</default>
+            <locale name="C">
+                <short>Prompt when quiting.</short>
+                <long>Ask for confirmation when guiting Guake and there
+                processes running.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/guake/general/window_ontop</key>
+            <applyto>/apps/guake/general/window_ontop</applyto>
+            <owner>guake</owner>
+            <type>bool</type>
+            <default>true</default>
+            <locale name="C">
+                <short>Stay on top.</short>
+                <long>Makes guake window be on top of all other windows in the
+                    desktop.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/guake/general/window_losefocus</key>
+            <applyto>/apps/guake/general/window_losefocus</applyto>
+            <owner>guake</owner>
+            <type>bool</type>
+            <default>false</default>
+            <locale name="C">
+                <short>Determine if guake hides on lose focus.</short>
+                <long>If this property is set as true, guake will be
+                hidden when the main window lose the focus (when
+                Alt+Tab be pressed for example).</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/guake/general/window_tabbar</key>
+            <applyto>/apps/guake/general/window_tabbar</applyto>
+            <owner>guake</owner>
+            <type>bool</type>
+            <default>true</default>
+            <locale name="C">
+                <short>The tab bar visibility.</short>
+                <long>When true, the tab bar is visible.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/guake/general/start_fullscreen</key>
+            <applyto>/apps/guake/general/start_fullscreen</applyto>
+            <owner>guake</owner>
+            <type>bool</type>
+            <default>false</default>
+            <locale name="C">
+                <short>Start fullscreen.</short>
+                <long>When true, the program will start in fullscreen mode.</long>
+            </locale>
+        </schema>
+
+	<schema>
+            <key>/schemas/apps/guake/general/window_width</key>
+            <applyto>/apps/guake/general/window_width</applyto>
+            <owner>guake</owner>
+            <type>int</type>
+            <default>100</default>
+            <locale name="C">
+                <short>Window height.</short>
+                <long>Percent of the screen that will be used by guake
+                  terminal horizontally.</long>
+            </locale>
+        </schema>
+
+	<schema>
+            <key>/schemas/apps/guake/general/window_height</key>
+            <applyto>/apps/guake/general/window_height</applyto>
+            <owner>guake</owner>
+            <type>int</type>
+            <default>50</default>
+            <locale name="C">
+                <short>Window size.</short>
+                <long>Percent of the screen that will be used by guake
+                  terminal vertically.</long>
+            </locale>
+        </schema>
+
+	<schema>
+	    <key>/schemas/apps/guake/general/window_halignment</key>
+	    <applyto>/apps/guake/general/window_halignment</applyto>
+	    <owner>guake</owner>
+	    <type>int</type>
+	    <default>0</default>
+	    <locale name="C">
+	    <short>Window horizontal alignment.</short>
+	    <long>Place Guake at:
+	          0: center, 1: left, 2: right</long>
+	    </locale>
+	</schema>
+
+        <schema>
+            <key>/schemas/apps/guake/general/use_scrollbar</key>
+            <applyto>/apps/guake/general/use_scrollbar</applyto>
+            <owner>guake</owner>
+            <type>bool</type>
+            <default>true</default>
+            <locale name="C">
+                <short>Sets the scrollbar visibility.</short>
+                <long>When true, scrollbar is visible.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/guake/general/history_size</key>
+            <applyto>/apps/guake/general/history_size</applyto>
+            <owner>guake</owner>
+            <type>int</type>
+            <default>1024</default>
+            <locale name="C">
+                <short>History Size.</short>
+                <long>The number of scrollback lines to save in
+                history.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/guake/general/scroll_output</key>
+            <applyto>/apps/guake/general/scroll_output</applyto>
+            <owner>guake</owner>
+            <type>bool</type>
+            <default>false</default>
+            <locale name="C">
+                <short>Scroll on output</short>
+                <long>If true, whenever there is new output in the
+                terminal, it will scroll to the bottom.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/guake/general/scroll_keystroke</key>
+            <applyto>/apps/guake/general/scroll_keystroke</applyto>
+            <owner>guake</owner>
+            <type>bool</type>
+            <default>true</default>
+            <locale name="C">
+                <short>Scroll on keystroke</short>
+                <long>If true and a key is pressed, the terminal is
+                scrolled to the bottom.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/guake/general/use_default_font</key>
+            <applyto>/apps/guake/general/use_default_font</applyto>
+            <owner>guake</owner>
+            <type>bool</type>
+            <default>true</default>
+            <locale name="C">
+                <short>Use default font</short>
+                <long>If true, Guake will use the GNOME monospace
+                default font.</long>
+            </locale>
+        </schema>
+
+	<schema>
+            <key>/schemas/apps/guake/general/use_vte_titles</key>
+            <applyto>/apps/guake/general/use_vte_titles</applyto>
+            <owner>guake</owner>
+            <type>bool</type>
+            <default>true</default>
+            <locale name="C">
+                <short>Use terminal titles for tab naming</short>
+                <long>Any terminal program can set the terminal's title via special escape sequences. Some shells (e.g. bash) display user's prompt there (though you can adjust that to any arbitrary text in bashrc or similar) and update it automatically as the prompt changes. So you can have easy automatically updating meaningful tab titles with this option turned on.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/guake/style/font/style</key>
+            <applyto>/apps/guake/style/font/style</applyto>
+            <owner>guake</owner>
+            <type>string</type>
+            <default>Monospace 10</default>
+            <locale name="C">
+                <short>Font style.</short>
+                <long>Font face and size that will be used in terminal.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/guake/style/font/color</key>
+            <applyto>/apps/guake/style/font/color</applyto>
+            <owner>guake</owner>
+            <type>string</type>
+            <default>#ffffffffffff</default>
+            <locale name="C">
+                <short>Font color.</short>
+                <long>Font color that will be used in terminal.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/guake/style/font/palette</key>
+            <applyto>/apps/guake/style/font/palette</applyto>
+            <owner>guake</owner>
+            <type>string</type>
+            <default>#000000000000:#cccc00000000:#4e4e9a9a0606:#c4c4a0a00000:#34346565a4a4:#757550507b7b:#060698209a9a:#d3d3d7d7cfcf:#555557575353:#efef29292929:#8a8ae2e23434:#fcfce9e94f4f:#72729f9fcfcf:#adad7f7fa8a8:#3434e2e2e2e2:#eeeeeeeeecec</default>
+            <locale name="C">
+                <short>Color scheme.</short>
+                <long>Color scheme that will be used in terminal.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/guake/style/background/color</key>
+            <applyto>/apps/guake/style/background/color</applyto>
+            <owner>guake</owner>
+            <type>string</type>
+            <default>#000000000000</default>
+            <locale name="C">
+                <short>Background color.</short>
+                <long>Background color that will be used in terminal.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/guake/style/background/image</key>
+            <applyto>/apps/guake/style/background/image</applyto>
+            <owner>guake</owner>
+            <type>string</type>
+            <default></default>
+            <locale name="C">
+                <short>Background image.</short>
+                <long>Background image that will be used in terminal.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/guake/style/background/transparency</key>
+            <applyto>/apps/guake/style/background/transparency</applyto>
+            <owner>guake</owner>
+            <type>int</type>
+            <default>80</default>
+            <locale name="C">
+                <short>Background transparency.</short>
+                <long>Alpha that will be applied to the terminal
+                background.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/guake/general/compat_backspace</key>
+            <applyto>/apps/guake/general/compat_backspace</applyto>
+            <owner>guake</owner>
+            <type>string</type>
+            <default>ascii-delete</default>
+            <locale name="C">
+                <short>Backspace Compatibility</short>
+                <long>Defines the behavior of backscape key.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/guake/general/compat_delete</key>
+            <applyto>/apps/guake/general/compat_delete</applyto>
+            <owner>guake</owner>
+            <type>string</type>
+            <default>delete-sequence</default>
+            <locale name="C">
+                <short>Delete Compatibility</short>
+                <long>Defines the behavior of delete key.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/guake/keybindings/global/show_hide</key>
+            <applyto>/apps/guake/keybindings/global/show_hide</applyto>
+            <owner>guake</owner>
+            <type>string</type>
+            <default>F12</default>
+            <locale name="C">
+                <short>Keybinding to show/hide guake.</short>
+                <long>Global keybinding to allow user call guake from each
+                place after it's opened without clicks.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/guake/keybindings/local/quit</key>
+            <applyto>/apps/guake/keybindings/local/quit</applyto>
+            <owner>guake</owner>
+            <type>string</type>
+            <default>&lt;Control&gt;&lt;Shift&gt;q</default>
+            <locale name="C">
+                <short>Quit</short>
+                <long>Quit Guake.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/guake/keybindings/local/new_tab</key>
+            <applyto>/apps/guake/keybindings/local/new_tab</applyto>
+            <owner>guake</owner>
+            <type>string</type>
+            <default>&lt;Control&gt;&lt;Shift&gt;t</default>
+            <locale name="C">
+                <short>Add a new tab.</short>
+                <long>Calls the function to add a new tab in guake window.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/guake/keybindings/local/close_tab</key>
+            <applyto>/apps/guake/keybindings/local/close_tab</applyto>
+            <owner>guake</owner>
+            <type>string</type>
+            <default>&lt;Control&gt;&lt;Shift&gt;w</default>
+            <locale name="C">
+                <short>Closes the current tab.</short>
+                <long>Accelerator to active function that closes the current selected tab.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/guake/keybindings/local/previous_tab</key>
+            <applyto>/apps/guake/keybindings/local/previous_tab</applyto>
+            <owner>guake</owner>
+            <type>string</type>
+            <default>&lt;Control&gt;Page_Up</default>
+            <locale name="C">
+                <short>Previous tab.</short>
+                <long>Shows the previous tab.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/guake/keybindings/local/next_tab</key>
+            <applyto>/apps/guake/keybindings/local/next_tab</applyto>
+            <owner>guake</owner>
+            <type>string</type>
+            <default>&lt;Control&gt;Page_Down</default>
+            <locale name="C">
+                <short>Next tab.</short>
+                <long>Shows the next tab.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/guake/keybindings/local/rename_tab</key>
+            <applyto>/apps/guake/keybindings/local/rename_tab</applyto>
+            <owner>guake</owner>
+            <type>string</type>
+            <default>F2</default>
+            <locale name="C">
+                <short>Rename tab.</short>
+                <long>Shows a dialog to rename the current tab.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/guake/keybindings/local/clipboard_copy</key>
+            <applyto>/apps/guake/keybindings/local/clipboard_copy</applyto>
+            <owner>guake</owner>
+            <type>string</type>
+            <default>&lt;Control&gt;&lt;Shift&gt;c</default>
+            <locale name="C">
+                <short>Copy clipboard.</short>
+                <long>Copy the clipboard content.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/guake/keybindings/local/clipboard_paste</key>
+            <applyto>/apps/guake/keybindings/local/clipboard_paste</applyto>
+            <owner>guake</owner>
+            <type>string</type>
+            <default>&lt;Control&gt;&lt;Shift&gt;v</default>
+            <locale name="C">
+                <short>Paste clipboard.</short>
+                <long>Paste the clipboard content.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/guake/keybindings/local/toggle_fullscreen</key>
+            <applyto>/apps/guake/keybindings/local/toggle_fullscreen</applyto>
+            <owner>guake</owner>
+            <type>string</type>
+            <default>F11</default>
+            <locale name="C">
+                <short>Toggle Fullscreen.</short>
+                <long>Toggle main guake window fullscreen.</long>
+            </locale>
+        </schema>
+
+        <!-- These options are not shown in guake-prefs window to
+             avoid bloating that pretty ui =) -->
+
+        <schema>
+            <key>/schemas/apps/guake/general/word_chars</key>
+            <applyto>/apps/guake/general/word_chars</applyto>
+            <owner>guake</owner>
+            <type>string</type>
+            <default>-A-Za-z0-9,./?%&amp;#:_</default>
+            <locale name="C">
+                <!-- these comments were stolen from gnome-terminal,
+                     thanks gnome-temrinal buddies -->
+                <short>Characters that are considered "part of a word"</short>
+                <long>When selecting text by word, sequences of these
+                characters are considered single words. Ranges can be
+                given as "A-Z". Literal hyphen (not expressing a
+                range) should be the first character given. </long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/guake/general/show_resizer</key>
+            <applyto>/apps/guake/general/show_resizer</applyto>
+            <owner>guake</owner>
+            <type>bool</type>
+            <default>true</default>
+            <locale name="C">
+                <short>If guake must show a control to make resizing more handful</short>
+                <long>When true, guake shows a resizer on its bottom to allow user 
+                resize guake.</long>
+            </locale>
+        </schema>
+
+        <schema>
+            <key>/schemas/apps/guake/general/toolbar_visible_in_fullscreen</key>
+            <applyto>/apps/guake/general/toolbar_visible_in_fullscreen</applyto>
+            <owner>guake</owner>
+            <type>bool</type>
+            <default>true</default>
+            <locale name="C">
+                <short>If the tabs bar must be visible in fullscreen</short>
+                <long>Set it as false to enjoy guake's fullscreen.</long>
+            </locale>
+        </schema>
+    </schemalist>
+</gconfschemafile>

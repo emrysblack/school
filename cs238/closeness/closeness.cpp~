@@ -1,0 +1,354 @@
+/***************************************************************************
+ * Program:
+ *    Relations as Connection Matrices
+ * Author:
+ *    You
+ * Purpose:
+ *    Exploring and enhancing an implementation of a
+ *    representation of relations to discover their basic properties.
+ *
+ * Summary:
+ *    Represents relations as connection (zero-one) matrices, and provides
+ *    functionality for testing properties of relations.
+ *
+ *    NOTE: deliberately (mostly) uncommented!
+ *
+ ***************************************************************************/
+#include <cmath>
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+#include "words.h"
+using namespace std;
+
+class Relation operator*(const Relation& r1, const Relation& r2);
+bool operator<=(const Relation& r1, const Relation& r2);
+
+class Relation
+{
+private:
+   bool** mMatrix;
+   int mSize;
+   
+   // members for easy checking
+   bool reflexive;
+   bool irreflexive;
+   bool antisymmetric;
+   
+   // others in case we ever wanted to check in the future
+   bool nonreflexive;
+   bool symmetric;
+   bool asymmetric;
+   bool transitive;
+   
+   void init()
+   {
+      mMatrix = new bool*[mSize];
+      for (int i = 0; i < mSize; i++)
+      {
+         mMatrix[i] = new bool[mSize];
+      }
+   }
+
+public:
+   Relation(int size)
+   {
+      mSize = size;
+      init();
+   }
+
+   Relation& operator=(const Relation& rtSide)
+   {
+      if (this == &rtSide)
+      {
+         return *this;
+      }
+      else
+      {
+         mSize = rtSide.mSize;
+         for (int i = 0; i < mSize; i++)
+         {
+            delete [] mMatrix[i];
+         }
+         delete [] mMatrix;
+         init();
+         for (int x = 0; x < mSize; x++)
+         {
+            for (int y = 0; y < mSize; y++)
+            {
+               mMatrix[x][y] = rtSide[x][y];
+            }
+         }
+      }
+      return *this;
+   }
+
+   Relation(const Relation& relation)
+   {
+      mSize = relation.getConnectionMatrixSize();
+      init();
+      *this = relation;
+   }
+
+   ~Relation()
+   {
+      for (int i = 0; i < mSize; i++)
+      {
+         delete [] mMatrix[i];
+      }
+      delete [] mMatrix;
+   }
+
+   int getConnectionMatrixSize() const
+   {
+      return mSize;
+   }
+
+   bool* operator[](int row) const
+   {
+      return mMatrix[row];
+   }
+
+   bool operator==(const Relation& relation)
+   {
+      int size = relation.getConnectionMatrixSize();
+      if (mSize != size)
+      {
+         return false;
+      }
+      for (int i = 0; i < size; i++)
+      {
+         for (int j = 0; j < size; j++)
+         {
+            if (mMatrix[i][j] != relation[i][j])
+            {
+               return false;
+            }
+         }
+      }
+      return true;
+   }
+   
+   /*************************************************************************
+    *  TODO:                                                            
+    *  In the next seven functions replace the "return false;" with your
+    *  code.
+    *  NOTE: you may have to implement some of these functions outside of
+    *  this class definition (like is done with the describe function).
+    ************************************************************************/
+   bool isReflexive()
+   {
+      reflexive = true;
+      for (int i = 0; i < mSize && reflexive; i++)
+      {
+         if (!mMatrix[i][i])
+         {
+            reflexive = false;
+         }
+      }
+      
+      return reflexive;
+   }
+
+   bool isIrreflexive()
+   {
+      irreflexive = true;
+      for (int i = 0; i < mSize && irreflexive; i++)
+      {
+         if (mMatrix[i][i])
+         {
+            irreflexive = false;
+         }
+      }
+      return irreflexive;
+   }
+
+   bool isNonreflexive()
+   {
+      nonreflexive = !reflexive && !irreflexive;
+      return nonreflexive;
+   }
+
+   bool isSymmetric()
+   {
+      symmetric = true;
+      for (int i = 0; i < mSize && symmetric; i++)
+      {
+         for (int j = 0; j < mSize && symmetric; j++)
+         {
+            if (mMatrix[i][j] != mMatrix[j][i])
+            {      
+               symmetric = false;
+            }
+         }
+      }
+      return symmetric;
+   }
+
+   bool isAntisymmetric()
+   {
+      antisymmetric = true;
+      for(int i = 0; i < mSize && antisymmetric; i++)
+      {
+         for(int j = 0; j < mSize && antisymmetric; j++)
+         {
+            if (mMatrix[i][j] && mMatrix[j][i] && i != j)
+            {      
+               antisymmetric = false;
+            }
+         }
+      }
+      return antisymmetric;
+   }
+
+   bool isAsymmetric()
+   {
+      asymmetric = antisymmetric && irreflexive;
+      return asymmetric;
+   }
+
+   bool isTransitive()
+   {
+      // if square is less than or equal to original
+      Relation product = *this * *this;
+      transitive = product <= *this;
+      return transitive;
+   }
+  
+   void describe();
+};
+
+// binary multiplication operator for matricies
+Relation operator*(const Relation& r1, const Relation& r2)
+{
+   // set up sizing for product
+   Relation product = r1;
+   const int size = product.getConnectionMatrixSize();
+   for (int i = 0; i < size; i++)
+   {
+      for (int j = 0; j < size; j++)
+      {
+         product[i][j] = false;
+         for (int k = 0; k < size && !product[i][j]; k++)
+         {
+            if (r1[k][j] && r2[i][k])
+            {
+               product[i][j] = true;
+            }
+         }
+      }
+   }
+   return product;
+}
+
+// comparison for matricies
+bool operator<=(const Relation& r1, const Relation& r2)
+{
+   // set up size
+   const int size = r1.getConnectionMatrixSize();
+   for (int i = 0; i < size; i++)
+   {
+      for (int j = 0; j < size; j++)
+      {
+         if (r1[i][j] > r2[i][j])
+         {
+            return false;
+         }
+      }
+   }
+   return true;
+}
+
+ostream& operator<<(ostream& os, const Relation& relation)
+{
+   int n = relation.getConnectionMatrixSize();
+   for (int i = 0; i < n; i++)
+   {
+      for (int j = 0; j < n; j++)
+      {
+         os << relation[i][j] << " ";
+      }
+      os << endl;
+   }
+   return os;
+}
+
+istream& operator>>(istream& is, Relation& relation)
+{
+   int n = relation.getConnectionMatrixSize();
+   for (int i = 0; i < n; i++)
+   {
+      for (int j = 0; j < n; j++)
+      {
+         is >> relation[i][j];
+      }
+   }
+   return is;
+}
+
+void Relation::describe()
+{
+   cout << "\nThe relation represented by the " << mSize << "x" << mSize << " matrix\n";
+   cout << *this << "is\n";
+   cout << (isReflexive() ? "" : "NOT ") << "Reflexive;\n";
+   cout << (isIrreflexive() ? "" : "NOT ") << "Irreflexive;\n";
+   cout << (isNonreflexive() ? "" : "NOT ") << "Nonreflexive;\n";
+   cout << (isSymmetric() ? "" : "NOT ") << "Symmetric;\n";
+   cout << (isAntisymmetric() ? "" : "NOT ") << "Antisymmetric;\n";
+   cout << (isAsymmetric() ? "" : "NOT ") << "Asymmetric; and\n";
+   cout << (isTransitive() ? "" : "NOT ") << "Transitive.\n";
+}
+
+/*************************************************************************
+ * runOne
+ *
+ * is a global function declared in /home/cs238/close/closenessCLI.cpp
+ * and implemented here.
+ *
+ * It serves as the interface between the CLI and the Relation class.
+ *************************************************************************/
+void runOne(string file)
+{
+   ifstream inFile(file.c_str());
+
+   if (inFile.is_open())
+   {
+      int size;
+      inFile >> size;
+      Relation relation(size);
+      inFile >> relation;
+      inFile.close();
+      relation.describe();
+   }
+   else
+   {
+      cout << "Unable to open " << file << ".\n";
+   }
+}
+
+/*************************************************************************
+ * learned
+ *
+ * Tells interested parties what you learned.
+ *
+ * Use one or more calls to out(...), or else use the whatIlearned
+ * script and do the following:
+ *
+ *   Words words = {
+ *   #include "whatIlearned.inc"
+ *   nl};
+ *   cout << words;
+ *************************************************************************/
+void learned()
+{
+}
+
+/*************************************************************************
+ * usage
+ *
+ * Tells the user how to use the program.
+ *************************************************************************/
+void usage(const char * programName)
+{
+   cout << programName << endl;
+}

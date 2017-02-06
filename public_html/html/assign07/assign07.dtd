@@ -1,0 +1,25 @@
+<!--
+   assign07.dtd - document type definition for
+   assign07 document which specifies bsa taglist
+-->
+
+<!ELEMENT bsa (council+)>
+<!ELEMENT council (troop+)>
+<!ELEMENT troop (scout+)>
+<!ELEMENT scout (firstName, lastName, phone, address, 
+                 rank*, meritbadge*)>
+<!ELEMENT firstName (#PCDATA)>
+<!ELEMENT lastName (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT address (street, city, state)>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ELEMENT rank (#PCDATA)>
+<!ELEMENT meritbadge (#PCDATA)>
+
+<!ATTLIST council name CDATA #REQUIRED>
+<!ATTLIST troop number CDATA #REQUIRED>
+<!ATTLIST troop unitName CDATA #REQUIRED>
+<!ATTLIST rank date-earned CDATA #REQUIRED>
+<!ATTLIST meritbadge date-earned CDATA #REQUIRED>

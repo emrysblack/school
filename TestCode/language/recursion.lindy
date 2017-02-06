@@ -1,0 +1,17 @@
+   {scopeFun()}
+      Print("I'm scoped!\n")
+
+
+{ countUp(num) }
+   If(num)
+      countUp(num - 1)
+   Print(num, "\n")
+
+{ test() }
+   Print("Enter a number to recursively count to: ")
+   countUp(Prompt())
+   Print("Next line should be a scoping error.\n")
+   scopeFun()
+
+scopeFun()
+test()

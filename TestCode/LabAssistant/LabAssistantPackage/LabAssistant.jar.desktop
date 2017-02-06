@@ -1,0 +1,10 @@
+
+[Desktop Entry]
+Type=Application
+Exec=/mnt/local/addlSoftware/LabAssistant.jar
+Hidden=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=Lab Assistant Serving
+Name=Lab Assistant Serving
+Comment[en_US]=
+Comment=

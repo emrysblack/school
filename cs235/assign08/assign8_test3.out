@@ -1,0 +1,13 @@
+F(x) =  x^3 + x^2 + x + 1
+G(x) =  -x^3 - x^2 - x
+
+P(x) = (F + G)(x) = 1
+P(10) = 1
+
+temp1(x) is same as 8x^6 + G(x) or 8x^6 - x^3 - x^2 - x
+temp2(x) is same as F(x) or x^3 + x^2 + x + 1
+temp3(x) is same as G(x) or -x^3 - x^2 - x
+
+Original functions were:
+F(x) =  x^3 + x^2 + x + 1
+G(x) =  -x^3 - x^2 - x

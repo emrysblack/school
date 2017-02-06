@@ -1,0 +1,9 @@
+
+I learned about conjectures and how to test them.
+I also learned about the NTL and using ZZ and RR.
+This was a fun project :)
+
+Usage: deepness n
+E.g., deepness 7194898723259873456987340698308962983739586724987345982634592783495872394857932745987234958
+
+The conjecture holds for 1000000000.

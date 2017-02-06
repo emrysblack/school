@@ -1,0 +1,132 @@
+# Created 2016-05-05 Thu 11:32
+#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t
+#+TITLE: Chapter 4 Exercises
+#+AUTHOR: <Your Name Goes Here>
+#+LANGUAGE: en
+#+STARTUP: showeverything
+
+* Exercise 7 on page 149
+
+Write pseudocode for a recursive algorithm for generating all
+\(2^n\) bit strings of length /n/.
+
+** Solution
+
+#+BEGIN_EXAMPLE
+
+function build(n)
+
+   set string_list to empty
+   
+   if n == 1
+      push 0 onto string_list
+      push 1 onto string_list
+   else
+      set temp_string_list to build(n - 1)
+      for each item in temp_string_list
+         push item + 0 onto string_list
+         push item + 1 onto string list
+   return string_list
+
+function main
+   set n to desired length of bitstring
+   set string_list to build(n)
+   display string_list
+#+END_EXAMPLE
+* Exercise not-in-book
+
+Convert this C code for doing Russian Peasant Multiplication into elisp.
+
+#+BEGIN_SRC C
+  #include<stdio.h>
+
+  int main()
+  {
+     long int a,b,rim;
+     long int sum=0;
+
+     printf("ENTER MULTIPLICAND: ");
+     scanf("%ld",&b);
+     printf("ENTER MULTIPLIER: ");
+     scanf("%ld",&a);
+     while(b>=1)
+     {
+        rim=b%2;
+        b=b/2;
+        if(rim==1)
+        {
+         sum=sum+a;
+         printf("%ld\n", sum);
+        }
+        a=a*2;
+     }
+     printf("%ld\n",sum);
+     return 0;
+  }
+#+END_SRC
+
+Hint:
+
+#+BEGIN_SRC emacs-lisp
+  (let ((n (string-to-int (read-from-minibuffer "ENTER NUMBER: "))))
+    (* 2 n))
+#+END_SRC
+
+** Solution
+#+BEGIN_SRC emacs-lisp
+  (defun prompt (message)
+  (string-to-int (read-from-minibuffer message))
+)
+prompt
+(defun rpm ()
+(let ( (a (prompt "ENTER MULTIPLICAND: "))
+(b (prompt "ENTER MULTIPLIER: "))
+)
+(list a b) ; inside let so variables don't fall out of scope, do loopy work here
+
+
+)
+)
+rpm
+
+
+(rpm)
+#+END_SRC
+* Exercise 1 on page 166
+
+*a.* If we measure an instance size of computing the greatest common
+divisor of /m/ and /n/ by the size of the second number /n/, by how
+much can the size decrease after one iteration of Euclid's algorithm?
+
+*b.* Prove that an instance size will always decrease at least by a
+factor of two after two successive iterations of Euclid's algorithm.
+
+* Exercise 12 on page 167
+
+/Flipping Pancakes/
+
+There are /n/ pancakes all of different sizes that are stacked on
+top of each other. You are allowed to slip a flipper under one of
+the pancakes and flip over the whole stack above the flipper. The
+purpose is to arrange pancakes according to their size with the
+biggest at the bottom. (You can see a visualization of this puzzle
+on the /Interactive Mathematics Miscellany and Puzzles/ site
+[Bog].) Design an algorithm for solving this puzzle.
+
+** Solution
+#+BEGIN_EXAMPLE
+SET target_position to bottom
+While(!sorted)
+{
+   put spatula below biggest pancake above target_position and flip
+   put spatula below target position and flip
+   decrease target_position by one pancake
+}
+#+END_EXAMPLE
+* Exercise not-in-book
+
+The only research paper published by a well-known individual was
+devoted to the pancakes flipping problem. Who is that individual?
+
+** Solution
+Bill Gates

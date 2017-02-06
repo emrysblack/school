@@ -1,0 +1,335 @@
+# -*- Shell-script -*-
+
+# Source functions for greppable scriptures
+if [ -f ~/.bash-scripture-grep ]; then
+    . ~/.bash-scripture-grep
+fi
+
+##############################
+##############################
+##
+## Utility Functions
+##
+##############################
+##############################
+
+# Creates a compressed tarfile from a folder (and deletes the folder)
+function tarball
+{
+    local FILE
+    for FILE in "${@}"
+    do
+        echo "===== Creating Tarball of $FILE ====="
+        if tar cvvjf "${FILE%%/}.tbz2" "$FILE"; then
+            echo "> Success"
+            echo "> Removing old copy of $FILE"
+            rm -rf "$FILE"
+        else
+            echo "> Failure"
+            rm -f "${FILE%%/}.tbz2"
+        fi
+   done
+}
+
+# Uncompresses a compressed tarfile (leaves the file)
+function untarball
+{
+    local FILE
+    for FILE in "${@}"
+    do
+        tar xjf "$FILE"
+    done
+}
+
+# Displays lines in a file
+# mid <start> <end> <file>
+function mid
+{
+    if [[ "$#" == 3 ]]; then
+        tail -n+"$1" "$3" | head -n"$2"
+    fi
+}
+
+# Print with line numbers
+function line-nums { nl -ba "$@"; }
+
+# Check the remaining quota
+checkquota ()
+{
+    local useHu="$(du -sh $HOME | cut -f1)"
+    local qtaHu="$(quota -s | tail -n1 | sed -r 's/ +/ /g' | cut -d' ' -f3)"
+
+    local useByte="$(du -s $HOME | cut -f1)"
+    local qtaByte="$(quota | tail -n1 | sed -r 's/ +/ /g' | cut -d' ' -f3)"
+
+    local percent="$(echo "scale=2;${useByte}/${qtaByte}*100" | bc -q 2>/dev/null)"
+
+    echo "$useHu / $qtaHu : ${percent%.*}%"
+}
+
+##############################
+##############################
+##
+## Functions for cleaning up
+## Web stuff
+##
+##############################
+##############################
+
+# Formats for easy viewing
+alias cleanxml='xmllint --format -'
+alias cleanjson='python -mjson.tool'
+
+# Validates xsd and dtd files
+function xsdValidate { xmllint --noout --schema   $@; }
+function dtdValidate { xmllint --noout --dtdvalid $@; }
+
+##############################
+##############################
+##
+## RCS stuff
+##
+##############################
+##############################
+alias ci='ci -u'
+
+function rcsopen
+{
+    find . -iname "*,v" -exec rlog -L -h "{}" \; | grep "^RCS" | cut -d ':' -f2 | sed 's/RCS\///' | sed 's/,v//'
+}
+
+function log
+{
+    if [[ "$@" == "" ]]; then
+        if [[ -d "RCS" ]]; then
+            echo "Working Files:" 1>&2
+            rlog RCS/* | grep "Working file" | sed 's/Working file: /\t/'
+        else
+            echo "RCS is not operating on this directory" 1>&2
+        fi
+    else
+        rlog $@
+    fi
+}
+
+##############################
+##############################
+##
+## Functions for working with
+## directories
+##
+##############################
+##############################
+
+# Enhanced wrappers for pushd and popd
+function cds { pushd "$@"; }
+function cdp
+{
+    if [ "$@" ]; then
+        pushd "$@"
+    elif ! popd 2> /dev/null; then
+        cd;
+    fi
+}
+
+##############################
+##############################
+##
+## Functions for background
+## spawning
+##
+##############################
+##############################
+function spawn
+{
+    if [ -n "$DISPLAY" ]; then
+        ( ( "$@" 2>/dev/null >/dev/null & ) & )
+    else
+        "$@"
+    fi
+}
+
+function spawnterm
+{
+    if [ -n "$DISPLAY" ]; then
+        local cmd="bash -c 'source ~/.bash-aliases; $@'"
+        #echo "Spawning: $cmd"
+        ( ( gnome-terminal \
+            --working-directory "$(pwd)" \
+            --title="$*" \
+            -e "$cmd" \
+            2>/dev/null >/dev/null & ) & )
+    else
+        "$@"
+    fi
+}
+
+function s  { spawn "$@";     }
+function st { spawnterm "$@"; }
+# Completion for background forks
+complete -cf spawn
+complete -cf spawnterm
+complete -cf s
+complete -cf st
+
+##############################
+##############################
+##
+## Command line web search
+##
+##############################
+##############################
+
+# Helper function to web encode a string
+function webSafe
+{ echo "$@" | xxd -plain | tr -d '\n' | sed 's/\(..\)/%\1/g'; }
+
+# Get the contents of the clipboard if there are no passed arguments
+function argClip
+{
+    local target="$@"
+    if [ ! "$target" ]; then
+        target="$(xpaste)"
+    fi
+    echo "$target"
+}
+
+# Search argument capture
+function query
+{ echo "$(webSafe "$(argClip "$@")")"; }
+
+# Open url
+function go
+{ spawn "$BROWSER" "$(argClip "$@")"; }
+
+# Various search engines / options
+function googleSearch      { go "http://www.google.com/search?q=$(query $@)"                                 ; }
+function googleImageSearch { go "http://www.google.com/search?q=$(query $@)&safe=active&tbm=isch"            ; }
+function wolf              { go "http://www.wolframalpha.com/input/?i=$(query $@)"                           ; }
+function ptToEng           { go "http://translate.google.com/translate_t?q=$(query $@)&sl=en&tl=pt"          ; }
+function lds               { go "http://www.lds.org/search?lang=eng&query=$(query $@)"                       ; }
+function scriptures        { go "http://www.lds.org/search?lang=eng&query=$(query $@)&collection=scriptures" ; }
+function define            { googleSearch "define:$(argClip "$@")"                ; }
+function wiki              { googleSearch "site:en.wikipedia.org $(argClip "$@")" ; }
+function cpp               { googleSearch "site:cplusplus.com/ $(argClip "$@")"   ; }
+function byui              { googleSearch "site:byui.edu $(argClip "$@")"         ; }
+
+##############################
+##############################
+##
+## Aliases
+##
+##############################
+##############################
+
+##### Defaults
+function finger { pinky -l $@; }
+function e  { "$EDITOR" $@; }
+function se { spawnterm "$EDITOR" $@; }
+function bcal { bc -l $@; }
+
+# Auto coloring for ls and grep
+alias ls='ls --color=auto -R'
+alias lh='ls -lh'
+alias ll='ls -l'
+alias la='ls -A'
+alias grep='grep --color=auto'
+export GREP_COLORS='mt=0;34'
+
+##### Fork aliases
+alias studentClient='spawn /mnt/local/addlSoftware/StudentClient'
+alias firefox='s firefox'
+alias evince='s evince'
+alias gedit='s gedit'
+alias gimp='s gimp'
+alias eog='s eog'
+function sman  { st man "$@"; }
+function shelp { st "help $@|less"; }
+function sinfo { st info "$@"; }
+
+##### Lazy aliases and one-liner functions
+alias editbashrc='spawnterm "$EDITOR" ~/.bashrc ~/.bash-aliases'
+alias reloadbashrc='unalias -a && source ~/.bashrc'
+
+function rpn { "$EDITOR" -f full-calc; }
+function today { date +"%Y%m%d"; }
+function todaynice { date +"%Y/%m/%d"; }
+
+function psall   { ps aux $@; }
+function pscount { ps --no-header -U"$(whoami)" | wc -l $@; }
+function psfind  { ps aux | grep $@; }
+function pstree  { ps axjf $@; }
+
+function spell { ispell $@; }
+
+function cleanspaces { compressSpaces; rename 's/\.?-+\.?/-/g; s/[ _]+/-/g;' * $@; }
+function compressSpaces { rename 's/ +/ /g' * $@; }
+function dirsize { ls -A | while read line; do du -sh -- "$line"; done | sort -h $@; }
+
+function simpleServer { python -m SimpleHTTPServer; }
+function sshmaster { ssh -fNM $@; }
+
+##### Web aliases
+alias docviewer='spawn $BROWSER https://viewer.zoho.com/home.do'
+alias docs='spawn $BROWSER https://drive.google.com/#my-drive'
+
+alias brainhoney='spawn "$BROWSER" https://byui.brainhoney.com/Frame/Component/StudentHome'
+alias brainhoneyadmin='spawn "$BROWSER" https://byui.brainhoney.com'
+alias brainhoneyta='spawn "$BROWSER" https://byui.brainhoney.com/Frame/Component/Home'
+
+alias brianhoneyta='brainhoneyta'
+alias brianhoneyadmin='brainhoneyadmin'
+alias brianhoney='brainhoney'
+
+alias duesoon='spawn "$BROWSER" http://byui.brainhoney.com/resource/14853/Web/Component/DueSoon/DueSoon.vhtml'
+
+alias outlook='spawn "$BROWSER" https://www.outlook.com'
+alias gmail='spawn "$BROWSER" https://mail.google.com'
+alias gcal='spawn "$BROWSER" https://www.google.com/calendar/'
+alias gplus='spawn "$BROWSER" https://plus.google.com'
+function doc2pdf  { go "http://www.doc2pdf.net/"; }
+function skydrive { go "https://skydrive.live.com/"; }
+
+alias g='googleSearch'
+alias gi='googleImageSearch'
+
+alias weather='go "http://www.weather.com/weather/today/83440"'
+alias weathernow='go "http://www.weather.com/weather/right-now/83440"'
+
+##### Xclip replacement xsel
+alias xcopy='xsel -ib'
+alias xpaste='xsel -ob'
+
+##############################
+##############################
+##
+## Lab stuff
+##
+##############################
+##############################
+function golab
+{
+    local xforward=""
+    local newWindow=0
+    local server=1
+    local cmd=""
+    for OPTION in "${@}"
+    do
+        case $OPTION in
+            x)      xforward="-YC" ;;
+            n)      newWindow=1    ;;
+            [0-9]*) server=$OPTION ;;
+            *)      cmd="$OPTION"  ;;
+        esac
+    done
+
+    if [ "$cmd" ]; then
+        echo "========== Running $cmd on server $server =========="
+    fi
+
+    if [[ $newWindow -eq 1 ]]; then
+        st ssh `svr $server` $xforward $cmd
+    else
+        ssh `svr $server` $xforward $cmd
+    fi
+}

@@ -1,0 +1,65 @@
+# Created 2016-06-25 Sat 16:55
+#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t
+#+TITLE: Vastness
+#+AUTHOR: Brady Field
+#+LANGUAGE: en
+#+STARTUP: showeverything
+
+* Exploration 3
+
+You are invited to apply what you've learned this semester to
+synthesize and analyze algorithms for solving Problem 3 of
+Exploration 1 by shrewdly searching through a sentential solution
+space, combinatorially explosive, vast in its extent. This
+invitation to exploration is codenamed /Vastness/.
+
+** Collaborators Thom - talked about general approaches to the
+problem, Matthew - talked about multithreading as a possible
+bruteforce technique, Lance - talked about cool ways to solve the
+problem.
+
+*** Introduction
+
+We have been invited to expand upon "Mysteriousness" in further
+pursuit of "the quesiton". From the way things have been going,
+it appears as though we are going to be able to use some simple
+information about the problem to greatly enhance our otherwise
+bruteforce methods. This could help us in the real world since
+even relatively simple information can yield big results if
+leveraged correctly.
+
+
+** Deliverables for Part 1 
+
+The combination of words
+is: "pattern", "numbers", "reason", "random", "appear", "first",
+"digit", "that", "look", "just", "the", "ten", "for", "any", "to",
+"or", "on", "in", "be", and "a".
+
+Lance and I talked about how to elegantly search it. He
+bruteforced the letter combinations, and then started elimnating
+words that had unused letters. We talked about generalizing this
+to eliminating words greater than the counts, and then
+subtracting the letter totals off of known words to repeat the
+proccess. He was able to greatly leverage this method into
+reducing the search space down to a few words. I wanted to do
+something similar, but I'm afraid my lack of experience with
+Emacs Lisp, and with functional programming in general, pushed me
+to go a more simple route. I followed the method briefly
+discussed in class where one would search the subspace of the
+different word lengths since they were known, and then combine
+them into an optimal answer. This worked out fine for me. I wrote
+a function to split the list of words into different sublists by
+length. I then wrote a function to find all the combinations of a
+sublist given a k value to choose between the different words. I
+then could compare the combination counts from the server and
+take the minimum as a guideline. I then bassically had everything
+I needed to check a final list against the server and verify that
+the chosen combination was correct. The hardest part was
+debugging the Elisp. I could spend hours on trivial things such
+as debugging loops or if statements. I actually wrote my
+combination function in C++ first, and then ported it over to
+Elisp once I found a good recursive solution. I'm not sure
+how "lispy" it is, but it works. All in all, the exploration was
+fun, but it did require a good deal of sweat and tears to get
+through the lisp since this is my first real exposure to it.

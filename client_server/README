@@ -1,0 +1,21 @@
+
+Things that might be done with this code:
+-----------------------------------------
+
+ -Modify it and run it on a single system.  To do this you might
+   1) Use a couple of terminal windows, or
+   2) Run the server in the background like: java TCPServer &
+      and use the same window to run the client
+
+ -Modify it to connect to a server on a different system
+
+ -A a try/catch to be able to clean up error messages
+
+ -Put the client in a loop and enhance it with prompts asking for a system
+  name and a sentence
+
+ -Have the client ask for, and send, two sentences to a server ... what happens?
+
+ - ...
+
+

@@ -1,0 +1,904 @@
++---------------------------+----------+-----------+-----------+
+|Output for producerConsumer|sleeping 2|producers 1|consumers 1|
++---------------------------+----------+-----------+-----------+
+501: P01 => C01
+992: P01 => C01
+763: P01 => C01
+843: P01 => C01
+708: P01 => C01
+252: P01 => C01
+565: P01 => C01
+585: P01 => C01
+864: P01 => C01
+546: P01 => C01
+973: P01 => C01
+193: P01 => C01
+566: P01 => C01
+766: P01 => C01
+510: P01 => C01
+264: P01 => C01
+111: P01 => C01
+281: P01 => C01
+865: P01 => C01
+887: P01 => C01
+433: P01 => C01
+792: P01 => C01
+219: P01 => C01
+343: P01 => C01
+151: P01 => C01
+942: P01 => C01
++--------------------------------------------------------------+
+|                         Summary                              |
++--------------------------------------------------------------+
+Max producer: 1
+Max consumer: 1
+
+Total Errors: 0
++---------------------------+----------+-----------+-----------+
+|Output for producerConsumer|sleeping 2|producers 2|consumers 3|
++---------------------------+----------+-----------+-----------+
+998: P02 => C02
+763: P02 => C03
+591: P01 => C02
+410: P01 => C01
+566: P01 => C03
+565: P02 => C01
+585: P02 => C02
+308: P02 => C01
+418: P01 => C01
+416: P02 => C02
+179: P01 => C03
+406: P01 => C01
+194: P02 => C01
+675: P01 => C01
+865: P01 => C02
+887: P02 => C02
+433: P02 => C03
+792: P01 => C01
+883: P02 => C03
+343: P02 => C01
+714: P01 => C03
+340: P01 => C03
+688: P02 => C03
+ 75: P02 => C02
+639: P01 => C02
+719: P01 => C01
+795: P02 => C03
+129: P01 => C01
+562: P01 => C02
+444: P02 => C03
+667: P01 => C02
+327: P02 => C01
+ 16: P01 => C01
+745: P02 => C03
+952: P02 => C01
+787: P02 => C02
+933: P01 => C03
+816: P01 => C01
+978: P01 => C02
+740: P02 => C02
+292: P02 => C03
+282: P01 => C03
+745: P02 => C01
+385: P02 => C03
+561: P01 => C01
+212: P02 => C01
+968: P02 => C03
+117: P02 => C02
+900: P01 => C02
+356: P02 => C03
+906: P01 => C02
++--------------------------------------------------------------+
+|                         Summary                              |
++--------------------------------------------------------------+
+Max producer: 2
+Max consumer: 3
+
+Total Errors: 0
++---------------------------+----------+-----------+-----------+
+|Output for             lab5|sleeping 2|producers 2|consumers 3|
++---------------------------+----------+-----------+-----------+
+335: P02 => C01
+649: P02 => C03
+362: P01 => C01
+763: P01 => C01
+426: P02 => C02
+211: P01 => C01
+429: P02 => C03
+862: P02 => C03
+135: P01 => C03
+ 22: P01 => C02
+167: P01 => C03
+ 11: P02 => C01
+373: P02 => C01
+784: P01 => C02
+324: P02 => C03
+413: P01 => C01
+980: P01 => C03
+862: P01 => C02
+281: P02 => C02
+925: P02 => C01
+327: P01 => C03
+313: P02 => C03
+895: P01 => C02
+814: P02 => C01
+364: P01 => C01
+ 87: P01 => C03
+178: P02 => C02
+403: P01 => C02
+754: P01 => C01
+ 60: P02 => C02
+ 12: P02 => C01
+ 94: P02 => C03
+570: P01 => C01
+378: P01 => C03
+902: P02 => C03
+652: P01 => C02
+280: P02 => C01
+865: P01 => C03
+619: P02 => C01
+ 31: P02 => C03
+771: P02 => C02
+709: P01 => C03
+856: P02 => C01
+586: P01 => C03
+683: P02 => C02
+528: P01 => C01
+829: P02 => C03
+270: P01 => C01
+715: P01 => C02
+796: P02 => C03
+245: P02 => C01
+921: P01 => C02
++--------------------------------------------------------------+
+|                         Summary                              |
++--------------------------------------------------------------+
+Max producer: 2
+Max consumer: 3
+
+Total Errors: 0
++---------------------------+----------+-----------+-----------+
+|Output for producerConsumer|sleeping 2|producers 1|consumers 1|
++---------------------------+----------+-----------+-----------+
+154: P01 => C01
+998: P01 => C01
+763: P01 => C01
+869: P01 => C01
+708: P01 => C01
+352: P01 => C01
+252: P01 => C01
+565: P01 => C01
+585: P01 => C01
+ 23: P01 => C01
+546: P01 => C01
+973: P01 => C01
+573: P01 => C01
+815: P01 => C01
+538: P01 => C01
+381: P01 => C01
+194: P01 => C01
+264: P01 => C01
+675: P01 => C01
+865: P01 => C01
+887: P01 => C01
+520: P01 => C01
+792: P01 => C01
+ 77: P01 => C01
++--------------------------------------------------------------+
+|                         Summary                              |
++--------------------------------------------------------------+
+Max producer: 1
+Max consumer: 1
+
+Total Errors: 0
++---------------------------+----------+-----------+-----------+
+|Output for producerConsumer|sleeping 5|producers 3|consumers 1|
++---------------------------+----------+-----------+-----------+
+501: P02 => C01
+992: P03 => C01
+763: P02 => C01
+591: P01 => C01
+843: P03 => C01
+708: P03 => C01
+410: P01 => C01
+252: P03 => C01
+115: P02 => C01
+ 23: P01 => C01
+308: P02 => C01
+973: P01 => C01
+418: P03 => C01
+573: P02 => C01
+566: P01 => C01
+538: P03 => C01
+194: P01 => C01
+510: P02 => C01
+807: P03 => C01
+887: P01 => C01
+520: P01 => C01
+501: P01 => C01
+493: P02 => C01
+570: P03 => C01
+334: P01 => C01
+714: P02 => C01
+151: P03 => C01
+737: P01 => C01
+592: P02 => C01
+267: P03 => C01
+688: P01 => C01
+900: P02 => C01
+421: P03 => C01
+632: P01 => C01
+795: P02 => C01
+973: P03 => C01
+317: P01 => C01
+186: P02 => C01
+678: P03 => C01
+414: P01 => C01
+245: P02 => C01
+952: P01 => C01
+787: P01 => C01
+442: P03 => C01
+134: P03 => C01
+933: P02 => C01
+751: P01 => C01
+978: P03 => C01
+247: P01 => C01
+651: P02 => C01
+ 66: P03 => C01
+ 80: P01 => C01
+301: P02 => C01
+120: P01 => C01
+385: P03 => C01
+414: P02 => C01
+456: P01 => C01
+272: P03 => C01
+968: P02 => C01
+394: P03 => C01
+226: P01 => C01
+356: P02 => C01
+192: P03 => C01
+906: P01 => C01
+ 26: P02 => C01
+306: P03 => C01
+719: P01 => C01
+201: P03 => C01
+134: P03 => C01
++--------------------------------------------------------------+
+|                         Summary                              |
++--------------------------------------------------------------+
+Max producer: 3
+Max consumer: 1
+
+Total Errors: 0
++---------------------------+----------+-----------+-----------+
+|Output for producerConsumer|sleeping 5|producers 3|consumers 1|
++---------------------------+----------+-----------+-----------+
+ERROR (FIFO violated): C1 ate 0, should have eaten 501
+ERROR (FIFO violated): C1 ate 0, should have eaten 904
+591: P01 => C01
+843: P01 => C01
+708: P03 => C01
+ 88: P01 => C01
+566: P01 => C01
+252: P02 => C01
+115: P03 => C01
+ 23: P03 => C01
+308: P01 => C01
+973: P03 => C01
+418: P02 => C01
+573: P01 => C01
+ERROR (FIFO violated): C1 ate 573, should have eaten 566
+ERROR (FIFO violated): C1 ate 573, should have eaten 538
+194: P03 => C01
+510: P01 => C01
+807: P02 => C01
+887: P03 => C01
+520: P03 => C01
+501: P03 => C01
+493: P01 => C01
+570: P02 => C01
+334: P03 => C01
+714: P01 => C01
+151: P02 => C01
+737: P03 => C01
+592: P01 => C01
+267: P02 => C01
+688: P03 => C01
+900: P01 => C01
+421: P02 => C01
+632: P03 => C01
+795: P01 => C01
+973: P02 => C01
+317: P03 => C01
+ERROR (FIFO violated): C1 ate 317, should have eaten 186
+678: P02 => C01
+414: P03 => C01
+245: P01 => C01
+952: P03 => C01
+787: P03 => C01
+442: P02 => C01
+134: P02 => C01
+933: P01 => C01
+751: P03 => C01
+978: P02 => C01
+247: P03 => C01
+651: P01 => C01
+ 66: P02 => C01
+ 80: P03 => C01
+301: P01 => C01
+120: P03 => C01
+385: P02 => C01
+414: P01 => C01
+456: P03 => C01
+272: P02 => C01
+968: P01 => C01
+394: P02 => C01
+226: P03 => C01
+356: P01 => C01
+192: P02 => C01
+906: P03 => C01
+ 26: P01 => C01
+306: P02 => C01
+719: P03 => C01
+201: P02 => C01
+134: P02 => C01
++--------------------------------------------------------------+
+|                         Summary                              |
++--------------------------------------------------------------+
+Max producer: 3
+Max consumer: 1
+
+Total Errors: 5
++---------------------------+----------+-----------+-----------+
+|Output for producerConsumer|sleeping 5|producers 3|consumers 1|
++---------------------------+----------+-----------+-----------+
+501: P03 => C01
+992: P01 => C01
+763: P03 => C01
+591: P02 => C01
+843: P01 => C01
+708: P01 => C01
+410: P02 => C01
+252: P01 => C01
+115: P03 => C01
+ 23: P02 => C01
+308: P03 => C01
+973: P02 => C01
+418: P01 => C01
+573: P03 => C01
+566: P02 => C01
+538: P01 => C01
+194: P02 => C01
+510: P03 => C01
+807: P01 => C01
+887: P02 => C01
+520: P02 => C01
+501: P02 => C01
+493: P03 => C01
+570: P01 => C01
+334: P02 => C01
+714: P03 => C01
+151: P01 => C01
+737: P02 => C01
+592: P03 => C01
+267: P01 => C01
+688: P02 => C01
+900: P03 => C01
+421: P01 => C01
+632: P02 => C01
+795: P03 => C01
+973: P01 => C01
+317: P02 => C01
+186: P03 => C01
+678: P01 => C01
+414: P02 => C01
+245: P03 => C01
+952: P02 => C01
+787: P02 => C01
+442: P01 => C01
+134: P01 => C01
+933: P03 => C01
+751: P02 => C01
+978: P01 => C01
+247: P02 => C01
+651: P03 => C01
+ 66: P01 => C01
+ 80: P02 => C01
+301: P03 => C01
+120: P02 => C01
+385: P01 => C01
+414: P03 => C01
+456: P02 => C01
+272: P01 => C01
+968: P03 => C01
+394: P01 => C01
+226: P02 => C01
+356: P03 => C01
+192: P01 => C01
+906: P02 => C01
+ 26: P03 => C01
+306: P01 => C01
+719: P02 => C01
+201: P01 => C01
+134: P01 => C01
++--------------------------------------------------------------+
+|                         Summary                              |
++--------------------------------------------------------------+
+Max producer: 3
+Max consumer: 1
+
+Total Errors: 0
++---------------------------+----------+-----------+-----------+
+|Output for producerConsumer|sleeping 5|producers 3|consumers 1|
++---------------------------+----------+-----------+-----------+
+ERROR (FIFO violated): C1 ate 992, should have eaten 501
+ERROR (FIFO violated): C1 ate 763, should have eaten 992
+ERROR (FIFO violated): C1 ate 591, should have eaten 763
+ERROR (FIFO violated): C1 ate 843, should have eaten 591
+ERROR (FIFO violated): C1 ate 708, should have eaten 843
+ERROR (FIFO violated): C1 ate 410, should have eaten 708
+ERROR (FIFO violated): C1 ate 252, should have eaten 410
+ERROR (FIFO violated): C1 ate 115, should have eaten 252
+ERROR (FIFO violated): C1 ate 23, should have eaten 115
+ERROR (FIFO violated): C1 ate 308, should have eaten 23
+ERROR (FIFO violated): C1 ate 973, should have eaten 308
+ERROR (FIFO violated): C1 ate 418, should have eaten 973
+ERROR (FIFO violated): C1 ate 573, should have eaten 418
+ERROR (FIFO violated): C1 ate 566, should have eaten 573
+ERROR (FIFO violated): C1 ate 538, should have eaten 566
+ERROR (FIFO violated): C1 ate 194, should have eaten 538
+ERROR (FIFO violated): C1 ate 510, should have eaten 194
+ERROR (FIFO violated): C1 ate 807, should have eaten 510
+ERROR (FIFO violated): C1 ate 887, should have eaten 807
+ERROR (FIFO violated): C1 ate 520, should have eaten 887
+ERROR (FIFO violated): C1 ate 501, should have eaten 520
+ERROR (FIFO violated): C1 ate 493, should have eaten 501
+ERROR (FIFO violated): C1 ate 570, should have eaten 493
+ERROR (FIFO violated): C1 ate 334, should have eaten 570
+ERROR (FIFO violated): C1 ate 714, should have eaten 334
+ERROR (FIFO violated): C1 ate 151, should have eaten 714
+ERROR (FIFO violated): C1 ate 737, should have eaten 151
+ERROR (FIFO violated): C1 ate 592, should have eaten 737
+ERROR (FIFO violated): C1 ate 267, should have eaten 592
+ERROR (FIFO violated): C1 ate 688, should have eaten 267
+ERROR (FIFO violated): C1 ate 900, should have eaten 688
+ERROR (FIFO violated): C1 ate 421, should have eaten 900
+ERROR (FIFO violated): C1 ate 632, should have eaten 421
+ERROR (FIFO violated): C1 ate 795, should have eaten 632
+ERROR (FIFO violated): C1 ate 973, should have eaten 795
+ERROR (FIFO violated): C1 ate 317, should have eaten 973
+ERROR (FIFO violated): C1 ate 186, should have eaten 317
+ERROR (FIFO violated): C1 ate 678, should have eaten 186
+ERROR (FIFO violated): C1 ate 414, should have eaten 678
+ERROR (FIFO violated): C1 ate 245, should have eaten 414
+ERROR (FIFO violated): C1 ate 952, should have eaten 245
+ERROR (FIFO violated): C1 ate 787, should have eaten 952
+ERROR (FIFO violated): C1 ate 442, should have eaten 787
+ERROR (FIFO violated): C1 ate 134, should have eaten 442
+ERROR (FIFO violated): C1 ate 933, should have eaten 134
+ERROR (FIFO violated): C1 ate 751, should have eaten 933
+ERROR (FIFO violated): C1 ate 978, should have eaten 751
+ERROR (FIFO violated): C1 ate 247, should have eaten 978
+ERROR (FIFO violated): C1 ate 651, should have eaten 247
+ERROR (FIFO violated): C1 ate 66, should have eaten 651
+ERROR (FIFO violated): C1 ate 80, should have eaten 66
+ERROR (FIFO violated): C1 ate 301, should have eaten 80
+ERROR (FIFO violated): C1 ate 120, should have eaten 301
+ERROR (FIFO violated): C1 ate 385, should have eaten 120
+ERROR (FIFO violated): C1 ate 414, should have eaten 385
+ERROR (FIFO violated): C1 ate 456, should have eaten 414
+ERROR (FIFO violated): C1 ate 272, should have eaten 456
+ERROR (FIFO violated): C1 ate 968, should have eaten 272
+ERROR (FIFO violated): C1 ate 394, should have eaten 968
+ERROR (FIFO violated): C1 ate 226, should have eaten 394
+ERROR (FIFO violated): C1 ate 356, should have eaten 226
+ERROR (FIFO violated): C1 ate 192, should have eaten 356
+ERROR (FIFO violated): C1 ate 906, should have eaten 192
+ERROR (FIFO violated): C1 ate 26, should have eaten 906
+ERROR (FIFO violated): C1 ate 306, should have eaten 26
+ERROR (FIFO violated): C1 ate 719, should have eaten 306
+ERROR (FIFO violated): C1 ate 201, should have eaten 719
+ERROR (FIFO violated): C1 ate 134, should have eaten 201
+ERROR (FIFO violated): C1 ate 162, should have eaten 134
++--------------------------------------------------------------+
+|                         Summary                              |
++--------------------------------------------------------------+
+Max producer: 3
+Max consumer: 1
+
+Total Errors: 69
++---------------------------+----------+-----------+-----------+
+|Output for producerConsumer|sleeping 5|producers 3|consumers 1|
++---------------------------+----------+-----------+-----------+
+501: P02 => C01
+992: P03 => C01
+763: P02 => C01
+591: P01 => C01
+843: P03 => C01
+708: P03 => C01
+410: P01 => C01
+252: P03 => C01
+115: P02 => C01
+ 23: P01 => C01
+308: P02 => C01
+973: P01 => C01
+418: P03 => C01
+573: P02 => C01
+566: P01 => C01
+538: P03 => C01
+194: P01 => C01
+510: P02 => C01
+807: P03 => C01
+887: P01 => C01
+520: P01 => C01
+501: P01 => C01
+493: P02 => C01
+570: P03 => C01
+334: P01 => C01
+714: P02 => C01
+151: P03 => C01
+737: P01 => C01
+592: P02 => C01
+267: P03 => C01
+688: P01 => C01
+900: P02 => C01
+421: P03 => C01
+632: P01 => C01
+795: P02 => C01
+973: P03 => C01
+317: P01 => C01
+186: P02 => C01
+678: P03 => C01
+414: P01 => C01
+245: P02 => C01
+952: P01 => C01
+787: P01 => C01
+442: P03 => C01
+134: P03 => C01
+933: P02 => C01
+751: P01 => C01
+978: P03 => C01
+247: P01 => C01
+651: P02 => C01
+ 66: P03 => C01
+ 80: P01 => C01
+301: P02 => C01
+120: P01 => C01
+385: P03 => C01
+414: P02 => C01
+456: P01 => C01
+272: P03 => C01
+968: P02 => C01
+394: P03 => C01
+226: P01 => C01
+356: P02 => C01
+192: P03 => C01
+906: P01 => C01
+ 26: P02 => C01
+306: P03 => C01
+719: P01 => C01
+201: P03 => C01
+134: P03 => C01
++--------------------------------------------------------------+
+|                         Summary                              |
++--------------------------------------------------------------+
+Max producer: 3
+Max consumer: 1
+
+Total Errors: 0
++---------------------------+----------+-----------+-----------+
+|Output for producerConsumer|sleeping 5|producers 3|consumers 1|
++---------------------------+----------+-----------+-----------+
+ERROR (FIFO violated): C1 ate 0, should have eaten 501
+ERROR (FIFO violated): C1 ate 0, should have eaten 904
+591: P01 => C01
+843: P01 => C01
+708: P03 => C01
+ 88: P01 => C01
+566: P01 => C01
+252: P02 => C01
+115: P03 => C01
+ 23: P03 => C01
+308: P01 => C01
+973: P03 => C01
+418: P02 => C01
+573: P01 => C01
+ERROR (FIFO violated): C1 ate 573, should have eaten 566
+ERROR (FIFO violated): C1 ate 573, should have eaten 538
+194: P03 => C01
+510: P01 => C01
+807: P02 => C01
+887: P03 => C01
+520: P03 => C01
+501: P03 => C01
+493: P01 => C01
+570: P02 => C01
+334: P03 => C01
+714: P01 => C01
+151: P02 => C01
+737: P03 => C01
+592: P01 => C01
+267: P02 => C01
+688: P03 => C01
+900: P01 => C01
+421: P02 => C01
+632: P03 => C01
+795: P01 => C01
+973: P02 => C01
+317: P03 => C01
+ERROR (FIFO violated): C1 ate 317, should have eaten 186
+678: P02 => C01
+414: P03 => C01
+245: P01 => C01
+952: P03 => C01
+787: P03 => C01
+442: P02 => C01
+134: P02 => C01
+933: P01 => C01
+751: P03 => C01
+978: P02 => C01
+247: P03 => C01
+651: P01 => C01
+ 66: P02 => C01
+ 80: P03 => C01
+301: P01 => C01
+120: P03 => C01
+385: P02 => C01
+414: P01 => C01
+456: P03 => C01
+272: P02 => C01
+968: P01 => C01
+394: P02 => C01
+226: P03 => C01
+356: P01 => C01
+192: P02 => C01
+906: P03 => C01
+ 26: P01 => C01
+306: P02 => C01
+719: P03 => C01
+201: P02 => C01
+134: P02 => C01
++--------------------------------------------------------------+
+|                         Summary                              |
++--------------------------------------------------------------+
+Max producer: 3
+Max consumer: 1
+
+Total Errors: 5
++---------------------------+----------+-----------+-----------+
+|Output for producerConsumer|sleeping 5|producers 3|consumers 1|
++---------------------------+----------+-----------+-----------+
+501: P02 => C01
+904: P02 => C01
+591: P01 => C01
+843: P01 => C01
+708: P03 => C01
+ 88: P01 => C01
+566: P01 => C01
+252: P02 => C01
+115: P03 => C01
+ 23: P03 => C01
+308: P01 => C01
+973: P03 => C01
+418: P02 => C01
+573: P01 => C01
+566: P03 => C01
+538: P02 => C01
+194: P03 => C01
+510: P01 => C01
+807: P02 => C01
+887: P03 => C01
+520: P03 => C01
+501: P03 => C01
+493: P01 => C01
+570: P02 => C01
+334: P03 => C01
+714: P01 => C01
+151: P02 => C01
+737: P03 => C01
+592: P01 => C01
+267: P02 => C01
+688: P03 => C01
+900: P01 => C01
+421: P02 => C01
+632: P03 => C01
+795: P01 => C01
+973: P02 => C01
+317: P03 => C01
+186: P01 => C01
+678: P02 => C01
+414: P03 => C01
+245: P01 => C01
+952: P03 => C01
+787: P03 => C01
+442: P02 => C01
+134: P02 => C01
+933: P01 => C01
+751: P03 => C01
+978: P02 => C01
+247: P03 => C01
+651: P01 => C01
+ 66: P02 => C01
+ 80: P03 => C01
+301: P01 => C01
+120: P03 => C01
+385: P02 => C01
+414: P01 => C01
+456: P03 => C01
+272: P02 => C01
+968: P01 => C01
+394: P02 => C01
+226: P03 => C01
+356: P01 => C01
+192: P02 => C01
+906: P03 => C01
+ 26: P01 => C01
+306: P02 => C01
+719: P03 => C01
+201: P02 => C01
+134: P02 => C01
++--------------------------------------------------------------+
+|                         Summary                              |
++--------------------------------------------------------------+
+Max producer: 3
+Max consumer: 1
+
+Total Errors: 0
++---------------------------+----------+-----------+-----------+
+|Output for producerConsumer|sleeping 5|producers 3|consumers 1|
++---------------------------+----------+-----------+-----------+
+501: P03 => C01
+992: P02 => C01
+763: P03 => C01
+591: P01 => C01
+843: P02 => C01
+708: P02 => C01
+410: P01 => C01
+252: P02 => C01
+115: P03 => C01
+ 23: P01 => C01
+308: P03 => C01
+973: P01 => C01
+418: P02 => C01
+573: P03 => C01
+566: P01 => C01
+538: P02 => C01
+194: P01 => C01
+510: P03 => C01
+807: P02 => C01
+887: P01 => C01
+520: P01 => C01
+501: P01 => C01
+493: P03 => C01
+570: P02 => C01
+334: P01 => C01
+714: P03 => C01
+151: P02 => C01
+737: P01 => C01
+592: P03 => C01
+267: P02 => C01
+688: P01 => C01
+900: P03 => C01
+421: P02 => C01
+632: P01 => C01
+795: P03 => C01
+973: P02 => C01
+317: P01 => C01
+186: P03 => C01
+678: P02 => C01
+414: P01 => C01
+245: P03 => C01
+952: P01 => C01
+787: P01 => C01
+442: P02 => C01
+134: P02 => C01
+933: P03 => C01
+751: P01 => C01
+978: P02 => C01
+247: P01 => C01
+651: P03 => C01
+ 66: P02 => C01
+ 80: P01 => C01
+301: P03 => C01
+120: P01 => C01
+385: P02 => C01
+414: P03 => C01
+456: P01 => C01
+272: P02 => C01
+968: P03 => C01
+394: P02 => C01
+226: P01 => C01
+356: P03 => C01
+192: P02 => C01
+906: P01 => C01
+ 26: P03 => C01
+306: P02 => C01
+719: P01 => C01
+201: P02 => C01
+134: P02 => C01
++--------------------------------------------------------------+
+|                         Summary                              |
++--------------------------------------------------------------+
+Max producer: 3
+Max consumer: 1
+
+Total Errors: 0
++---------------------------+----------+-----------+-----------+
+|Output for producerConsumer|sleeping 5|producers 3|consumers 1|
++---------------------------+----------+-----------+-----------+
+501: P03 => C01
+992: P02 => C01
+763: P03 => C01
+591: P01 => C01
+843: P02 => C01
+708: P02 => C01
+410: P01 => C01
+252: P02 => C01
+115: P03 => C01
+ 23: P01 => C01
+308: P03 => C01
+973: P01 => C01
+418: P02 => C01
+573: P03 => C01
+566: P01 => C01
+538: P02 => C01
+194: P01 => C01
+510: P03 => C01
+807: P02 => C01
+887: P01 => C01
+520: P01 => C01
+501: P01 => C01
+493: P03 => C01
+570: P02 => C01
+334: P01 => C01
+714: P03 => C01
+151: P02 => C01
+737: P01 => C01
+592: P03 => C01
+267: P02 => C01
+688: P01 => C01
+900: P03 => C01
+421: P02 => C01
+632: P01 => C01
+795: P03 => C01
+973: P02 => C01
+317: P01 => C01
+186: P03 => C01
+678: P02 => C01
+414: P01 => C01
+245: P03 => C01
+952: P01 => C01
+787: P01 => C01
+442: P02 => C01
+134: P02 => C01
+933: P03 => C01
+751: P01 => C01
+978: P02 => C01
+247: P01 => C01
+651: P03 => C01
+ 66: P02 => C01
+ 80: P01 => C01
+301: P03 => C01
+120: P01 => C01
+385: P02 => C01
+414: P03 => C01
+456: P01 => C01
+272: P02 => C01
+968: P03 => C01
+394: P02 => C01
+226: P01 => C01
+356: P03 => C01
+192: P02 => C01
+906: P01 => C01
+ 26: P03 => C01
+306: P02 => C01
+719: P01 => C01
+201: P02 => C01
+134: P02 => C01
++--------------------------------------------------------------+
+|                         Summary                              |
++--------------------------------------------------------------+
+Max producer: 3
+Max consumer: 1
+
+Total Errors: 0

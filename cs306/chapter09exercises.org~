@@ -1,0 +1,25 @@
+# Created 2016-06-16 Thu 17:13
+#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t
+#+TITLE: Chapter 9 Exercises
+#+AUTHOR: <Your Name Goes Here>
+#+LANGUAGE: en
+#+STARTUP: showeverything
+
+* Exercise 3 on page 313
+
+Consider the problem of scheduling /n/ jobs of known
+durations \(t_1, t_2, \ldots, t_n\) for execution by a single
+processor. The jobs can be scheduled in any order, one job at a
+time. You want to find a shedule that minimizes the total time
+spent by all the jobs in the system. (The time spent by one job in
+the system is the sum of the time spent by this job in waiting plus
+the time spent on its execution.)  Design a greedy algorithm for
+this problem. Does the greedy algorithm always yield an optimal
+solution?
+
+
+
+* Exercises Started in Class
+
+Apply Prim's and Kruskal's algorithms to find minimum spanning trees of the
+given graphs.

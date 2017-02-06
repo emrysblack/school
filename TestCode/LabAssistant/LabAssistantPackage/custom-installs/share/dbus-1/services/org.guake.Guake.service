@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=org.guake.Guake
+Exec=/home/pes11001/custom-installs/bin/guake

@@ -1,0 +1,53 @@
+
+	=== test-files tests ===
+
+Running tests in test-files.dir ...
+PASS: test-files.dir/CLOCK3-1.test
+PASS: test-files.dir/CLOCK3-2.test
+PASS: test-files.dir/CLOCK3-3.test
+PASS: test-files.dir/CLOCK3-4.test
+PASS: test-files.dir/CLOCK3-5.test
+PASS: test-files.dir/CLOCK4-1.test
+PASS: test-files.dir/CLOCK4-2.test
+PASS: test-files.dir/CLOCK4-3.test
+PASS: test-files.dir/CLOCK4-4.test
+PASS: test-files.dir/CLOCK4-5.test
+PASS: test-files.dir/CLOCK5-1.test
+PASS: test-files.dir/CLOCK5-2.test
+PASS: test-files.dir/CLOCK5-3.test
+PASS: test-files.dir/CLOCK5-4.test
+PASS: test-files.dir/CLOCK5-5.test
+PASS: test-files.dir/FIFO3-1.test
+PASS: test-files.dir/FIFO3-2.test
+PASS: test-files.dir/FIFO3-3.test
+PASS: test-files.dir/FIFO3-4.test
+PASS: test-files.dir/FIFO3-5.test
+PASS: test-files.dir/FIFO4-1.test
+PASS: test-files.dir/FIFO4-2.test
+PASS: test-files.dir/FIFO4-3.test
+PASS: test-files.dir/FIFO4-4.test
+PASS: test-files.dir/FIFO4-5.test
+PASS: test-files.dir/FIFO5-1.test
+PASS: test-files.dir/FIFO5-2.test
+PASS: test-files.dir/FIFO5-3.test
+PASS: test-files.dir/FIFO5-4.test
+PASS: test-files.dir/FIFO5-5.test
+PASS: test-files.dir/LRU3-1.test
+PASS: test-files.dir/LRU3-2.test
+PASS: test-files.dir/LRU3-3.test
+PASS: test-files.dir/LRU3-4.test
+PASS: test-files.dir/LRU3-5.test
+PASS: test-files.dir/LRU4-1.test
+PASS: test-files.dir/LRU4-2.test
+PASS: test-files.dir/LRU4-3.test
+PASS: test-files.dir/LRU4-4.test
+PASS: test-files.dir/LRU4-5.test
+PASS: test-files.dir/LRU5-1.test
+PASS: test-files.dir/LRU5-2.test
+PASS: test-files.dir/LRU5-3.test
+PASS: test-files.dir/LRU5-4.test
+PASS: test-files.dir/LRU5-5.test
+
+	=== test-files summary ===
+
+	45 tests passed

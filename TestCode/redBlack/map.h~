@@ -1,0 +1,46 @@
+#include "bst.h" // change to red black after rotations
+
+template <class T1, class T2>
+class Tuple;
+
+template <class T1, class T2>
+   class Map : public BST< Tuple <T1, T2> >// is a, or has a?
+{
+  private:
+      //class Tuple<T1, T2>;
+      //BST< Tuple < T1, T2 > > tree; // change to red black
+  public:
+   Map()
+   {
+   }
+   ~Map()
+   {
+   }
+   T2 & operator[](T1 key)
+   {
+      T2 val;
+      Tuple <T1, T2>item(key, val);
+      if(this->find(item) == this->end())
+         insert(item);
+      // can I do this without breaking my iterator...?
+      // or do I have to make a private function in BST and make myself a friend?
+      return find(item).getNode()->value;
+   }
+};
+
+template <class T1, class T2>
+class Tuple
+//class Map<T1,T2>::Tuple
+{
+
+  public:
+   T1 key;
+   T2 value;
+   Tuple(T1 key, T2 value): key(key), value(value) {}
+   Tuple(const Tuple & rhs) { key = rhs.key; value = rhs.value; }
+   bool operator <(const Tuple & rhs) { return key < rhs.key; }
+   bool operator ==(const Tuple & rhs) { return key == rhs.key; }
+   bool operator !=(const Tuple & rhs) { return !(key == rhs.key); }
+   bool operator <=(const Tuple & rhs)
+   { return (key < rhs.key || key == rhs.key); }
+};

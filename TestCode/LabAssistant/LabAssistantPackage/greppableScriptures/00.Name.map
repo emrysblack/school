@@ -1,0 +1,88 @@
+ot,Old Testament,GEN,gen,Genesis
+ot,Old Testament,EXO,ex,Exodus
+ot,Old Testament,LEV,lev,Leviticus
+ot,Old Testament,NUM,num,Numbers
+ot,Old Testament,DEU,deut,Deuteronomy
+ot,Old Testament,JOS,josh,Joshua
+ot,Old Testament,JDG,judg,Judges
+ot,Old Testament,RTH,ruth,Ruth
+ot,Old Testament,SA1,1-sam,1 Samuel
+ot,Old Testament,SA2,2-sam,2 Samuel
+ot,Old Testament,KI1,1-kgs,1 Kings
+ot,Old Testament,KI2,2-kgs,2 Kings
+ot,Old Testament,CH1,1-chr,1 Chronicles
+ot,Old Testament,CH2,2-chr,2 Chronicles
+ot,Old Testament,EZR,ezra,Ezra
+ot,Old Testament,NEH,neh,Nehemiah
+ot,Old Testament,EST,esth,Esther
+ot,Old Testament,JOB,job,Job
+ot,Old Testament,PSA,ps,Psalms
+ot,Old Testament,PRO,prov,Proverbs
+ot,Old Testament,ECC,eccl,Ecclesiastes
+ot,Old Testament,SON,song,Song of Solomon
+ot,Old Testament,ISA,isa,Isaiah
+ot,Old Testament,JER,jer,Jeremiah
+ot,Old Testament,LAM,lam,Lamentations
+ot,Old Testament,EZE,ezek,Ezekiel
+ot,Old Testament,DAN,dan,Daniel
+ot,Old Testament,HOS,hosea,Hosea
+ot,Old Testament,JOE,joel,Joel
+ot,Old Testament,AMO,amos,Amos
+ot,Old Testament,OBA,obad,Obadiah
+ot,Old Testament,JON,jonah,Jonah
+ot,Old Testament,MIC,micah,Micah
+ot,Old Testament,NAH,nahum,Nahum
+ot,Old Testament,HAB,hab,Habakkuk
+ot,Old Testament,ZEP,zeph,Zephaniah
+ot,Old Testament,HAG,hag,Haggai
+ot,Old Testament,ZEC,zech,Zechariah
+ot,Old Testament,MAL,mal,Malachi
+nt,New Testament,MAT,matt,Matthew
+nt,New Testament,MAR,mark,Mark
+nt,New Testament,LUK,luke,Luke
+nt,New Testament,JOH,john,John
+nt,New Testament,ACT,acts,Acts
+nt,New Testament,ROM,rom,Romans
+nt,New Testament,CO1,1-cor,1 Corinthians
+nt,New Testament,CO2,2-cor,2 Corinthians
+nt,New Testament,GAL,gal,Galatians
+nt,New Testament,EPH,eph,Ephesians
+nt,New Testament,PHI,philip,Philippians
+nt,New Testament,COL,col,Colossians
+nt,New Testament,TH1,1-thes,1 Thessalonians
+nt,New Testament,TH2,2-thes,2 Thessalonians
+nt,New Testament,TI1,1-tim,1 Timothy
+nt,New Testament,TI2,2-tim,2 Timothy
+nt,New Testament,TIT,titus,Titus
+nt,New Testament,PHM,philem,Philemon
+nt,New Testament,HEB,heb,Hebrews
+nt,New Testament,JAM,james,James
+nt,New Testament,PE1,1-pet,1 Peter
+nt,New Testament,PE2,2-pet,2 Peter
+nt,New Testament,JO1,1-jn,1 John
+nt,New Testament,JO2,2-jn,2 John
+nt,New Testament,JO3,3-jn,3 John
+nt,New Testament,JUD,jude,Jude
+nt,New Testament,REV,rev,Revelation
+bofm,Book Of Mormon,NE1,1-ne,1 Nephi
+bofm,Book of Mormon,NE2,2-ne,2 Nephi
+bofm,Book of Mormon,JAC,jacob,Jacob
+bofm,Book of Mormon,ENO,enos,Enos
+bofm,Book of Mormon,JAR,jarom,Jarom
+bofm,Book of Mormon,OMN,omni,Omni
+bofm,Book of Mormon,WOM,w-of-m,Words of Mormon
+bofm,Book of Mormon,MSH,mosiah,Mosiah
+bofm,Book of Mormon,ALM,alma,Alma
+bofm,Book of Mormon,HEL,hel,Helaman
+bofm,Book of Mormon,NE3,3-ne,3 Nephi
+bofm,Book of Mormon,NE4,4-ne,4 Nephi
+bofm,Book of Mormon,MOR,morm,Mormon
+bofm,Book of Mormon,ETH,ether,Ether
+bofm,Book of Mormon,MNI,moro,Moroni
+dc-testament,Doctrine And Covenants,D&C,dc,Doctrine and Covenants
+dc-testament,Doctrine And Covenants,DEC,od,Official Declarations
+pgp,Pearl of Great Price,MOS,moses,Moses
+pgp,Pearl of Great Price,ABR,abr,Abraham
+pgp,Pearl of Great Price,JSM,js-m,Joseph Smith-Matthew
+pgp,Pearl of Great Price,JSH,js-h,Joseph Smith-History
+pgp,Pearl of Great Price,AOF,a-of-f,Articles of Faith

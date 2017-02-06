@@ -1,0 +1,19 @@
+dirsize ()
+{
+    ls --color=auto -A | while read line; do
+        du -sh -- "$line";
+    done | sort -h $@
+}
+
+checkquota ()
+{
+    local useHu="$(du -sh $HOME | cut -f1)"
+    local qtaHu="$(quota -s | tail -n1 | sed -r 's/ +/ /g' | cut -d' ' -f3)"
+
+    local useByte="$(du -s $HOME | cut -f1)"
+    local qtaByte="$(quota | tail -n1 | sed -r 's/ +/ /g' | cut -d' ' -f3)"
+
+    local percent="$(echo "scale=2;${useByte}/${qtaByte}*100" | bc -q 2>/dev/null)"
+
+    echo "$useHu / $qtaHu : ${percent%.*}%"
+}

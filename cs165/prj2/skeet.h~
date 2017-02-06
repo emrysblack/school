@@ -1,0 +1,31 @@
+/***********************************************************************
+* Program:
+*    Assignment ##, ???? 
+*    Brother Helfrich, CS165
+* Author:
+*    your name
+* Summary: 
+*    This header file describes all the interfaces associated with
+*    the skeet program.
+************************************************************************/
+
+#ifndef SKEET_H
+#define SKEET_H
+
+class Skeet
+{
+  public:
+   Skeet();
+   ~Skeet();
+  private:
+   int pos;
+   int hVol;
+   int vVol;
+   bool isDead;
+};
+
+#ifndef NDEBUG
+
+#endif
+
+#endif // SKEET_H

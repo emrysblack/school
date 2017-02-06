@@ -1,0 +1,67 @@
+table[0] -> (empty)
+table[1] -> const_cast, while
+table[2] -> return
+table[3] -> namespace
+table[4] -> default
+table[5] -> operator
+table[6] -> if
+table[7] -> struct, wchar_t
+table[8] -> (empty)
+table[9] -> mutable
+table[10]-> case, do
+table[11]-> (empty)
+table[12]-> char
+table[13]-> (empty)
+table[14]-> using
+table[15]-> const
+table[16]-> try, typedef
+table[17]-> union
+table[18]-> (empty)
+table[19]-> (empty)
+table[20]-> (empty)
+table[21]-> (empty)
+table[22]-> (empty)
+table[23]-> else
+table[24]-> delete, short
+table[25]-> (empty)
+table[26]-> bool, private
+table[27]-> (empty)
+table[28]-> throw
+table[29]-> friend
+table[30]-> long
+table[31]-> signed, static_cast
+table[32]-> double, protected, void
+table[33]-> (empty)
+table[34]-> (empty)
+table[35]-> enum
+table[36]-> inline, public
+table[37]-> (empty)
+table[38]-> this, virtual
+table[39]-> auto, goto
+table[40]-> (empty)
+table[41]-> (empty)
+table[42]-> (empty)
+table[43]-> (empty)
+table[44]-> (empty)
+table[45]-> static
+table[46]-> catch, true
+table[47]-> (empty)
+table[48]-> break
+table[49]-> (empty)
+table[50]-> (empty)
+table[51]-> reinterpret_cast
+table[52]-> typeid
+table[53]-> asm, sizeof
+table[54]-> false
+table[55]-> switch
+table[56]-> template
+table[57]-> dynamic_cast, unsigned
+table[58]-> (empty)
+table[59]-> extern, for
+table[60]-> volatile
+table[61]-> (empty)
+table[62]-> explicit, new
+table[63]-> int, typename
+table[64]-> (empty)
+table[65]-> class, continue, float, register
+table[66]-> (empty)

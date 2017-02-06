@@ -1,0 +1,11 @@
+Makefiles
+==================================================
+Great intro:
+      http://www.linuxforu.com/2012/06/gnu-make-in-detail-for-beginners/
+
+Revision Control
+==================================================
+Emacs defaults to RCS, so http://www.emacswiki.org/emacs/RevisionControlSystem
+      will show you how to use it with emacs. (VERY easy).
+
+Look at 'man rcsinfo' for detail on using RCS without emacs (for the Vi crowd).

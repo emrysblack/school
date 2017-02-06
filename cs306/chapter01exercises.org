@@ -1,0 +1,206 @@
+# Created 2016-04-21 Thu 10:49
+#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t
+#+TITLE: Chapter 1 Exercises
+#+AUTHOR: Brady Field
+#+LANGUAGE: en
+#+STARTUP: showeverything
+
+* Exercise 4 on page 7
+
+Design an algorithm for computing \(\lfloor \sqrt{n} \rfloor\)
+for any positive integer \(n\).  Besides assignment and comparison,
+your algorithm may only use the four basic arithmetical operations.
+
+/Up to 4 points are possible for a good answer./
+
+** Solution
+
+I repeatedly took an average of a number until it was reduced to two common integers.
+
+#+BEGIN_SRC C++ :tangle yes
+// test for a simple sqrt algorithm
+#include <iostream>
+using namespace std;
+
+int main()
+{
+   double num;
+   int rootFloor;
+
+   do
+   {
+      cout << "Enter the number to find the root: ";
+      cin >> num;
+   } while (num < 0);
+   
+   // compute the root
+   double big = num;
+   double small = 0;
+   while ((int)big != (int)small)
+   {
+      // take average
+      big = (big + small) / 2;
+      small = num / big;
+   }
+
+   rootFloor = big;
+   // display result
+   cout << "The Square root of "
+        << num << " floored is " << rootFloor << endl
+        << rootFloor << " squared is "
+        << rootFloor * rootFloor << endl;
+   return 0;
+}
+#+END_SRC
+
+* Exercise 8 on page 8
+
+What does Euclid's algorithm do for a pair of numbers in
+which the first number is smaller than the second one? What is the
+largest number of times this can happen during the algorithm's
+execution on such an input?
+
+/Up to 2 points are possible for a good answer for each question,
+for a total possible of 4 points./
+
+** Solution
+1. The algorithm will flip the two numbers as a natural result of the modulus operation.
+2. It can only happen once. After being flipped, the two numbers will continue the
+algorithm in the normal fashion.
+
+* Exercise 12 on page 8
+
+/Locker doors/
+
+There are /n/ lockers in a hallway, numbered sequentially from 1 to
+/n/. Initially, all the locker doors are closed. You make /n/ passes
+by the lockers, each time starting with locker #1. On the /ith/
+pass, /i/ = 1, 2, ..., /n/, you toggle the door of every /ith/
+locker: if the door is closed, you open it; if it is open, you close
+it. After the last pass, which locker doors are open and which are
+closed? How many of them are open?
+
+/Up to 4 points are possible for a good answer for each question,
+for a total possible of 8 points./
+
+** Solution
+1. After the last pass, only perfect squares are the door numbers left open.
+2. The number of doors that are left open is related to the first question: the floor of the square root of n.
+
+* Exercise 5 on page 17
+
+Describe the standard algorithm for finding the binary
+representation of a positive decimal integer
+
+- in English
+- in a pseudocode.
+
+/Up to 4 points are possible for a good answer for each part,
+for a total possible of 8 points./
+
+** Solution
+*** English
+Repeatedly divide a number by two and record the remainder at each step until the number is broken down to zero.
+The list of remainders becomes the binary number.
+*** Pseudocode
+#+BEGIN_EXAMPLE
+while number > 0
+   append number % 2 to end of string
+   set number to number / 2
+display string in reverse
+#+END_EXAMPLE
+* Exercise 10 on page 18
+
+One of the most influential books on problem solving, titled
+/How to Solve It/ [Pol57], was written by the Hungarian-American
+mathematician George Polya (1887-1985). Polya summarized his ideas in
+a four-point summary. Find this summary on the Web or, better yet,
+in his book, and compare it with the plan outlined in Section 1.2.
+What do they have in common? How are they different?
+
+/Up to 4 points are possible for a good answer for each part,
+for a total possible of 8 points./
+
+** Solution
+1. They both give a similar process for solving problems. They both agree that one must first understand a problem before attempting to come up with a solution. They both place importance on verification.
+2. They differ in that Levitin talks about more steps. Levitin talks about designing and implementing the algorithm specifically for a computational device. Also, Polya outlines in his last step that one should try a different approach to the problem. This is not explicitly stated as a unique step in the Levitin text. 
+
+* Exercise 8 on page 25
+
+Consider the following map:
+
+#+BEGIN_EXAMPLE
+
++-----+-----------+-----+
+|     |           |     |
+|     |     b     |     |
+|     |           |     |
+|  a  +-----+-----+     |
+|     |     |           |
+|     |     |     d     |
+|     |     |           |
++-----+  c  |           |
+|     |     |           |
+|     |     +-----------+
+|     |     |           |
+|  e  +-----+           |
+|     |                 |
+|     |           f     |
+|     |                 |
++-----+-----------------+
+#+END_EXAMPLE
+
+*a.* Explain how we can use the graph-coloring problem to color the map so
+that no two neighboring regions are colored the same.
+
+*b.* Use your answer to part *a* to color the map with the smallest number of
+colors.
+
+/Up to 4 points are possible for a good answer for each part,
+for a total possible of 8 points./
+
+** Solution
+1. The blocks are the nodes. They can be colored so as to not be connected with the same color values. The fewest amount of colors in this example is 4.
+2. Part B
+#+BEGIN_EXAMPLE
+
++-----+-----------+-----+
+| red |  green    |     |
+|     |     b     |     |
+|     |           |     |
+|  a  +-----+-----+     |
+|     |brown| blue      |
+|     |     |     d     |
+|     |     |           |
++-----+  c  |           |
+|blue |     |           |
+|     |     +-----------+
+|     |     |           |
+|  e  +-----+           |
+|     | red             |
+|     |           f     |
+|     |                 |
++-----+-----------------+
+#+END_EXAMPLE
+
+* Exercise 9 on page 25
+
+Design an algorithm for the following problem: Given a set of /n/ points in the
+Cartesian plane, determine whether all of them lie on the same circumference.
+
+/Up to 8 points are possible for a good answer./
+
+** Solution
+#+BEGIN_EXAMPLE
+if n < 3
+   return true
+
+compute circumcenter from the first three points in the list.
+
+set dist to distance from circumcenter to first point
+
+for i..n
+   if dist is not equal to distance from point i to circumcenter
+      return false
+return true
+#+END_EXAMPLE

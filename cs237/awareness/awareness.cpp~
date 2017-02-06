@@ -1,0 +1,318 @@
+/***********************************************************************
+ * Program:
+ *    Exploration 5, Awareness
+ *    Brother Neff, CS237
+ *
+ * Author:
+ *    Brady Field
+ *
+ * Summary:
+ *    Check for Cliques and Anti-Cliques.
+ *
+ * NOTE: this code is highly UNcommented -- this is deliberate.
+ *
+ ***********************************************************************/
+
+#include <cassert>
+#include <cstdlib>
+#include <cstring>
+#include <cmath>
+#include <iomanip>
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <map>
+#include <queue>
+#include <set>
+#include <algorithm>
+using namespace std;
+
+typedef unsigned int uint;
+
+class Node
+{
+private:
+   uint mNumber;
+
+public:
+   Node(uint inNumber)
+   {
+      mNumber = inNumber;
+   }
+
+   uint getNumber() const { return mNumber; }
+};
+
+ostream& operator<<(ostream& os, const Node& n)
+{
+   os << "Node[" << n.getNumber() << "]";
+   return os;
+}
+
+class Edge
+{
+private:
+   uint mFirst;
+   uint mSecond;
+
+public:
+   Edge(uint first, uint second)
+   {
+      mFirst = first;
+      mSecond = second;
+   }
+
+   uint first() const { return mFirst; }
+   uint second() const { return mSecond; }
+   bool operator ==(const Edge & rhs) const
+   { return mFirst == rhs.mFirst && mSecond == rhs.mSecond
+         || mFirst == rhs.mSecond && mSecond == rhs.mFirst;}
+};
+
+ostream& operator<<(ostream& os, const Edge& e)
+{
+   os << "Edge[" << e.first() << ", " << e.second() << "]";
+   return os;
+}
+
+class Graph
+{
+private:
+   set<uint> mVertices;
+   vector<Node> mNodes;
+   vector<Edge> mEdges;
+   map<uint, vector<Edge> > mAdjacencies;
+
+public:
+   const set<uint>& vertices() const { return mVertices; }
+
+   const vector<Node>& nodes() const { return mNodes; }
+
+   const vector<Edge>& edges() const { return mEdges; }
+
+   Graph(const char* filename)
+   {
+      readFrom(filename);
+   }
+
+   virtual ~Graph()
+   {
+   }
+
+   void readFrom(const char* filename)
+   {
+      uint v1;
+      uint v2;
+      ifstream file(filename, ios_base::in);
+      if (file)
+      {
+         while (true)
+         {
+            file >> v1 >> v2;
+
+            if (file.eof() || file.fail())
+            {
+               break;
+            }
+            addEdge(v1, v2);
+         }
+         file.close();
+         addNodes();
+      }
+   }
+
+   void addEdge(uint v1, uint v2)
+   {
+      Edge e(v1, v2);
+      addEdge(e);
+      addVertices(e);
+
+      if (mAdjacencies.find(v1) != mAdjacencies.end())
+      {
+          vector<Edge> * adj = &mAdjacencies.find(v1)->second;
+          adj->push_back(e);
+      }
+      else
+      {
+          vector<Edge> adj; adj.push_back(e);
+          mAdjacencies.insert(pair<uint, vector<Edge> >(v1, adj));
+      }
+      if (mAdjacencies.find(v2) != mAdjacencies.end())
+      {
+          vector<Edge> * adj = &mAdjacencies.find(v2)->second;
+          adj->push_back(e);
+      }
+      else
+      {
+          vector<Edge> adj; adj.push_back(e);
+          mAdjacencies.insert(pair<uint, vector<Edge> >(v2, adj));
+      }
+   }
+
+   void addEdge(const Edge& e)
+   {
+      mEdges.push_back(e);
+   }
+
+   void addVertices(const Edge& e)
+   {
+      mVertices.insert(e.first());
+      mVertices.insert(e.second());
+   }
+
+   void addNodes()
+   {
+      addNodes(mVertices);
+   }
+
+   void addNodes(set<uint> vertices)
+   {
+      for (set<uint>::const_iterator it = vertices.begin();
+           it != vertices.end(); it++)
+      {
+         uint v = *it;
+         mNodes.push_back(Node(v));
+      }
+   }
+
+   void addVertices(Graph& g)
+   {
+      addVertices(g.vertices());
+   }
+
+   void addVertices(set<uint> vertices)
+   {
+      for (set<uint>::const_iterator it = vertices.begin();
+           it != vertices.end(); it++)
+      {
+         mVertices.insert(*it);
+      }
+   }
+
+   bool contains(uint v) const
+   {
+      return (mVertices.find(v) != mVertices.end());
+   }
+   
+   bool containsVertices(vector<uint>& vertices)
+   {
+      vector<uint>::const_iterator it = vertices.begin();
+      while (it != vertices.end())
+      {
+         if (! contains(*it))
+         {
+            return false;
+         }
+         it++;
+      }
+      return true;
+   }
+
+   bool containsEdge(uint v1, uint v2) const
+   {
+      // use adjacencies member variable?
+      vector<Edge>::const_iterator it = mAdjacencies.find(v1);
+      //for ()
+      return mAdjacencies.find(v1) != mAdjacencies.end();
+         //return find(mEdges.begin(),mEdges.end(),Edge(v1, v2)) != mEdges.end();
+   }
+};
+
+ostream& operator<<(ostream& os, const Graph& g)
+{
+   os << "Graph[\n";
+
+   vector<Edge> edges = g.edges();
+
+   os << edges.size() << " edges:";
+   for (vector<Edge>::const_iterator it = edges.begin();
+        it != edges.end(); it++)
+   {
+      os << "\n\t" << *it;
+   }
+
+   vector<Node> nodes = g.nodes();
+   int numNodes = nodes.size();
+
+   os << "\n" << numNodes << " nodes:";
+
+   for (vector<Node>::const_iterator it = nodes.begin();
+        it != nodes.end(); it++)
+   {
+      os << "\n\t" << *it;
+   }
+
+   os << "\n]";
+
+   return os;
+}
+
+/*************************************************************************
+ * runs through a vector of vertices and checks for edges
+ *************************************************************************/
+bool checkClique(const Graph & g, bool anti, vector<uint>& vertices)
+{
+   int size = vertices.size();
+   for (int i = 0; i < size; i++)
+   {
+      for (int j = i + 1; j < size; j++)
+      {
+         if (anti == g.containsEdge(vertices[i], vertices[j]))
+         {
+            return false;
+         }
+      }
+   }
+   return true;
+}
+
+/*************************************************************************
+ * The point of entry to a world of graph exploration.
+ *************************************************************************/
+bool checkCliqueOrAntiClique(const char * fileName, bool anti,
+                             vector<uint>& vertices)
+{
+   return checkClique(Graph (fileName), anti, vertices);
+}
+
+/*************************************************************************
+ * How to use this program to be implemented here.
+ *************************************************************************/
+void usage(const char* programName)
+{
+}
+
+/*************************************************************************
+ * What was learned, more granularly laid out via these 8 functions.
+ *************************************************************************/
+void howImasteredTheBasicTerminologyAndOperationsOfLogicSetsFunctionsAndGraphs()
+{
+}
+
+void howIdemonstrateLogicalReasoningThroughSolvingProblems()
+{
+}
+
+void howIinterpretedTheMeaningOfMathematicalStatementsInTheContextOfRealWorldApplications()
+{
+}
+
+void howIdiscernedBetweenEffectiveAndIneffectiveApproachesToProblemSolving()
+{
+}
+
+void howIsolvedProblemsUsingLimitedOrConstrainedResources()
+{
+}
+
+void howIsynthesizedNewProblemSolvingConceptsByPuttingOldConceptsTogetherInNovelWays()
+{
+}
+
+void howIrecognizedTheRelativeImportanceOfDifferentElementsOfAComputerScienceProblem()
+{
+}
+
+void howIknowHowDiscreteMathematicsAppliesToAllPartsOfComputerScience()
+{
+}

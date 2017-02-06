@@ -1,0 +1,120 @@
+(require 'ment "/home/neffr/emacs/ment.el")
+
+(defun whatIsTrue () (list
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; What is true of my experience in general?                              ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; I learned something new. (2 points)
+false
+;; I achieved something meaningful,
+;; or something I can build upon at a later time. (2 points)
+false
+;; I collaborated with one or more classmates. (2 points)
+false
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; What is true of my code's command-line interface?                       ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; It uses *unmodified* the /home/cs238/close/closenessCLI.cpp file,
+;; which interface handles the case of no command-line arguments, calling
+;; a function named *learned*, and then a function named *usage*. (2 points)
+false
+;; The *learned* function outputs several (> 9) well-written sentences
+;; reporting on the learning that happened. (4 points)
+false
+;; The *usage* function gives instructions on how to run WITH command-line
+;; parameters. (2 points)
+false
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; What is true of the mechanical "infelicities" (misspelled words,        ;;
+;; grammatical errors, punctuation errors) in my report of what I learned? ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; There are fewer than four. (2 points)
+false
+;; There are fewer than three. (3 points)
+false
+;; There are fewer than two. (3 points)
+false
+;; There are none. (4 points)
+false
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; What is true about the correctness and completeness of my code          ;;
+;; (verified by no "diff" output from the "make just" command)?            ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; It correctly passes Test 1. (2 points)
+false
+;; It correctly passes Test 2. (2 points)
+false
+;; It correctly passes Test 3. (2 points)
+false
+;; It correctly passes Test 4. (2 points)
+false
+;; It correctly passes Test 5. (2 points)
+false
+;; It correctly passes Test 6. (2 points)
+false
+;; It correctly passes Test 7. (2 points)
+false
+;; It correctly passes Test 8. (2 points)
+false
+;; It correctly passes Test 9. (2 points)
+false
+;; It correctly passes Test 10. (2 points)
+false
+;; It correctly passes Test 11. (2 points)
+false
+;; It correctly passes Test 12. (2 points)
+false
+;; It correctly passes Test 13. (2 points)
+false
+;; It correctly passes Test 14. (2 points)
+false
+;; It correctly passes Test 15. (2 points)
+false
+;; It correctly passes Test 16. (2 points)
+false
+;; It correctly passes Test 17. (2 points)
+false
+;; It correctly passes Test 18. (2 points)
+false
+;; It correctly passes Test 19. (2 points)
+false
+;; It correctly passes Test 20. (2 points)
+false
+;; It correctly passes Test 21. (2 points)
+false
+;; It correctly passes Test 22. (2 points)
+false
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; What is true about the elegance of my code?                             ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; It has some by virtue of its correctness, as first and foremost,
+;; an elegant solution is a correct one. (2 points)
+false
+;; It increases by using encapsulation appropriately. (3 points)
+false
+;; It increases by overloading the * operator
+;; for computing the Boolean product. (3 points)
+false
+;; It increases by overloading another appropriate operator
+;; for use in the isTransitive test. (5 points)
+false
+;; It increases by having some redundant code eliminated. (8 points)
+false
+;; It increases by having ALL redundant code eliminated. (9 points)
+false
+))
+
+;;; Local Variables: 
+;;; mode: Emacs-Lisp
+;;; compile-command: "whatIsTrue /home/cs238/close"
+;;; TeX-master: t
+;;; End: 

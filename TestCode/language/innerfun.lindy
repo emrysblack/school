@@ -1,0 +1,9 @@
+{fun()}
+   {innerFun()}
+      Print("I'm in innerFun\n")
+   Print("I'm in fun\n")
+   innerFun()
+
+fun()
+Print("The next line should be an error\n")
+innerFun()

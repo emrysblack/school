@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+targetNamespace="assign07"
+xmlns="assign07"
+elementFormDefault="qualified">
+
+<xs:element name = "bsa">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name = "council" 
+                   maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name = "troop"
+                        maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name = "scout"
+                              maxOccurs="unbounded">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name = "firstName"
+                                    type = "xs:string"/>
+                        <xs:element name = "lastName"
+                                    type = "xs:string"/>
+                        <xs:element name = "phone"
+                                    type = "xs:string"/>
+                        <xs:element name = "address">
+                          <xs:complexType>
+                            <xs:all>
+                              <xs:element name = "street"
+                                          type = "xs:string"/>
+                              <xs:element name = "city"
+                                          type = "xs:string"/>
+                              <xs:element name = "state"
+                                          type = "xs:string"/>
+                            </xs:all>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element name = "rank"
+                                    minOccurs="0" maxOccurs="unbounded">
+                          <xs:complexType>                          
+                            <xs:simpleContent>
+                              <xs:extension base = "xs:string">
+                                <xs:attribute name = "date-earned" use="required"/>
+                              </xs:extension>
+                            </xs:simpleContent>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element name = "meritbadge"
+                                    minOccurs="0" maxOccurs="unbounded">
+                          <xs:complexType>                          
+                            <xs:simpleContent>
+                              <xs:extension base = "xs:string">
+                                <xs:attribute name = "date-earned" use="required"/>
+                              </xs:extension>
+                            </xs:simpleContent>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+                <xs:attribute name="number" type="xs:string" use="required"/>
+                <xs:attribute name="unitName" type="xs:string" use="required"/>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attribute name="name" type="xs:string" use="required"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+</xs:schema>

@@ -1,0 +1,501 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+lang="en" xml:lang="en">
+<head>
+<title>Mysteriousness</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2016-06-01 22:14:19 MDT"/>
+<meta name="author" content="Brady Field"/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color:lightblue; font-weight:normal }
+  .target { }
+  .timestamp { color: grey }
+  .timestamp-kwd { color: CadetBlue }
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*/-->
+</script>
+</head><body>
+<h1 class="title">Mysteriousness</h1>
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">1 Introduction </h2>
+<div id="text-1">
+
+<p>We were supposed to tackle three different problems and submit three
+possible solutions per problem to be evaluated. I assume the point of
+this exploration is to help us experience good approaches to comparing
+different possible solutions to things we could encounter in the
+workplace, and thus prepare us for better problem solving through
+algorithm evaluation.
+</p>
+
+</div>
+
+<div id="outline-container-1.1" class="outline-3">
+<h3 id="sec-1.1">1.1 Problem 1 </h3>
+<div id="text-1.1">
+
+
+<p class="verse">
+//count up and add the rest onto the last num<br/>
+FOR 0 &hellip; numPieces - 1<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SET pieces of position i to i + i<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/>
+ADD remainder to last position in pieces<br/>
+<br/>
+// work from triangular number and count down<br/>
+FOR 0 &hellip; numPieces<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SET pieces of position i to numPieces - i<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/>
+ADD remainder to pieces of position 0<br/>
+<br/>
+// work from average num and adjust<br/>
+FOR 0 &hellip; numPieces<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SET pieces of position i to average number<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/>
+ADD remainder to pieces of position 0<br/>
+<br/>
+SET maxPossibleAdjustment to average number - 1<br/>
+FOR 2 &hellip; numPieces, increment by 2<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ADD maxPossibleAdjustment to pieces of position i - 1<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SUBTRACT maxPossibleAdjustment from pieces of position i<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SUBTRACT 1 from maxPossibleAdjustment<br/>
+</p>
+
+<p>
+This one was interesting. I started out with a simple approach: start
+with one for the first box, increase by one for every box, and then
+after I ran out of boxes, I just added the difference on top to ensure
+that no numbers would collide by putting the difference in a lower
+number.
+</p>
+<p>
+My second approach was to start at the number of boxes and count down
+from there forming a perfect sum (6, 10, 15, 21, etc&hellip;), and then to
+put the difference in the top number to avoid collisions.
+</p>
+<p>
+My best approach, I feel, was my last when I decided to divide the
+number by the number of boxes and adjust by adding and subtracting
+different amounts to get the same total value, but preserve uniqueness
+amongst the numbers. It took me a bit to figure out some corner cases,
+but I calculated the maximum sequential adjustment I could make and
+then counted down my adjustments from there.
+</p>
+<p>
+I was having fun so I tried some different approaches that didn't get
+all worked out. For example, I tried to evenly distribute the distance
+of numbers to add up to the total. This proved to be non-trivial to
+know where to stop and to ensure uniqueness in regards to the last
+number.  If I had more time I would change my second algorithm a bit
+so that instead of adding the difference to the top number, I would go
+back the appropriate number of boxes and add one to all of them so
+that the difference could be adjusted that way.
+</p>
+<p>
+I was interested in evaluating these algorithms by efficiency, memory
+usage, and elegance.
+</p>
+
+</div>
+
+<div id="outline-container-1.1.1" class="outline-4">
+<h4 id="sec-1.1.1">1.1.1 Efficiency </h4>
+<div id="text-1.1.1">
+
+<p>In terms of efficiency, all three algorithms performed the same.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1.1.2" class="outline-4">
+<h4 id="sec-1.1.2">1.1.2 Memory </h4>
+<div id="text-1.1.2">
+
+<p>As far as memory usage goes, all three algorithms used the same amount. 
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1.1.3" class="outline-4">
+<h4 id="sec-1.1.3">1.1.3 Elegance </h4>
+<div id="text-1.1.3">
+
+<p>When it comes to elegance, the first two are comparable, and in fact
+could be considered variations of each other since they both return
+similar results. The third algorithm, however, is much more elegant
+than the first two since it returns more interesting numbers.
+</p>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1.2" class="outline-3">
+<h3 id="sec-1.2">1.2 Problem 2 </h3>
+<div id="text-1.2">
+
+
+<p class="verse">
+//Brute force<br/>
+<br/>
+For 1 &hellip; 26<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nested loops for each letter var with same condition<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if checkNumbers is true<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/>
+//Shuffle algorithm<br/>
+<br/>
+While checkNumbers is false<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; assign vars to random numbers from 1 to 26<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/>
+//Brute force vowels and then use linear algebra to solve for consonants<br/>
+<br/>
+For 1 &hellip; 26<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nested loops for each vowel var with same condition<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set testable to true<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for 0 &hellip; num words<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set remainder to word total modulus word vowels total<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if remainder is true<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set testable to false<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if testable is true<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set up system of equations using consonants as unknowns and word total divided by vowel total as final column in matrix for each word<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; use Gauss-Jordan Elimination Method to reduce matrix<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if matrix succesfully reduces to reduced row echelon form with no free variables<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if vowels are unique and consonants are unique<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return<br/>
+</p>
+
+<p>
+This one was a much more difficult problem. It wasn’t particularly
+difficult for me to solve, but many of the techniques I used were
+non-trivial to code, so I decided to start with a more basic approach:
+brute force. I would use loops to go through every single combination
+of letter values and test them out on words until I found a
+solution. This helped me a bit later on.
+</p>
+<p>
+My second approach was actually just fun. It was inspired by the
+“boggle-sort” method. I would randomly assign each letter to a value
+and check for correctness. I would repeat this process until a
+solution was found.
+</p>
+<p>
+My third technique was a hybrid of the brute force method and linear
+algebra. The hard part is getting it down into the right factors. I
+tried a few approaches, but they were non-trivial. So I decided to use
+a brute-force method for the vowels and that would allow me to build a
+system of equations with the consonants. I picked vowels for the brute
+force part since there are less of them. I just needed a set of vowels
+that would evenly divide the words they were assigned to. Once I had
+what I called a “testable set”, I could build a system of equations
+with the remaining consonants and reduce it with the Gauss-Jordan
+Elimination Method. If I got the identity matrix excluding the
+solution column, I just had to double check that the vowels contained
+no duplicates and the solution column contained no duplicates.
+</p>
+<p>
+If I had more time, I would work out the factoring bit so that brute
+forcing the vowels would be unnecessary. I’d start by getting all the
+two-part factors from the word values and compare them with other
+words that had the same vowels to figure out which part most likely
+represented the vowels. I could break down the numbers from there and
+then start plugging in to other words and solving from the two-part
+factors until I got a unique set for the vowels that worked with all
+the words. Then I would form the systems of equations and see if a
+unique solution could be found. Then I would rinse and repeat if
+necessary.
+</p>
+
+
+</div>
+
+<div id="outline-container-1.2.1" class="outline-4">
+<h4 id="sec-1.2.1">1.2.1 Efficiency </h4>
+<div id="text-1.2.1">
+
+<p>The second algorithm had the worst performance as far as efficiency is
+concerned. The worst case scenario is that is never ends. It also has
+the best theoretical best case scenario if it happened to get all the
+right values on the first shuffle. The odds of this happening are
+almost non-existent.  The first algorithm would be quicker than the
+shuffle, but still be less than optimal. The third algorithm would be
+far superior to the others in efficiency since the brute-force is
+limited to 5 potential values instead of 26. The linear algebra
+reduction would take care of the remaining values in a procedural
+manner.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1.2.2" class="outline-4">
+<h4 id="sec-1.2.2">1.2.2 Memory </h4>
+<div id="text-1.2.2">
+
+<p>With memory usage, all three algorithms would use the same
+amount. There would need to be a value to store for each letter.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1.2.3" class="outline-4">
+<h4 id="sec-1.2.3">1.2.3 Elegance </h4>
+<div id="text-1.2.3">
+
+<p>In regards to elegance, the third algorithm would be considered the
+superior solution. It would have the most lines of code, but the
+method is more clever than pure brute force. Shuffling would be
+considered the least elegant since it isn’t guaranteed to solve the
+problem consistently. It was a fun and creative, albeit not
+particularly clever, solution.
+</p>
+
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1.3" class="outline-3">
+<h3 id="sec-1.3">1.3 Problem 3 </h3>
+<div id="text-1.3">
+
+
+<p class="verse">
+//Brute Force<br/>
+<br/>
+While next permutation<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; push back permutation of question<br/>
+<br/>
+While question is not correct<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ask next question in vector of questions<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/>
+//Brute force variation<br/>
+<br/>
+While question is not correct<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ask next permutation of question<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/>
+//Monkey<br/>
+Find monkey<br/>
+Train monkey in the ways of speech and grammar<br/>
+<br/>
+While next permutation<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if monkey understands question<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; monkey writes permutation of question<br/>
+<br/>
+While question is not correct<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; monkey asks next question in list of questions<br/>
+<br/>
+//Brother Neff<br/>
+Kidnap Brother Neff and books<br/>
+<br/>
+While question is not correct<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; destroy book<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ask Brother Neff what question is<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/>
+</p>
+This one was a head-turning problem.  Not knowing exactly
+how the problem was defined, or if we had the right answer, was
+particularly challenging. I spent a good amount of time staring at the
+numbers and trying to make mathematical or cryptographic connections,
+only to determine that I was asking all the wrong kinds of
+questions. I’m still not sure what I was supposed to be looking
+for. Since I was unsure of the problem size, or how to properly verify
+a correct answer, brute force, and “variations thereof” seemed like
+natural approaches.
+
+<p>
+My first algorithm permutes through all possible questions and asks
+until the correct question is asked.
+</p>
+<p>
+My second approach is a variation of the first. All possible questions
+are generated, but then a trained monkey will weed out nonsense
+phrases by hand and only ask coherent ones. The reason for a monkey
+being selected instead of a human for the task is that most humans
+would tire of the repetitive nature of the task and probably quit
+before finding an appropriate solution. A trained monkey could
+eventually get there given the training. Plus, who doesn’t like a
+trained monkey?
+</p>
+<p>
+My third approach would be to kidnap brother Neff and his books. I
+could destroy one book at a time until Brother Neff asks me the right
+question, and thus I would have the answer, or rather the question.
+</p>
+<p>
+Using the same criteria to judge these algorithms produced some
+interesting results.
+</p>
+
+</div>
+
+<div id="outline-container-1.3.1" class="outline-4">
+<h4 id="sec-1.3.1">1.3.1 Efficiency </h4>
+<div id="text-1.3.1">
+
+<p>As far as efficiency is concerned, the first algorithm would take a
+very long time. It simply needs to generate a gigantic amount of
+possible questions. The second algorithm would take possibly longer
+than the first. All permutations still need to be generated plus
+there’s the added overhead of running all questions through the monkey
+to weed out incoherent sentences. The third algorithm has the possible
+best case time since the overhead cost of kidnapping only needs to be
+paid a single time, and then the time is a direct result of Brother
+Neff’s tolerance for “academic pain”. This is admittedly an unknown
+variable, but comes with high confidence. It also has the possible
+worst case efficiency scenario that Brother Neff is simply willing to
+part with all his books and thus an answer is never reached.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1.3.2" class="outline-4">
+<h4 id="sec-1.3.2">1.3.2 Memory </h4>
+<div id="text-1.3.2">
+
+<p>In terms of memory usage, the first algorithm needs the most space to
+store all possible questions. A simple variation on this algorithm
+would be to ask each question as it was generated and thus never store
+any question that was not correct. This would be a simple change, but
+would dramatically reduce the necessary storage space. Only memory is
+needed for storing the most common words to generate from, but this is
+relatively trivial as far as memory goes. The second algorithm would
+take up less space than the first if storing all possible questions
+since incoherent questions were weeded out, and thus never need be
+stored. These incoherent questions would make up the vast majority of
+all possible combinations, so the memory required would be
+substantially less than the first, assuming the first stored all
+possibilities. The third algorithm is probably the most efficient with
+storage since the only memory required is that of Brother Neff and his
+love for his books.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1.3.3" class="outline-4">
+<h4 id="sec-1.3.3">1.3.3 Elegance </h4>
+<div id="text-1.3.3">
+
+<p>In regards to elegance some interesting things happened. The first
+algorithm is actually optimal in the fact that it is guaranteed to
+arrive at a solution with minimal side effects. Since the answer, or
+rather the question, and the process are relatively unknown, brute
+force is actually considered an elegant approach. The second algorithm
+has an interesting side effect of even if a question is not reached,
+the presence of a trained monkey that can actually do grammar problems
+could produce an unexpected revenue stream. This does come with a
+challenge of actually obtaining and training said monkey. The
+difficulty involved in implementation makes this algorithm less than
+optimal; especially in consideration of the efficiency drawback
+compared to the other algorithms. The third solution was considered
+optimal due to the overall unpleasantness for all parties involved,
+and the side effect that I would probably be doing jail time whether
+or not the proper solution was reached. These factors make this
+algorithm come last in terms of elegance.
+</p>
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">2 Conclusion </h2>
+<div id="text-2">
+
+<p>While these were not simple problems, the most important problems are
+rarely simple. It turns out that sometimes brute force is the best
+overall solution. Many times the best solution is not the first one
+you had, and should certainly never be the only solution
+proposed. Coming up with one solution leads to many variations and
+sometimes completely different ones, but exploration is the necessary
+path to arrive at a potential optimal solution.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">3 Acknowledgement </h2>
+<div id="text-3">
+
+<p>I received Brother Neff's email. I read brother Neff's email. I spent
+a lot of time implimenting changes to my report to align with the
+instructions in Brother Neff's email. Things that needed correction
+after class today were to use verse tags instead of source tags for
+pseudocode and replacing my actual C++ source code with higher level pseudocode since "high-level only" was a
+request made in Brother Neff's email. These changes have now been
+implimented and the export has been tested. Thank you Brother Neff.
+</p></div>
+</div>
+<div id="postamble"><p class="author"> Author: Brady Field
+<a href="mailto:emrys@AUS213L30.byui.edu">&lt;emrys@AUS213L30.byui.edu&gt;</a>
+</p>
+<p class="date"> Date: 2016-06-01 22:14:19 MDT</p>
+<p>HTML generated by org-mode 6.21b in emacs 23</p>
+</div></body>
+</html>

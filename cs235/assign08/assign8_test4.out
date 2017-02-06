@@ -1,0 +1,13 @@
+F(x) =  3x^5 - 2x^3 + 7x^2 + 1
+G(x) =  -3x^5 + 4x^4 + 5x^3 - 7x
+
+P(x) = (F + G)(x) = 4x^4 + 3x^3 + 7x^2 - 7x + 1
+P(2) = 103
+
+temp1(x) is same as 8x^6 + G(x) or 8x^6 - 3x^5 + 4x^4 + 5x^3 - 7x
+temp2(x) is same as F(x) or 3x^5 - 2x^3 + 7x^2 + 1
+temp3(x) is same as G(x) or -3x^5 + 4x^4 + 5x^3 - 7x
+
+Original functions were:
+F(x) =  3x^5 - 2x^3 + 7x^2 + 1
+G(x) =  -3x^5 + 4x^4 + 5x^3 - 7x

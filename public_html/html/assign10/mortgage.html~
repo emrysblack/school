@@ -1,0 +1,47 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+          "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!--Assignments Page
+   Conatins links to other assignments
+  -->
+<html xmlns = "http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Mortgage Calculator CGI</title>
+    <script type = "text/javascript" src = "../js/assign10.js"></script>
+  </head>
+  <body style = "background-color:#d0e4fe;">
+    <h1 style = "color:orange; text-align:center;">CS 213</h1>
+    <hr/>
+    <p style = "font-family:Times New Roman; font-size:20px;
+                 text-align:center;">
+      Mortgage Calculator
+    </p>
+     <form onsubmit="return assertForm()" 
+           action = "http://157.201.194.254/cgi-bin/fie05004/assign10">
+      <table border="0" 
+             style = "margin:auto; font-family:serif; background-color:grey">
+        <tr>
+          <td>APR</td>
+          <td><input type="text" id = "apr" name="APR" placeholder="APR"/></td>
+        </tr>
+        <tr>
+          <td>Term</td>
+          <td>
+            <input type="text" id = "term" name="Term" placeholder="Loan Term"/>
+          </td>
+        </tr>
+        <tr>
+          <td>Loan Amount</td>
+          <td>
+            <input type="text" id = "amt" name="Amt" placeholder="Loan Amount"/>
+          </td>
+        </tr>
+        <tr>
+          <td><input type="submit" value="Submit"/></td>
+          <td><input type="reset" value="Reset"/></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

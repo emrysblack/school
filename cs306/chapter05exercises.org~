@@ -1,0 +1,32 @@
+# Created 2016-05-07 Sat 19:05
+#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t
+#+TITLE: Chapter 5 Exercises
+#+AUTHOR: <Your Name Goes Here>
+#+LANGUAGE: en
+#+STARTUP: showeverything
+
+* Exercise 1 on page 174
+
+*a.* Write a pseudocode for a divide-and-conquer algorithm for finding
+a position of the largest element in an array of /n/ numbers.
+
+*b.* What will be your algorithm's output for arrays with several
+elements of the largest value?
+
+*c.* Set up and solve a recurrence relation for the number of key
+comparisons made by your algorithm.
+
+*d.* How does this algorithm compare with the brute-force algorithm
+for this problem?
+
+* Exercise 5 on page 175
+
+Find the order of growth for solutions of the following recurrences.
+
+*a.* \(T(n) = 4T(n/2) + n, T(1) = 1\)
+
+*b.* \(T(n) = 4T(n/2) + n^2, T(1) = 1\)
+
+*c.* \(T(n) = 4T(n/2) + n^3, T(1) = 1\)
+
+*NOTE:* No exercises are assigned for the remaining sections 5.2-5.5.

@@ -1,0 +1,49 @@
+!--------------------------------------------------
+! Set capslock to be tab
+!--------------------------------------------------
+!remove Lock = Caps_Lock
+!keysym Caps_Lock = Tab
+
+!--------------------------------------------------
+! Remap Tab to Backspace
+!--------------------------------------------------
+!keysym Tab = BackSpace
+
+!--------------------------------------------------
+! Remap backspace to delete
+!--------------------------------------------------
+!keysym BackSpace = Delete
+
+!--------------------------------------------------
+! Remap delete to Capslock
+!--------------------------------------------------
+!keysym Delete = NoSymbol
+
+!--------------------------------------------------
+! Keypad remap
+!--------------------------------------------------
+clear Mod2
+! Mod2 is NumLock
+
+keycode  63 =  asterisk
+
+keycode  77 = BackSpace
+
+keycode  79 = 7
+keycode  80 = 8
+keycode  81 = 9
+keycode  82 = minus
+keycode  83 = 4
+keycode  84 = 5
+keycode  85 = 6
+keycode  86 = plus
+keycode  87 = 1
+keycode  88 = 2
+keycode  89 = 3
+keycode  90 = 0
+keycode  91 = period
+
+keycode 104 = Return
+keycode 106 = slash
+
+remove Lock = Num_Lock

@@ -1,0 +1,214 @@
+# Created 2016-04-28 Thu 16:29
+#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t
+#+TITLE: Chapter 3 Exercises
+#+AUTHOR: Brady Field
+#+LANGUAGE: en
+#+STARTUP: showeverything
+
+** Partners in Crime
+Thom Allen and Matthew Ary
+* Exercise 2 on page 106
+
+As shown in Section 2.1, the average number of key comparisons made
+by sequential search (without a sentinel, under standard assumptions
+about its inputs) is given by the formula
+
+\[C_{avg}(n) = \frac{p(n + 1)}{2} + n(1 - p),\]
+
+where /p/ is the probability of a successful search. Determine, for
+a fixed /n/, the values of /p/ \((0 \le p \le 1)\) for which this
+formula yields the maximum value of \(C_{avg}(n)\) and the minimum
+value of \(C_{avg}(n)\).
+
+** Solution
+There are no curves, so the endpoints will be the extremes.
+Probability is always between 0 and 1. Plugging in a 0 for P,
+we end up with an n. Plugging in a 1 yields (n + 1)/2. Clearly Plugging
+in the 0 will give the Max value, the 1 will give a min value, and plugging in
+anything between 0 and 1 will give a answer between those extremes. 
+
+* Exercise 11 on pages 121-122
+
+/Famous alphametic/
+
+A puzzle in which the digits in a correct mathematical expression,
+such as a sum, are replaced by letters is called /*cryptarithm*/;
+if, in addition, the puzzle’s words make sense, it is said to be an
+/*alphametic*/. The most well-known alphametic was published by the
+renowned British puzzlist Henry E. Dudeney (1857–1930):
+
+|   | S | E | N | D |
+| + | M | O | R | E |
+
+| M | O | N | E | Y |
+
+Two conditions are assumed: first, the correspondence between
+letters and decimal digits is one-to-one, i.e., each letter
+represents one digit only and different letters represent different
+digits. Second, the digit zero does not appear as the left-most
+digit in any of the numbers. To solve an alphametic means to find
+which digit each letter represents. Note that a solution’s
+uniqueness cannot be assumed and has to be verified by the solver.
+
+*a.* Write a program for solving cryptarithms by exhaustive
+search. Assume that a given cryptarithm is a sum of two words.
+
+*b.* Solve Dudeney’s puzzle the way it was expected to be solved when
+it was first published in 1924.
+
+** Solution
+*a.* 
+#+BEGIN_SRC C++ :tangle yes
+// alphametic test
+#include <iostream>
+#include <string>
+using namespace std;
+
+bool possible(int letters[], string word1, string word2, string key)
+{
+	// check for uniqueness
+   for (int i = 0; i < 26; i++)
+   {
+      for (int j = 0; j < 26; j++)
+      {
+         if (i != j)
+         {
+            if (letters[i] == letters[j] && letters[i] != -1)
+            {
+               return false;
+            }
+         }
+      }
+   }
+      // check for non-zero
+   if (letters[tolower(word1[0]) - 'a'] == 0 || letters[tolower(word2[0]) - 'a'] == 0 || letters[tolower(key[0]) - 'a'] == 0)
+   {
+	   return false;
+   }
+   return true;
+}
+bool addAndVerify(int letters[], string word1, string word2, string key)
+{
+   int w1[256];
+   int w2[256];
+   int k[256];
+   int answer[256];
+   
+   // prepare variables for math, store backwards to make easier
+   for (int i = 0; i < 256; i++)
+   {
+	   answer[i] = 0;
+	   w1[i] = 0;
+	   w2[i] = 0;
+   }
+   for (int i = 0; i < word1.length(); i++)
+   {
+	   w1[word1.length() - i - 1] = letters[tolower(word1[i]) - 'a'];
+   }
+   for (int i = 0; i < word2.length(); i++)
+   {
+	   w2[word2.length() - i - 1] = letters[tolower(word2[i]) - 'a'];
+   }
+   for (int i = 0; i < key.length(); i++)
+   {
+	   k[key.length() - i - 1] = letters[tolower(key[i]) - 'a'];
+   }
+   int maxLength = (word1.length() > word2.length() ? word1.length(): word2.length());
+   for (int i = 0; i < maxLength; i++)
+   {
+	   answer[i + 1] = (answer[i] + w1[i] + w2[i]) / 10; // carry 
+	   answer[i] = (answer[i] + w1[i] + w2[i]) % 10; // digit
+   }
+   
+   // compare to key
+   for (int i = 0; i < key.length(); i++)
+   {
+	   if (answer[i] != k[i])
+	   {
+		   return false;
+	   }
+   }
+   if (answer[key.length()]) // check for extra carry
+   {
+	   return false;
+   }
+   
+   return true;
+}
+
+int main(int argc, char ** argv)
+{
+   string word1 = argv[1];
+   string word2 = argv[2];
+   string key = argv[3];
+   cout << word1 << " + " << word2 << " = " << key << endl << endl;
+	
+   int letters[26];
+   // prefill with emptys
+   for (int i = 0; i < 26; i++)
+   {
+      letters[i] = -1;
+   }
+   // fill with letters
+   for (int i = 0; i < word1.length(); i++)
+   {
+      letters[tolower(word1[i]) - 'a'] = 0;
+   }
+   for (int i = 0; i < word2.length(); i++)
+   {
+      letters[tolower(word2[i]) - 'a'] = 0;
+   }
+   for (int i = 0; i < key.length(); i++)
+   {
+      letters[tolower(key[i]) - 'a'] = 0;
+   }
+
+   // the brute-force way
+   int solutions = 0;
+   int i = 0;
+   while(i >= 0)
+   {
+      // simulate nested loops for all non-negative values
+      i = 25;
+      do 
+      {
+         letters[i] = letters[i] % 10;
+         for (i = i - 1; letters[i] == -1; i--)
+         {
+         }
+         letters[i]++;
+      } while(letters[i] >= 10 && i >= 0);
+
+      // check current values
+      if (possible(letters, word1, word2, key))
+      { 
+         if (addAndVerify(letters, word1, word2, key))
+         {
+            solutions++;
+            cout << "Solution " << solutions << endl;
+            for (int j = 0; j < 26; j++)
+            {
+               if (letters[j] != -1)
+               {
+                  cout << char('a' + j) << ": " << letters[j] << " ";
+               }
+            }
+            cout << endl << endl;
+         }
+      }
+   }
+   cout << "found " << solutions
+        << (solutions == 1 ? " solution\n" : " solutions\n");
+   return 0;
+}
+#+END_SRC
+*b.*
+M = 1 - from carry one the end
+S = 9 - had to be 8 or 9 depending on a carry
+O = 0 - had to be since M was one and carried, this forced S to be 9 instead of 8
+E = 5 - had to be 1 smaller than N since it obviously had a carry when added to 0
+R = 8 - had to be 8 or 9 depending on carry since when added to N it produced E wich was one shy of 10 (full circle).
+9 was already taken so it could only be 8 with a carry value.
+N = 6 - done by elimination since anything else would have screwed up already claimed values. This gave the value of E as well.
+D = 7 - also done by elimination of remaining values since anything else wouldn't have worked the carry and remainder.
+Y = 2 - simple since it was last and we know that (5 + 7) mod 10 is 2 

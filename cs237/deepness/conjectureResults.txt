@@ -1,0 +1,2 @@
+Conjecture verified for all numbers up to number 1000000000
+largest number reached is 1414213562
