@@ -1,9 +1,0 @@
-phase 1
-look for string in register
-e.g. ("I am not part of the problem. I am a Republican.")
-
-phase 2
-1st and 4th param must be same
-2nd and 5th same
-3rd and 6th same
-e.g. (1 2 3 1 2 3)

@@ -1,5 +1,0 @@
-#!/bin/bash
-
-echo "this is a test"
-exec ./test1.sh
-echo "end of first"
